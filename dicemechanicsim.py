@@ -27,7 +27,7 @@ import argparse # Add switch arguments for python v2.7 and v3.2+
 import csv # Export to csv
 #from csv import writer, writerow
 from time import strftime, localtime
-#import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt # nonnative # https://matplotlib.org/users/installing.html
 
 
 # Variables
