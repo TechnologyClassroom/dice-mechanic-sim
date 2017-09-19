@@ -55,8 +55,11 @@ args = parser.parse_args()
 # csv file output
 time = strftime("%Y%m%d%H%M%S", localtime()) # Time variable
 filename = str(time) + '.csv'
-print(filename)
+print(filename) # Debug
+
+# Open new csv file
 file = open(filename, "wb")
+# Choose csv settings as comma, single quote, and only quote nonnumeric data.
 writer = csv.writer(file, delimiter=',', quotechar="'", quoting=csv.QUOTE_NONNUMERIC)
 
 
@@ -76,14 +79,17 @@ for cell in score:
   else:
     score_key.append("M" + str((len(score_key)/2)+1))
 
-print(','.join(map(str, score_key))) # CSV header
+# CSV header
+print(','.join(map(str, score_key)))
 writer.writerow(score_key)
-print(','.join(map(str, score))) # Starting scores
+# Starting scores
+print(','.join(map(str, score)))
 writer.writerow(score)
+
 
 # Functions
 
-# Die roll functions
+# Die roll function
 def roll(diefaces):
   return randrange(1, int(diefaces+1))
 
