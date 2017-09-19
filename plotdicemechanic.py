@@ -1,4 +1,6 @@
-# Using plotly to visualize csv data for Midnight Riders
+# plotdicemechanic.py
+# 
+# visualize csv data with plotly for Midnight Riders
 
 # Michael McMahon
 
