@@ -1,5 +1,5 @@
 # dicemechanicsim.py
-# Dice Mechanic Simulation v0.94
+# Dice Mechanic Simulation v0.95
 
 # Michael McMahon
 
@@ -433,6 +433,7 @@ file.close()
 #   The PC with the highest madness defends against the PC with highest rep.
 #     D12+madness vs D12+rep
 
+
 # Feature request
 # 
 # Refactor libraries for only what I need.
@@ -445,6 +446,7 @@ file.close()
 #     If you have 1 lower dice than PC, 3 points.
 #     If you have 2 lower dice than PC, 4 points.
 
+
 # Game balance goals
 #
 # Numbers and dice consistently leaning towards higher numbers
@@ -456,6 +458,7 @@ file.close()
 #
 # Unlikelihood of getting stuck at rolling a D6 forever
 
+
 # Experiments
 #
 # What are the results of all players chosing maximum points.
@@ -463,15 +466,3 @@ file.close()
 # How to do make sense of the data
 #
 # Increase PC vs PC and see how it affects scores
-#
-# 
-#
-
-# Change log 0.95:
-# -Ouput to a .csv file in native python
-# -Static options for number of player and individual player choice has been
-# -Explicit comments have been added
-
-# Road map to v1.0:
-# -Event 7 edge cases need to be addressed
-
