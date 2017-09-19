@@ -38,7 +38,9 @@ Loop the script every two seconds (GNU/Linux or UNIX):
 # Features
 
 -The game results are recorded into a .csv file
+
 -Only native python libraries are required.  No additional installations are necessary.
+
 -The script works on all major operating systems (GNU/Linux, Mac, UNIX, and Windows)
 
 # How to analyze data generated from this script
