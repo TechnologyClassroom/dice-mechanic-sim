@@ -1,8 +1,9 @@
 # plotdicemechanic.py
-# 
-# visualize csv data with plotly for Midnight Riders
+# Plot Dice Mechanic
 
 # Michael McMahon
+
+# PDM Visualize csv data with plotly for Midnight Riders.
 
 # https://plot.ly/python/getting-started/#initialization-for-offline-plotting
 # https://plot.ly/python/plot-data-from-csv/#plotting-data-from-external-source
