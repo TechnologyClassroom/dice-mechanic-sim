@@ -35,6 +35,12 @@ Loop the script every two seconds (GNU/Linux or UNIX):
 
 ```watch -n 2 python dicemechanicsim.py```
 
+# Features
+
+-The game results are recorded into a .csv file
+-Only native python libraries are required.  No additional installations are necessary.
+-The script works on all major operating systems (GNU/Linux, Mac, UNIX, and Windows)
+
 # How to analyze data generated from this script
 
 Open the data folder ( https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data ) and extract a data pack for example data.
