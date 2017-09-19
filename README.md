@@ -11,6 +11,8 @@ No AI is present.  All decisions are made randomly.
 
 Static choices can be selected for player 1.
 
+The simulation runs in milliseconds instead of hours.  This allows for fast experimentation with rule changes instead of months of gameplay tests.
+
 Tested with python versions 2.7.12 and 3.5.2, but should work with 2.7+ and 3.2+.
 
 # How to run this script
