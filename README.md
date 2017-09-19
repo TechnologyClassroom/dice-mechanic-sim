@@ -34,3 +34,13 @@ Enable verbose mode:
 Loop the script every two seconds (GNU/Linux or UNIX):
 
 ```watch -n 2 python dicemechanicsim.py```
+
+# How to analyze data generated from this script
+
+Open the data folder ( https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data ) and extract a data pack for example data.
+
+What is a CSV file?  CSV stands for comma separated values.  It is a very simple spreadsheet with each row being a new line and each column separated by commas.
+
+The csv files can be opened with popular spread sheet software such as LibreOffice Calc or Microsoft Excel.  A plain text editor can also view the files.
+
+Data analysis software and programming languages can also be used to parse the data.
