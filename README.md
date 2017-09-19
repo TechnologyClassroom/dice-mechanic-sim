@@ -14,10 +14,10 @@ Static choices can be selected for player 1.
 Tested with python versions 2.7.12 and 3.5.2, but should work with 2.7+ and 3.2+.
 
 Run with this command:
-  python dicemechanicsim.py
+```python dicemechanicsim.py```
 
 View help:
-  python dicemechanicsim.py -h
+```python dicemechanicsim.py -h```
 
 Enable verbose mode:
-  python dicemechanicsim.py -v
+```python dicemechanicsim.py -v```
