@@ -53,4 +53,4 @@ The csv files can be opened with popular spreadsheet software such as LibreOffic
 
 Data analysis software and programming languages can also be used to parse the data.
 
-Data can be graphed with spreadsheet software or with within python through pyplot.
+Data can be graphed with spreadsheet software or with within python through plotly, pyplot, networkx, or igraph.
