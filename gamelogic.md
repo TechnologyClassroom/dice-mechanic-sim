@@ -2,6 +2,8 @@
 
 Game logic for dice-mechanic-simulator
 
+Michael McMahon
+
 # Start of the game
 - Decide number of players
 - For each player, create two variables (M1, R1, M2, R2, ..., M5, R5).
