@@ -50,6 +50,7 @@ Michael McMahon
     - If you have the same dice as PC, 2 points.
     - If you have 1 lower dice than PC, 3 points.
     - If you have 2 lower dice than PC, 4 points.
+- Output graph of simulation output in .png format in addition to .csv format.
 
 
 # Game balance goals
