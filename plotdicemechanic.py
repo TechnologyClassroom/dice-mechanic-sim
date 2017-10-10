@@ -14,6 +14,8 @@
 #  pip install plotly --upgrade
 #  pip install pandas --upgrade
 
+# I originally ported the graphing through plotly, but the output format requires opening a local webpage instead of a static image which slows creating and viewing data.  Matplotlib allows natively exporting graphs to any format.
+
 import plotly.offline as py
 import plotly.graph_objs as go
 import plotly.figure_factory as FF
