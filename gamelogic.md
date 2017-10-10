@@ -51,6 +51,7 @@ Michael McMahon
     - If you have 1 lower dice than PC, 3 points.
     - If you have 2 lower dice than PC, 4 points.
 - Output graph of simulation output in .png format in addition to .csv format.
+- pep 8
 
 
 # Game balance goals
