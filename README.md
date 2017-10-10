@@ -33,7 +33,7 @@ Loop the script every two seconds (GNU/Linux or UNIX):
 
 -The game results are recorded into a .csv file
 
--Only native python libraries are required.  No additional installations are necessary.
+-Only native python libraries are required and no additional installations are necessary to run dicemechanicsim.py simulations.
 
 -The script works on all major operating systems (GNU/Linux, Mac, UNIX, and Windows)
 
