@@ -43,7 +43,7 @@ Michael McMahon
 D12s to settle ties.
 
 
-# Feature request
+# Feature requests
 - Only load pieces of libraries that are used to speed up processing time
 - Proposed changes for dice tiers and points
   - Change point system for PC vs PC based on dice advantage
