@@ -40,6 +40,8 @@ Michael McMahon
 #   Event 7
 - The PC with the highest madness defends against the PC with highest rep.
     - D12+madness vs D12+rep
+- When two or more characters have highest madness and/or reputation, roll
+D12s to settle ties.
 
 
 # Feature request
