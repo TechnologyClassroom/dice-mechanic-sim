@@ -36,11 +36,10 @@ Michael McMahon
 - Record player or players with highest reputation.
 - Record player or players with highest madness.
 - if a player has the highest repuation and madness, there is no event 7.
-
-#   Event 7
-- The PC with the highest madness defends against the PC with highest rep.
+- Event 7
+  - The PC with the highest madness defends against the PC with highest rep.
     - D12+madness vs D12+rep
-- When two or more characters have highest madness and/or reputation, roll
+  - When two or more characters have highest madness and/or reputation, roll
 D12s to settle ties.
 
 
