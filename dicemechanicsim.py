@@ -6,8 +6,6 @@
 # DMS tests game mechanics for the RPG Midnight Riders.
 # This script can be used to balance dice based RPGs and board games.
 
-# No AI is present.  All decisions are made randomly.
-# Static choices can be selected for player 1.
 
 # Tested with python versions 2.7.12 and 3.5.2.
 
@@ -94,7 +92,8 @@ def roll(diefaces):
   return randrange(1, int(diefaces+1))
 
 
-# Choose an opponent PC to battle 
+# Choose an opponent PC to battle
+# No AI is present.  All decisions are made randomly.
 def OpposingForce():
   of = randrange(0, (N+1) )
   # Change above from 0 to 1, to remove NPC from challenge 3.
@@ -197,6 +196,7 @@ for x in range(0, H): # Run a full game.
     print("Happening modifiers (Ignored): " + str(h1) + " & " + str(h2)) # Debug
 
   # Decide amount of difficulty and risk
+  # Static choices can be selected for player 1.
   if turn == 1: # Experiment with static challenge choices
     chlng = randrange(1,4) # Default action
     if current > (H/6)*3: # Experiment with static choices based on progress.
