@@ -13,6 +13,8 @@ Goals for the game mechanics to become more fun and balanced:
 
 Data analysis can be achieved by watching simulations over time and with data analysis and graphing libraries (numpy and matplotlib).
 
+# Road map to v1.0:
+-Event 7 edge cases need to be addressed
 
 # Feature requests
 - Only load pieces of libraries that are used to speed up processing time
