@@ -31,9 +31,15 @@ Loop the script every two seconds (GNU/Linux or UNIX):
 
 ```watch -n 2 python dicemechanicsim.py```
 
+
+
 # Game Logic
 
 The logic behind the game can be seen in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/gamelogic.md">gamelogic.md file</a>.
+
+# Goals
+
+Goals for the project can be found in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/goals.md">goals.md file</a>
 
 # Features
 
@@ -48,6 +54,8 @@ The logic behind the game can be seen in the <a href="https://github.com/Technol
 -Static choices can be selected for player 1.
 
 -The simulation runs in milliseconds instead of hours.  This allows for fast experimentation with rule changes instead of months of gameplay tests.
+
+Feature requests can be found in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/goals.md">goals.md file</a>.
 
 # How to analyze data generated from this script
 
