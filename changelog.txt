@@ -1,6 +1,3 @@
-Road map to v1.0:
--Event 7 edge cases need to be addressed
-
 Change log v0.95:
 -Outputs to a .csv file with a name based on the local time in native python
 -Static options for number of player and individual player choice are optional
