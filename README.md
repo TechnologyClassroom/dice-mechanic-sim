@@ -31,16 +31,6 @@ Loop the script every two seconds (GNU/Linux or UNIX):
 
 ```watch -n 2 python dicemechanicsim.py```
 
-
-
-# Game Logic
-
-The logic behind the game can be seen in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/gamelogic.md">gamelogic.md file</a>.
-
-# Goals
-
-Goals for the project can be found in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/goals.md">goals.md file</a>
-
 # Features
 
 -The game results are recorded into a .csv file
@@ -68,3 +58,11 @@ The csv files can be opened with popular spreadsheet software such as LibreOffic
 Data analysis software and programming languages can also be used to parse the data.
 
 Data can be graphed with spreadsheet software or within python through matplotlib, plotly, networkx, or igraph.
+
+# Game Logic
+
+The logic behind the game can be seen in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/gamelogic.md">gamelogic.md file</a>.
+
+# Goals
+
+Goals for the project can be found in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/goals.md">goals.md file</a>.
