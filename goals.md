@@ -1,3 +1,5 @@
+# Goals & Feature Requests
+
 # Game balance goals
 Goals for the game mechanics to become more fun and balanced:
 
