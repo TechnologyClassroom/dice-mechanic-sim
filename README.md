@@ -7,7 +7,9 @@ This code is released under the AGPL 3.0.
 
 This script can be used to balance dice based RPGs and board games.
 
-Tested with python versions 2.7.12 and 3.5.2, but should work with 2.7+ and 3.2+.
+Tested with python versions 2.7.12 and 3.5.2, but should work with 2.7+ and 3.2+.7
+
+<a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/changelog.txt">Change log</a>
 
 # How to run this script
 
@@ -28,6 +30,10 @@ Enable verbose mode:
 Loop the script every two seconds (GNU/Linux or UNIX):
 
 ```watch -n 2 python dicemechanicsim.py```
+
+# Game Logic
+
+The logic behind the game can be seen in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/gamelogic.md">gamelogic.md file</a>.
 
 # Features
 
