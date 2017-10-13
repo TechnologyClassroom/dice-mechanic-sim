@@ -9,7 +9,7 @@ This script can be used to balance dice based RPGs and board games.
 
 Tested with python versions 2.7.12 and 3.5.2, but should work with 2.7+ and 3.2+.7
 
-<a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/changelog.txt">Change log</a>
+<a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt">Change log</a>
 
 # How to run this script
 
@@ -45,11 +45,11 @@ Loop the script every two seconds (GNU/Linux or UNIX):
 
 -The simulation runs in milliseconds instead of hours.  This allows for fast experimentation with rule changes instead of months of gameplay tests.
 
-Feature requests can be found in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/goals.md">goals.md file</a>.
+Feature requests can be found in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md">goals.md file</a>.
 
 # How to analyze data generated from this script
 
-Open the data folder ( https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data ) and extract a data pack for example data.
+Open the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data">data folder</a>, download, and extract a data pack for example data.
 
 What is a CSV file?  CSV stands for comma separated values.  It is a very simple spreadsheet with each row being a new line and each column separated by commas.
 
@@ -61,8 +61,8 @@ Data can be graphed with spreadsheet software or within python through matplotli
 
 # Game Logic
 
-The logic behind the game can be seen in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/gamelogic.md">gamelogic.md file</a>.
+The logic behind the game can be seen in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md">gamelogic.md file</a>.
 
 # Goals
 
-Goals for the project can be found in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/goals.md">goals.md file</a>.
+Goals for the project can be found in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md">goals.md file</a>.
