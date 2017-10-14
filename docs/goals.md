@@ -17,7 +17,7 @@ Data analysis can be achieved by watching simulations over time and with data an
 -Event 7 edge cases need to be addressed
 
 # Feature requests
-- Easy: [pep 8 style](https://www.python.org/dev/peps/pep-0008)
+- Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
   - [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
   of 80 characters per line for code and 72 for docstrings/comments.
 - Easy: Only load pieces of libraries that are used to speed up processing time
