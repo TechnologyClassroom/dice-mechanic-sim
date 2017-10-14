@@ -5,11 +5,11 @@ part of a published game!
 
 Pull requests will be accepted as long as they are working towards the
 stated goals.  Goals for the project can be found in the [goals.md file]
-(https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md").
+(https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
 
 ## First Steps towards a pull request
 
-* [Make a GitHub account]((https://github.com/signup/free).
+* [Make a GitHub account](https://github.com/signup/free).
 * (Optional) Check the [Issues page](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues)
 for something you can contribute towards.
   * (Optional) Submit a [new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new)
