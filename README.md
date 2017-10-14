@@ -73,4 +73,4 @@ Goals for the project can be found in the [goals.md file](https://github.com/Tec
 
 [*Imposter syndrome disclaimer*](https://github.com/adriennefriend/imposter-syndrome-disclaimer): I want your help.  No really, I do.
 
-See the [CONTRIBUTING.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/CONTRIBUTING.md) for loose guidelines to how you can help.
+See the [CONTRIBUTING.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/CONTRIBUTING.md) for loose guidelines on how you can help.
