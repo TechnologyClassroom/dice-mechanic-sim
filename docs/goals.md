@@ -32,7 +32,9 @@ Data analysis can be achieved by watching simulations over time and with data an
     - d10       1           1           2           3
 - Output graph of simulation output in .png format in addition to .csv format.
 - pep 8
-
+  - [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
+  of 80 characters per line for code and 72 for docstrings/comments.
+- Run plotdicemechanic.py at the end of dicemechanicsim.py on the csv file.
 
 # Experiments
 
