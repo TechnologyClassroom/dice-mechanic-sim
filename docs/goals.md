@@ -24,6 +24,12 @@ Data analysis can be achieved by watching simulations over time and with data an
     - If you have the same dice as PC, 2 points.
     - If you have 1 lower dice than PC, 3 points.
     - If you have 2 lower dice than PC, 4 points.
+  - Higher point table
+    - PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
+    - d4        3           4           5           6
+    - d6        2           3           4           5
+    - d8        1           2           3           4
+    - d10       1           1           2           3
 - Output graph of simulation output in .png format in addition to .csv format.
 - pep 8
 
