@@ -22,6 +22,8 @@ import plotly.figure_factory as FF
 import numpy as np
 import pandas as pd
 
+#import matplotlib.pyplot as plt # nonnative # https://matplotlib.org/users/installing.html
+
 input='test.csv'
 df = pd.read_csv(input)
 
