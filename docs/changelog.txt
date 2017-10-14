@@ -1,3 +1,8 @@
+Change log dicemechanicsim v0.96:
+-Static choices can easily be set for player 1, late game, or all players.
+-Parsed with autopep8
+-Cleaned comments
+
 Change log v0.95:
 -Outputs to a .csv file with a name based on the local time in native python
 -Static options for number of player and individual player choice are optional
