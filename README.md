@@ -3,9 +3,11 @@ DMS tests game mechanics for Midnight Riders, the upcoming pen and paper RPG.
 
 Michael McMahon
 
-This code is released under the AGPL 3.0.
+This code is released under the [AGPL 3.0 license](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/LICENSE).
 
 This script can be used to balance dice based RPGs and board games.
+
+DMS boils the game down to only the game mechanics by removing the theme and the characters.
 
 Tested with python versions 2.7.12 and 3.5.2, but should work with 2.7+ and 3.2+.7
 
