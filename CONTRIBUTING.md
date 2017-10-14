@@ -32,7 +32,8 @@ done working on the fork after the change, the repository can be deleted.
 
 * I use minimalistic text editors without spell check.  US grammar corrections
 will be accepted.
-* If something is worded awkwardly, submit a pull request to add clarity.
+* If something is worded awkwardly, submit a pull request to add clarity.  If
+you do not understand something enough to add clarity, submit a [new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new).
 
 ## Style
 
