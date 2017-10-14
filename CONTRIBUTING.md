@@ -19,7 +19,7 @@ page titled YOURUSERNAME / dice-mechanic-sim.
 ## Pull request
 
 * Create a new branch from your fork.
-* Make changes.
+* Make changes.  Less is more.
 * An option to create a pull request will appear at the top of the main page.
 * Explain the reasoning behind the change in the pull request.
 
