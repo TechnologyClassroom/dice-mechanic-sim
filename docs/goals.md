@@ -11,7 +11,8 @@ Goals for the game mechanics to become more fun and balanced:
 
 4) Low probability of getting stuck at the first dice tier
 
-Data analysis can be achieved by watching simulations over time and with data analysis and graphing libraries (numpy and matplotlib).
+Data analysis can be achieved by watching simulations over time and with data
+analysis and graphing libraries (numpy and matplotlib).
 
 # Road map to v1.0:
 -Event 7 edge cases need to be addressed
@@ -19,6 +20,8 @@ Data analysis can be achieved by watching simulations over time and with data an
 # Feature requests
 - Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
   - [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
+  - A few automatic code analyzers are [autopep8](https://github.com/hhatto/autopep8),
+  [yapf](https://github.com/google/yapf), and [pycodestyle](https://github.com/PyCQA/pycodestyle).
   of 80 characters per line for code and 72 for docstrings/comments.
 - Easy: Only load pieces of libraries that are used to speed up processing time
 - dicemechanicsim.py
