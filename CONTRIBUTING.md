@@ -18,10 +18,15 @@ page titled YOURUSERNAME / dice-mechanic-sim.
 
 ## Pull request
 
-* Create a new branch from your fork.
+* Create a new branch from your fork.  Name the branch based on what you
+intend to change such as fixing-spelling-errors.
 * Make changes.  Less is more.
 * An option to create a pull request will appear at the top of the main page.
 * Explain the reasoning behind the change in the pull request.
+
+## After the pull request
+(Optional) After a change is merged, you can delete the branch.  If you are
+done working on the fork after the change, the repository can be deleted.
 
 ## Low hanging fruit
 
