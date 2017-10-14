@@ -66,3 +66,9 @@ The logic behind the game can be seen in the <a href="https://github.com/Technol
 # Goals
 
 Goals for the project can be found in the <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md">goals.md file</a>.
+
+# Contributing
+
+[*Imposter syndrome disclaimer*](https://github.com/adriennefriend/imposter-syndrome-disclaimer): I want your help.  No really, I do.
+
+See the [CONTRIBUTING.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/CONTRIBUTING.md) for loose guidelines to how you can help.
