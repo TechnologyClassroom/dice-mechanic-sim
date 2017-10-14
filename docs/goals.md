@@ -14,8 +14,12 @@ Goals for the game mechanics to become more fun and balanced:
 Data analysis can be achieved by watching simulations over time and with data
 analysis and graphing libraries (numpy and matplotlib).
 
-# Road map to v1.0:
+# Road map to dicemechanicsim.py v1.0:
 -Event 7 edge cases need to be addressed
+-Add complex dice tier mechanics
+
+# Road map to plotdicemechanic.py v1.0:
+-Export a simulation .csv file to a graph in .png format without intermediary steps.
 
 # Feature requests
 - Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
