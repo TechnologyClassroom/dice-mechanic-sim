@@ -1,5 +1,5 @@
 # dicemechanicsim.py
-# Dice Mechanic Simulation v0.95
+# Dice Mechanic Simulation v0.96
 
 # Michael McMahon
 
