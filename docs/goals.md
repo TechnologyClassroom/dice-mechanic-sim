@@ -11,6 +11,8 @@ Goals for the game mechanics to become more fun and balanced:
 
 4) Low probability of getting stuck at the first dice tier
 
+5) Low probability of leaving a player left behind
+
 Data analysis can be achieved by watching simulations over time and with data
 analysis and graphing libraries (numpy and matplotlib).
 
