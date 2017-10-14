@@ -31,10 +31,9 @@ will be accepted.
 
 ## Style
 
-As of this time, I have not used a style guide.  Attempt to make contributions
-loosely fit in.  Example: If everything around your contributions is in all
-lowercase letters and your contribution is all capital letters, it will look
-bad.  I would probably still accept it if it worked towards the goals though.
-
-If you wanted to convert the code to pep 8 format, I would accept the change and
-update this section.
+As of this time, I am very loosely using [pep 8](https://www.python.org/dev/peps/pep-0008/)
+as a style guide.  Attempt to make contributions loosely fit in.  Example:
+If everything around your contributions is in all lowercase letters and your
+contribution is all capital letters, it will look bad.  I would probably still
+accept pull requests if they worked towards the [stated goals](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
+regardless of style.
