@@ -49,7 +49,7 @@ Feature requests can be found in the <a href="https://github.com/TechnologyClass
 
 # How to analyze data generated from this script
 
-Open the [data folder]https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data], download, and extract a data pack for example data.
+Open the [data folder]https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data), download, and extract a data pack for example data.
 
 What is a CSV file?  CSV stands for comma separated values.  It is a very simple spreadsheet with each row being a new line and each column separated by commas.
 
