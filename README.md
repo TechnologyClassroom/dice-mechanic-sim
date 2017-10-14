@@ -67,7 +67,7 @@ The logic behind the game can be seen in the [gamelogic.md file](https://github.
 
 # Goals
 
-Goals for the project can be found in the [goalsmd file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
+Goals for the project can be found in the [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
 
 # Contributing
 
