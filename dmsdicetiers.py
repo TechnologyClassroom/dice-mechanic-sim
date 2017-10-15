@@ -100,81 +100,61 @@ def roll(diefaces):
     return randrange(1, int(diefaces + 1))
 
 
+# Choose an opponent to battle
+def OpposingForce():
+    of = randrange(0, (N + 1))
+    # Change above from 0 to 1, to remove NPC conflicts.
+
+    if int(of) == 0:
+        # Control the chances of fighting NPCs.
+        chance = roll(4)
+        if chance < 2:  # 75% chance of rerolling if NPC is chosen.
+            return of
+        else:
+            return OpposingForce()
+    # Check to see if you picked yourself.
+    elif int(of) != int(turn):
+        return of
+    else:
+        if args.verbose:
+            print("You tried to fight yourself.  Reroll for a new opponent!")
+        return OpposingForce()
+
+
 #  Dice chart
 #   1 -  6 = d6
 #   7 - 13 = d8
 #  14+     = d10
 
-# These next two functions need to be fed the same conditional statements.
-# Replace those numbers with variables set prior so they can be easily changed.
-
-# Find dice tier
-def dicetier(pc):
-    level = score[(2 * pc) - 2 + rpmd]  # PC level variable
-    if level == 0:
-        return 0
-    elif 0 < level <= 6:
-        return 1
-    elif 6 < level <= 13:
-        return 2
-    elif 13 < level:
-        return 3
-    # elif 30 < level <= 35:
-    #     return 4
-    # elif 35 < level:
-    #     return 5
-    else:
-        return "ERROR: level is not a number!!"
-
-# Find PC roll
 def pcdice(pc):
     level = score[(2 * pc) - 2 + rpmd]  # PC level variable
-    if level == 0:
-        if args.verbose:
-            print("Rolling a D4...")
-        return roll(4)
-    elif 0 < level <= 6:
+    if level <= 6:
+        tier=1
         if args.verbose:
             print("Rolling a D6...")
         return roll(6)
     elif 6 < level <= 13:
+        tier=2
         if args.verbose:
             print("Rolling a D8...")
         return roll(8)
     elif 13 < level:
+        tier=3
         if args.verbose:
             print("Rolling a D10...")
         return roll(10)
     # elif 30 < level <= 35:
+    #     tier=4
     #     if args.verbose:
     #         print("Rolling a D12...")
     #     return roll(12)
     # elif 35 < level:
+    #     tier=5
     #     if args.verbose:
     #         print("Rolling a D20...")
     #     return roll(20)
     else:
         return "ERROR: level is not a number!!"
-
-
-# Choose an opponent to battle
-def OpposingForce():
-    # Control the chances of fighting NPCs.
-    chance = roll(100)
-    if chance < 26:  # 75% chance of rerolling if NPC is chosen.
-    # Change above from 26 to 0, to remove NPC conflicts entirely.
-        return 0
-    else:
-        # Pick an opposing player randomly.
-        of = randrange(0, (N + 1))
-
-        # Check to see if you picked yourself.
-        if int(of) != int(turn):
-            return of
-        else:
-            if args.verbose:
-                print("You tried to fight yourself.  Reroll for a new opponent!")
-            return OpposingForce()
 
 
 # Tie breaker
@@ -184,11 +164,11 @@ def tiebreak():
     player2 = roll(12)
     if player1 > player2:
         if args.verbose:
-            print("Player " + str(turn) + " wins the tie!")
+            print("Player " + str(turn) + "wins the tie!")
         return True
     elif player1 < player2:
         if args.verbose:
-            print("Player " + str(opp) + " wins the tie!")
+            print("Player " + str(opp) + "wins the tie!")
         return False
     else:
         if args.verbose:
@@ -198,14 +178,13 @@ def tiebreak():
 
 # Game loop plays through 6 events.
 # Each loop is one happening.
-for x in range(0, H):
+for x in range(0, H):  # Run a full game.
     # Loop Variables
     current = x + 1  # Happening variable
 
     turn = ((current - 1) % N) + 1  # Player turn variable
 
-    # DEBUG: I believe this line is no longer necessary.
-    #opp = 0  # Reset opponent variable.  0=NPC
+    opp = 0  # Reset opponent variable.  0=NPC
 
     if args.verbose and turn == 1:
         print("")  # A blank line for new Events.
@@ -223,7 +202,7 @@ for x in range(0, H):
     h1 = roll(4)
     h2 = roll(12)
     if args.verbose:
-        print("Happening modifiers: " + str(h1) + " & " + str(h2))
+        print("Happening modifiers (Ignored): " + str(h1) + " & " + str(h2))
 
     # Decide to go for Reputation or Madness
     rpmd = randrange(0, 2)
@@ -234,80 +213,62 @@ for x in range(0, H):
             print("Rolling for Madness!")
 
     # Calculate PC dice tier and roll
-    pctier = dicetier(turn)
+    pcroll = pcdice(turn)
+    pctier = tier
     if args.verbose:
         print("PC dice tier: " + str(pctier))
-    pcroll = pcdice(turn)
 
     # Choose opponent
     opp = OpposingForce()
 
     if opp > 0:
-        optier = dicetier(opp)
-        if args.verbose:
-            print("PC vs PC")
-            print("Player chose to go up against player " + str(opp) + "!")
-            print("Opponent dice tier: " + str(pctier))
         oproll = pcdice(opp)
-
-        # Determine dice tier difference.
-        delta = pctier - optier
-
-        # Amount of difference sets point difference as challenge value.
-        # chlng is short for challenge and how much is at risk.
-        # gnlhc is chlng backwards and is how much the Opponent is risking.
-        if delta == 0:
-            chlng = 3
-            gnlhc = 3
-        elif delta == -1:
-            chlng = 4
-            gnlhc = 2
-        elif delta == -2:
-            chlng = 5
-            gnlhc = 1
-        elif delta == -3:
-            chlng = 6
-            gnlhc = 1
-        elif delta == 1:
-            chlng = 2
-            gnlhc = 4
-        elif delta == 2:
-            chlng = 1
-            gnlhc = 5
-        elif delta == 3:
-            chlng = 1
-            gnlhc = 6
-
+        optier = tier
+        if args.verbose:
+            print("Player chose to go up against player " + str(opp) + "!")
+            print("Opponent dice tier: " + str(opptier) + "!")
     else:
+        
         if args.verbose:
-            print("PC vs NPC")
-        # Choose NPC difficulty and risk
-        # Static choices can be selected for player 1, late game, or all players.
-        if turn == 1:  # Experiment with Player 1 static choices
-            chlng = roll(3)  # Default action
-            #chlng = 3 # Static choice
-            # Uncomment the above line to set a static challenge choice for Player 1.
-        elif current > (H / 6) * 3:  # Experiment with late game static choices
-            chlng = roll(3)  # Default action
-            #chlng = 3 # Static choice
-            # Uncomment the above line to set a static challenge choice for late game.
-        else:
-            chlng = roll(3)
-            #chlng = 3
-            # Uncomment the above line to set a static challenge choice.
+            print("Player chose to go up against NPC!")
+    #   If NPC, choose difficulty
+    # Calculate scores for PC and opponent
 
+    # Decide amount of difficulty and risk
+    # Static choices can be selected for player 1, late game, or all players.
+    if turn == 1:  # Experiment with Player 1 static choices
+        chlng = randrange(1, 4)  # Default action
+        # chlng = 3 # Static choice
+        # Uncomment the above line to set a static challenge choice for Player 1.
+    elif current > (H / 6) * 3:  # Experiment with late game static choices
+        chlng = randrange(1, 4)  # Default action
+        # chlng = 3 # Static choice
+        # Uncomment the above line to set a static challenge choice for late game.
+    else:
+        chlng = randrange(1, 4)
+        #chlng = 3
+        # Uncomment the above line to set a static challenge choice.
+    if args.verbose:
+        print("Challenge rating: " + str(chlng))
+
+    # Choose opposing PC
+    if chlng == 3:
+        opp = OpposingForce()
         if args.verbose:
-            print("NPC challenge rating: " + str(chlng))
+            print("Opponent is player " + str(opp))
 
-        # Calculate opposing NPC dice class and roll
-        if chlng == 1:
-            oproll = roll(4)
-        elif chlng == 2:
-            oproll = roll(6)
-        elif chlng == 3:
+    # Calculate opposing dice class and roll
+    if chlng == 1:
+        oproll = roll(4)
+    elif chlng == 2:
+        oproll = roll(6)
+    elif chlng == 3:
+        if opp == 0:
             oproll = roll(8)
         else:
-            print("ERROR: chlng is not 1-3!!")
+            oproll = pcdice(opp)
+    else:
+        print("ERROR: chlng is not 1-3!!")
 
     if args.verbose:
         print("PC rolls " + str(pcroll) + "!")
@@ -316,6 +277,8 @@ for x in range(0, H):
 
     # Compare rolls and add / remove challenge points.
     if opp == 0:
+        if args.verbose:
+            print("PC vs NPC")
         if pcroll > oproll:
             if args.verbose:
                 print("WIN!")
@@ -338,17 +301,18 @@ for x in range(0, H):
         else:
             print("ERROR: pcroll or oproll is invalid!")
     else:
-        # THIS IS WHERE I LEFT OFF!!!
+        if args.verbose:
+            print("PC vs PC")
         if pcroll > oproll:
             if args.verbose:
                 print("WIN!")
             score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] + chlng
-            score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] - gnlhc
+            score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] - chlng
         elif pcroll < oproll:
             if args.verbose:
                 print("LOSE!")
             score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] - chlng
-            score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] + gnlhc
+            score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] + chlng
         elif pcroll == oproll:
             if args.verbose:
                 print("TIE!")
@@ -356,22 +320,22 @@ for x in range(0, H):
                 if args.verbose:
                     print("WIN!")
                 score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] + chlng
-                score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] - gnlhc
+                score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] - chlng
             else:
                 if args.verbose:
                     print("LOSE!")
                 score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] - chlng
-                score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] + gnlhc
+                score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] + chlng
         else:
             print("ERROR: pcroll or oproll is invalid!")
 
     # Results
 
-    # Score after each happening
+    # score after each happening
     if args.verbose:
         print(','.join(map(str, score)))
 
-    # Score after each event
+    # score after each event
     if turn == N:
         if args.verbose:
             print("Final event scores:")
@@ -456,4 +420,3 @@ print("Winner:," + str(win))
 file.close()
 
 # (Optional) run python script on csv to graph results.
-
