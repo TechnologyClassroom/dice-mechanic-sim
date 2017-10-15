@@ -113,7 +113,7 @@ def roll(diefaces):
 #  25+     = d10
 
 # Dice tier variables
-# Modify these to experiment with different dice tiers easily
+# Modify these to experiment with different dice tiers easily # DEBUG
 tier0 = 0
 tier1 = 6
 tier2 = 24
@@ -123,7 +123,7 @@ tier2 = 24
 # Find dice tier
 def dicetier(pc):
     level = score[(2 * pc) - 2 + rpmd]  # PC level variable
-    if level == tier0:
+    if level <= tier0:
         return 0
     elif tier0 < level <= tier1:
         return 1
@@ -266,7 +266,7 @@ for x in range(0, H):
         delta = pctier - optier
 
         # Amount of difference sets point difference as challenge value.
-        # chlng is short for challenge and how much is at risk.
+        # chlng is short for challenge and how much is at risk. # DEBUG
         # gnlhc is chlng backwards and is how much the Opponent is risking.
         if delta == 0:
             chlng = 3
