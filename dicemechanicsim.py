@@ -338,7 +338,6 @@ for x in range(0, H):
         else:
             print("ERROR: pcroll or oproll is invalid!")
     else:
-        # THIS IS WHERE I LEFT OFF!!!
         if pcroll > oproll:
             if args.verbose:
                 print("WIN!")
