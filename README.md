@@ -13,7 +13,27 @@ Tested with python versions 2.7.12 and 3.5.2, but should work with 2.7+ and 3.2+
 
 <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt">Change log</a>
 
-# How to run this script
+## How to install Python
+
+  * GNU/Linux Installation Instructions
+
+Python is probably already installed on your GNU/Linux system.  You can check that Python is installed by running this command from a terminal:
+
+    python -V
+
+  * Mac Installation Instructions
+
+Python is already installed on your system.  You can check that Python is installed by running this command from the terminal:
+
+    python -V
+
+If you would like to use IDLE, install [version 2 or 3 from python.org](https://www.python.org/downloads/mac-osx/).  
+
+  * Windows Installation Instructions
+
+The easiest way to install Python (and many other common programs) for Windows is through <a href="https://ninite.com/python/">ninite.  Ninite</a> is a website that allows you to install many programs at once without accidentally installing adware.  The ninite download program can be left on your system and used as an updater in the future.
+
+## How to run this script
 
 Install python.  Download this script.  Open a terminal.  Change to the directory with the script.
 
@@ -33,7 +53,9 @@ Loop the script every two seconds (GNU/Linux or UNIX):
 
 ```watch -n 2 python dicemechanicsim.py```
 
-# Features
+Alternatively, open the file in IDLE, make changes, save, and press F5 to run the script.
+
+## Features
 
 -The game results are recorded into a .csv file
 
@@ -61,15 +83,15 @@ Data analysis software and programming languages can be used to parse the data.
 
 Data can be graphed with spreadsheet software or within python through matplotlib, plotly, networkx, or igraph.
 
-# Game Logic
+## Game Logic
 
 The logic behind the game can be seen in the [gamelogic.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md).
 
-# Goals
+## Goals
 
 Goals for the project can be found in the [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
 
-# Contributing
+## Contributing
 
 [*Imposter syndrome disclaimer*](https://github.com/adriennefriend/imposter-syndrome-disclaimer): I want your help.  No really, I do.
 
