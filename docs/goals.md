@@ -40,7 +40,7 @@ analysis and graphing libraries (numpy and matplotlib).
       - If you have the same dice as PC, 2 points.
       - If you have 1 lower dice than PC, 3 points.
       - If you have 2 lower dice than PC, 4 points.
-    - Higher point table
+    - ~~Higher point table~~
 ```
       PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
       d4        3           4           5           6
