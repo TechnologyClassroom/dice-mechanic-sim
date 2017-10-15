@@ -8,6 +8,8 @@
 # https://plot.ly/python/getting-started/#initialization-for-offline-plotting
 # https://plot.ly/python/plot-data-from-csv/#plotting-data-from-external-source
 
+# https://matplotlib.org/examples/pylab_examples/plotfile_demo.html
+
 # PDM uses python 3 because of the dependencies.  Tested with v3.5.2.
 
 # Install dependencies
