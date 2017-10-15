@@ -51,6 +51,7 @@ analysis and graphing libraries (numpy and matplotlib).
 - plotdicemechanic.py
   - Medium: Change plotdicemechanic.py from plotly to matplotlib.
   - Medium: Output graph of simulation output in .png format instead of html.
+  - Medium: Analyze and plot averages from multiple csv files.
 
 # Experiments
 
