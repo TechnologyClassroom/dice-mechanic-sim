@@ -49,6 +49,7 @@ if args.verbose:
 SS = 3  # Starting Score
 
 MS = 3  # Minimum Score
+MS = 0  # Minimum Score DEBUG
 
 if args.verbose:
     print("Starting score:" + str(SS) + " Minimum score:" + str(MS) + ".")
@@ -105,23 +106,34 @@ def roll(diefaces):
 #   7 - 13 = d8
 #  14+     = d10
 
-# These next two functions need to be fed the same conditional statements.
-# Replace those numbers with variables set prior so they can be easily changed.
+# Debug Dice Chart
+#   0      = d4
+#   1 -  6 = d6
+#   7 - 24 = d8
+#  25+     = d10
+
+# Dice tier variables
+# Modify these to experiment with different dice tiers easily
+tier0 = 0
+tier1 = 6
+tier2 = 24
+#tier3 = 30
+#tier4 = 40
 
 # Find dice tier
 def dicetier(pc):
     level = score[(2 * pc) - 2 + rpmd]  # PC level variable
-    if level == 0:
+    if level == tier0:
         return 0
-    elif 0 < level <= 6:
+    elif tier0 < level <= tier1:
         return 1
-    elif 6 < level <= 13:
+    elif tier1 < level <= tier2:
         return 2
-    elif 13 < level:
+    elif tier2 < level:
         return 3
-    # elif 30 < level <= 35:
+    # elif tier3 < level <= tier4:
     #     return 4
-    # elif 35 < level:
+    # elif tier4 < level:
     #     return 5
     else:
         return "ERROR: level is not a number!!"
@@ -129,27 +141,27 @@ def dicetier(pc):
 # Find PC roll
 def pcdice(pc):
     level = score[(2 * pc) - 2 + rpmd]  # PC level variable
-    if level == 0:
+    if level == tier0:
         if args.verbose:
             print("Rolling a D4...")
         return roll(4)
-    elif 0 < level <= 6:
+    elif tier0 < level <= tier1:
         if args.verbose:
             print("Rolling a D6...")
         return roll(6)
-    elif 6 < level <= 13:
+    elif tier1 < level <= tier2:
         if args.verbose:
             print("Rolling a D8...")
         return roll(8)
-    elif 13 < level:
+    elif tier2 < level:
         if args.verbose:
             print("Rolling a D10...")
         return roll(10)
-    # elif 30 < level <= 35:
+    # elif tier3 < level <= tier4:
     #     if args.verbose:
     #         print("Rolling a D12...")
     #     return roll(12)
-    # elif 35 < level:
+    # elif tier4 < level:
     #     if args.verbose:
     #         print("Rolling a D20...")
     #     return roll(20)
