@@ -34,6 +34,9 @@ done working on the fork after the change, the repository can be deleted.
 will be accepted.
 * If something is worded awkwardly, submit a pull request to add clarity.  If
 you do not understand something enough to add clarity, submit a [new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new).
+* Check the [stated goals](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
+for lines starting with the "Easy" label.
+
 
 ## Style
 
@@ -43,3 +46,4 @@ If everything around your contributions is in all lowercase letters and your
 contribution is all capital letters, it will look bad.  I would probably still
 accept pull requests if they worked towards the [stated goals](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
 regardless of style.
+

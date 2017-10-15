@@ -3,7 +3,7 @@
 # Game balance goals
 Goals for the game mechanics to become more fun and balanced:
 
-1) Numbers and dice consistently learning towards higher numbers as the game progresses
+1) Numbers and dice should consistently increase as the game progresses
 
 2) Close matches
 
@@ -21,17 +21,19 @@ analysis and graphing libraries (numpy and matplotlib).
 -Add complex dice tier mechanics
 
 # Road map to plotdicemechanic.py v1.0:
--Export a simulation .csv file to a graph in .png format without intermediary steps.
+-Export a simulation .csv file directly to a graph in .png format
 
 # Feature requests
 - Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
   - [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
   - A few automatic code analyzers are [autopep8](https://github.com/hhatto/autopep8),
-  [yapf](https://github.com/google/yapf), and [pycodestyle](https://github.com/PyCQA/pycodestyle).
+  [yapf](https://github.com/google/yapf), and
+  [pycodestyle](https://github.com/PyCQA/pycodestyle).
   of 80 characters per line for code and 72 for docstrings/comments.
 - Easy: Only load pieces of libraries that are used to speed up processing time
 - dicemechanicsim.py
-  - Easy: Run plotdicemechanic.py at the end of dicemechanicsim.py on the csv file.
+  - Easy: Run plotdicemechanic.py at the end of dicemechanicsim.py.
+  - Medium: Event 7 is a best 2 out of 3.
   - Medium: Proposed changes for dice tiers and points
     - Change point system for PC vs PC based on dice advantage
       - If you have a higher dice than PC, 1 point.
@@ -63,3 +65,4 @@ analysis and graphing libraries (numpy and matplotlib).
 5) What are the results when only PC vs NPC occurs?
 
 6) Event 7 resolution methods
+
