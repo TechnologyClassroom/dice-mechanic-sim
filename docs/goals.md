@@ -35,19 +35,19 @@ analysis and graphing libraries (matplotlib).
   - Easy: Run plotdicemechanic.py at the end of dicemechanicsim.py.
   - Medium: Event 7 is a best 2 out of 3.
   - Medium: Proposed changes for dice tiers and points
-    - ~~Change point system for PC vs PC based on dice advantage~~
+   - ~~Change point system for PC vs PC based on dice advantage~~
       - If you have a higher dice than PC, 1 point.
       - If you have the same dice as PC, 2 points.
       - If you have 1 lower dice than PC, 3 points.
       - If you have 2 lower dice than PC, 4 points.
-    - Loss table
+   - Loss table
 ```
       PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
       d6        3           2           1           1
       d8        5           4           3           1
       d10       7           6           5           4
 ```
-    - ~~Higher point table~~
+   - ~~Higher point table~~
 ```
       PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
       d4        3           4           5           6
