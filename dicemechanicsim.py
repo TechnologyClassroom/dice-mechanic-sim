@@ -25,6 +25,7 @@ import argparse  # Add switch arguments for python v2.7 and v3.2+
 import csv  # Export to csv format
 #from csv import writer, writerow  # Export to csv format
 from time import strftime, localtime  # Name output file with timestamp
+import plotdicemechanic
 
 
 # argparse
@@ -61,7 +62,8 @@ filename = str(time) + '.csv'
 print(filename)
 
 # Open new csv file
-file = open(filename, "wb")
+#file = open(filename, "wb")  # Python 2
+file = open(filename, "w", newline="")  # Python 3
 # Choose csv settings as comma, single quote, and only quote nonnumeric data.
 writer = csv.writer(file, delimiter=',', quotechar="'",
                     quoting=csv.QUOTE_NONNUMERIC)
@@ -80,9 +82,16 @@ score_key = []
 # Generate column headers for each player.  R1,M1,R2,M2,...,RN,MN
 for cell in score:
     if len(score_key) % 2 == 0:
-        score_key.append("R" + str((len(score_key) / 2) + 1))
+        score_key.append("R" + str(int(len(score_key) / 2) + 1))
     else:
-        score_key.append("M" + str((len(score_key) / 2) + 1))
+        score_key.append("M" + str(int(len(score_key) / 2) + 1))
+
+# Add an index in column 0 for data analysis
+index = "Event"
+score_key = [index] + score_key
+index = 0
+score = [index] + score
+# From Rohit Jain at https://stackoverflow.com/questions/17911091/append-integer-to-beginning-of-list-in-python
 
 # CSV header
 # Prints a line at the top of the CSV which labels each column.
@@ -122,7 +131,7 @@ tier2 = 24
 
 # Find dice tier
 def dicetier(pc):
-    level = score[(2 * pc) - 2 + rpmd]  # PC level variable
+    level = score[(2 * pc) - 1 + rpmd]  # PC level variable
     if level <= tier0:
         return 0
     elif tier0 < level <= tier1:
@@ -140,7 +149,7 @@ def dicetier(pc):
 
 # Find PC roll
 def pcdice(pc):
-    level = score[(2 * pc) - 2 + rpmd]  # PC level variable
+    level = score[(2 * pc) - 1 + rpmd]  # PC level variable
     if level == tier0:
         if args.verbose:
             print("Rolling a D4...")
@@ -216,20 +225,18 @@ for x in range(0, H):
 
     turn = ((current - 1) % N) + 1  # Player turn variable
 
-    # DEBUG: I believe this line is no longer necessary.
-    #opp = 0  # Reset opponent variable.  0=NPC
+    # Increase event index by one at the beginning of a new event
+    if turn == 1:
+        score[0] = score[0] + 1
 
-    if args.verbose and turn == 1:
-        print("")  # A blank line for new Events.
 
     if args.verbose:
-        print("Current happening: " + str(current))
+        # Insert a blank line for new events when in verbose
+        if turn == 1:
+            print("")
+        print("Current Event: " + str(score[0]))
+        print("Current Happening: " + str(current))
         print("Turn: Player " + str(turn))
-
-    # If a score value is below the minimum score, bump up to minimum.
-    for checkms in score:
-        if checkms < MS:
-            score[score.index(checkms)] = MS
 
     # Rolling for happening modifier (ignored in simulation)
     h1 = roll(4)
@@ -331,52 +338,57 @@ for x in range(0, H):
         if pcroll > oproll:
             if args.verbose:
                 print("WIN!")
-            score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] + chlng
+            score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng
         elif pcroll < oproll:
             if args.verbose:
                 print("LOSE!")
-            score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] - chlng
+            score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
         elif pcroll == oproll:
             if args.verbose:
                 print("TIE!")
             if tiebreak() == True:
                 if args.verbose:
                     print("WIN!")
-                score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] + chlng
+                score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng
             else:
                 if args.verbose:
                     print("LOSE!")
-                score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] - chlng
+                score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
         else:
             print("ERROR: pcroll or oproll is invalid!")
     else:
         if pcroll > oproll:
             if args.verbose:
                 print("WIN!")
-            score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] + chlng
-            score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] - gnlhc
+            score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng
+            score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] - gnlhc
         elif pcroll < oproll:
             if args.verbose:
                 print("LOSE!")
-            score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] - chlng
-            score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] + gnlhc
+            score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
+            score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] + gnlhc
         elif pcroll == oproll:
             if args.verbose:
                 print("TIE!")
             if tiebreak() == True:
                 if args.verbose:
                     print("WIN!")
-                score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] + chlng
-                score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] - gnlhc
+                score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng
+                score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] - gnlhc
             else:
                 if args.verbose:
                     print("LOSE!")
-                score[(2 * turn) - 2 + rpmd] = score[(2 * turn) - 2 + rpmd] - chlng
-                score[(2 * opp) - 2 + rpmd] = score[(2 * opp) - 2 + rpmd] + gnlhc
+                score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
+                score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] + gnlhc
         else:
             print("ERROR: pcroll or oproll is invalid!")
 
     # Results
+
+    # If a score value is below the minimum score, bump up to minimum.
+    for checkms in score[1:]:
+        if checkms < MS:
+            score[score.index(checkms)] = MS
 
     # Score after each happening
     if args.verbose:
@@ -396,8 +408,8 @@ for x in range(0, H):
 # Calculate max Repuation and Madness after 6 events
 
 # Make new arrays for Reputation and Madness
-ev6rep = score[::2]
-ev6mad = score[1::2]
+ev6rep = score[1::2]
+ev6mad = score[2::2]
 
 if args.verbose:
     print("Event 6 Reputation: " + str(ev6rep))
@@ -467,4 +479,6 @@ print("Winner:," + str(win))
 file.close()
 
 # (Optional) run python script on csv to graph results.
+plotdicemechanic.plotaspng(filename)
+# Comment the above line to use only python 2 without graphing.
 
