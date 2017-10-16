@@ -18,10 +18,10 @@ analysis and graphing libraries (numpy and matplotlib).
 
 # Road map to dicemechanicsim.py v1.0:
 -Event 7 edge cases need to be addressed
--Add complex dice tier mechanics
+-~~Add complex dice tier mechanics~~
 
 # Road map to plotdicemechanic.py v1.0:
--Export a simulation .csv file directly to a graph in .png format
+- ~~Export a simulation .csv file directly to a graph in .png format~~
 
 # Feature requests
 - Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
@@ -35,11 +35,18 @@ analysis and graphing libraries (numpy and matplotlib).
   - Easy: Run plotdicemechanic.py at the end of dicemechanicsim.py.
   - Medium: Event 7 is a best 2 out of 3.
   - Medium: Proposed changes for dice tiers and points
-    - Change point system for PC vs PC based on dice advantage
+    - ~~Change point system for PC vs PC based on dice advantage~~
       - If you have a higher dice than PC, 1 point.
       - If you have the same dice as PC, 2 points.
       - If you have 1 lower dice than PC, 3 points.
       - If you have 2 lower dice than PC, 4 points.
+    - Loss table
+```
+      PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
+      d6        3           2           1           1
+      d8        5           4           3           1
+      d10       7           6           5           4
+```
     - ~~Higher point table~~
 ```
       PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
@@ -49,21 +56,24 @@ analysis and graphing libraries (numpy and matplotlib).
       d10       1           1           2           3
 ```
 - plotdicemechanic.py
-  - Medium: Change plotdicemechanic.py from plotly to matplotlib.
-  - Medium: Output graph of simulation output in .png format instead of html.
+  - ~~Medium: Change plotdicemechanic.py from plotly to matplotlib.~~
+  - ~~Medium: Output graph of simulation output in .png format instead of html.~~
   - Medium: Analyze and plot averages from multiple csv files.
 
 # Experiments
 
-1) What are the results of all players choosing maximum points?
+1) New ways of calculating scores (The "underdog" comeback scoring mechanism)
 
-2) What are the results of all players choosing minimum points?
+2) What are the results when only PC vs PC occurs?
 
-3) New ways of calculating scores (The "underdog" comeback scoring mechanism)
+3) What are the results when only PC vs NPC occurs?
 
-4) What are the results when only PC vs PC occurs?
+  * ~~What are the results of all players choosing maximum points?~~
 
-5) What are the results when only PC vs NPC occurs?
+  * ~~What are the results of all players choosing minimum points?~~
 
-6) Event 7 resolution methods
+4) Event 7 resolution methods
 
+  * Best 2 out of 3
+
+  * d12 to settle ties
