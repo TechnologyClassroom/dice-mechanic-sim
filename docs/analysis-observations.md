@@ -24,8 +24,8 @@ Solution: We need to add a minimum score to the rules.  The rule could read some
 Solution: Experiment with higher minimum scores.
 
 
-* dicemechanicsim.py runs slightly faster with python 2.7.  Runtime is still less one second either way.  This can be tested with UNIX based systems using this command:
+* Test runtime on UNIX based systems using this command:
 
 ```
-time python2 dicemechanicsim.py
+time python3 dicemechanicsim.py
 ```
