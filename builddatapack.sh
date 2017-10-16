@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# builddatapack.sh
+
+# Michael McMahon
+
+# builddatapack works with dicemechanicsim to run tests, display the output, and
+# package the contents.
+
+# To run, open a terminal and enter:
+#   bash builddatapack.sh
+
+
+# Generate timestamp variable
+pack=$(date +%Y%m%d-%H%M)
+
+# Run 40 simulations and display contents
+for i in {1..40}
+do
+  # Run dms
+  python3 dicemechanicsim.py 2>/dev/null
+  # Display the latest png file
+  #gpicview $((exec ls . | sed 's/\([0-9]\+\).*/\1/g' | sort -n | tail -1)) &
+  ls -tr | tail -n 1 | xargs gpicview &
+  # From bmb at https://stackoverflow.com/questions/1587059/bash-find-highest-numbered-filename-in-a-directory-where-names-start-with-digit
+  # Wait 2 second
+  sleep 2
+  # Stop gpicview
+  pkill gpicview
+done
+
+# Create a temp directory and copy work files
+mkdir $pack
+cd $pack
+mv ../*.csv .
+mv ../*.png .
+cp ../dicemechanicsim.py .
+cp ../plotdicemechanic.py .
+cp ../builddatapack.sh .
+
+# Archive in zip format
+zip -r data$pack.zip ./*
+
+# Remove temp directory and work files
+mv data$pack.zip ..
+cd ..
+rm -fr $pack
+
