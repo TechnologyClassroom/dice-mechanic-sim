@@ -22,3 +22,10 @@ Solution: We need to add a minimum score to the rules.  The rule could read some
 Problem: Once reputation or madness reaches 0, there is little chance of recovering.
 
 Solution: Experiment with higher minimum scores.
+
+
+dicemechanicsim.py runs slightly faster with python 2.7.  Runtime is still less one second either way.  This can be tested with UNIX based systems using this command:
+
+```
+time python2 dicemechanicsim.py
+```
