@@ -34,4 +34,3 @@ Michael McMahon
     - D12+madness vs D12+reputation
   - When two or more characters have highest madness and/or reputation, roll
 D12s to settle ties.
-
