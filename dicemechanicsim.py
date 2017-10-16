@@ -7,7 +7,7 @@
 # This script can be used to balance dice based RPGs and board games.
 
 
-# Tested with python versions 2.7.12 and 3.5.2.
+# Tested with python versions 3.5.2.
 
 # Run with this command:
 #   python dicemechanicsim.py
@@ -18,6 +18,14 @@
 # Enable verbose mode:
 #   python dicemechanicsim.py -v
 
+# Python 2 Information
+# To run dms with python 2, remove, change, comment these three lines:
+# Remove "import plotdicemechanic"
+# Change this line "file = open(filename, "w", newline="")  # Python 3"
+# to this "file = open(filename, "wb")  # Python 2"
+# Remove "plotdicemechanic.plotaspng(filename)"
+
+
 
 # Import libraries
 from random import randrange  # dice rolls and probability
@@ -25,7 +33,7 @@ import argparse  # Add switch arguments for python v2.7 and v3.2+
 import csv  # Export to csv format
 #from csv import writer, writerow  # Export to csv format
 from time import strftime, localtime  # Name output file with timestamp
-import plotdicemechanic
+import plotdicemechanic  # Python 3
 
 
 # argparse
@@ -62,7 +70,6 @@ filename = str(time) + '.csv'
 print(filename)
 
 # Open new csv file
-#file = open(filename, "wb")  # Python 2
 file = open(filename, "w", newline="")  # Python 3
 # Choose csv settings as comma, single quote, and only quote nonnumeric data.
 writer = csv.writer(file, delimiter=',', quotechar="'",
@@ -479,6 +486,4 @@ print("Winner:," + str(win))
 file.close()
 
 # (Optional) run python script on csv to graph results.
-plotdicemechanic.plotaspng(filename)
-# Comment the above line to use only python 2 without graphing.
-
+plotdicemechanic.plotaspng(filename)  # Python 3
