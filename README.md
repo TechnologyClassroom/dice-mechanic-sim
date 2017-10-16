@@ -9,7 +9,7 @@ This script can be used to balance dice based RPGs and board games.
 
 DMS boils the game down to only the game mechanics by removing the theme and the characters.
 
-Tested with python versions 2.7.12 and 3.5.2, but should work with 2.7+ and 3.2+.7
+Tested with python versions 3.5.2, but should work with 3.2+.
 
 <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt">Change log</a>
 
@@ -19,15 +19,15 @@ Tested with python versions 2.7.12 and 3.5.2, but should work with 2.7+ and 3.2+
 
 Python is probably already installed on your GNU/Linux system.  You can check that Python is installed by running this command from a terminal:
 
-    python -V
+    python3 -V
 
   * Mac Installation Instructions
 
 Python is already installed on your system.  You can check that Python is installed by running this command from the terminal:
 
-    python -V
+    python3 -V
 
-If you would like to use IDLE, install [version 2 or 3 from python.org](https://www.python.org/downloads/mac-osx/).  
+If you would like to use IDLE, install [version 3 from python.org](https://www.python.org/downloads/mac-osx/).  
 
   * Windows Installation Instructions
 
@@ -39,19 +39,23 @@ Install python.  Download this script.  Open a terminal.  Change to the director
 
 Run with this command:
 
-```python dicemechanicsim.py```
+```python3 dicemechanicsim.py```
 
 View help:
 
-```python dicemechanicsim.py -h```
+```python3 dicemechanicsim.py -h```
 
 Enable verbose mode:
 
-```python dicemechanicsim.py -v```
+```python3 dicemechanicsim.py -v```
 
 Loop the script every two seconds (GNU/Linux or UNIX):
 
-```watch -n 2 python dicemechanicsim.py```
+```watch -n 2 python3 dicemechanicsim.py```
+
+Loop the script 40 times and packages as a data pack (GNU/Linux or UNIX):
+
+```bash builddatapack.sh```
 
 Alternatively, open the file in IDLE, make changes, save, and press F5 to run the script.
 
@@ -59,13 +63,11 @@ Alternatively, open the file in IDLE, make changes, save, and press F5 to run th
 
 -The game results are recorded into a .csv file
 
--Only native python libraries are required and no additional installations are necessary to run dicemechanicsim.py simulations.
-
 -The script works on all major operating systems (GNU/Linux, Mac, UNIX, and Windows)
 
 -No AI is present.  All decisions are made randomly.
 
--Static choices can be selected for player 1, late game, and all players.
+-Static choices can be selected for player 1, late game, and all players for NPC interactions.
 
 -The simulation runs in milliseconds instead of hours.  This allows for fast experimentation with rule changes instead of months of gameplay tests.
 
