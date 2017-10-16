@@ -12,10 +12,14 @@ What is a CSV file?  CSV stands for comma separated values.  It is a very simple
 
 Download and extract a data pack for example data.
 
-
-
 Ways to view and analyze the data:
 * A plain text editor can also view the files quickly.
 * The csv files can be opened with popular spreadsheet software such as LibreOffice Calc, Google Sheets, or Microsoft Excel.
 * Data can be graphed with spreadsheet software or within python through matplotlib, plotly, networkx, or igraph.
 * Data analysis software and programming languages can be used to parse the data.
+
+## Observations and Findings
+
+Observations and findings are recorded in the [analysis-observations](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/analysis-observations.md).
+
+If you have any observations, you can submit them as a pull request or submit a [new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new).
