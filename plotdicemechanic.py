@@ -5,48 +5,55 @@
 
 # PDM Visualize csv data with plotly for Midnight Riders.
 
-# https://plot.ly/python/getting-started/#initialization-for-offline-plotting
-# https://plot.ly/python/plot-data-from-csv/#plotting-data-from-external-source
-
-# https://matplotlib.org/examples/pylab_examples/plotfile_demo.html
+# Tested with python 3 and matplotlib 2.1.0
 
 # PDM uses python 3 because of the dependencies.  Tested with v3.5.2.
 
+
 # Install dependencies
-#  pip install plotly --upgrade
-#  pip install pandas --upgrade
+#  pip3 install matplotlib --upgrade
+#  pip3 install pandas --upgrade
+#  Additional system dependencies may be needed for Debian:
+#    apt-get install -y libpng12-dev libfreetype6-dev pkg-config
+#    apt-get install -y libffi-dev
+#    pip3 install cairocffi
+#    apt-get install python-gobject-cairo
 
-# I originally ported the graphing through plotly, but the output format requires opening a local webpage instead of a static image which slows creating and viewing data.  Matplotlib allows natively exporting graphs to any format.
+# Resources
+# Example 3 http://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html
+# https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.html
+# https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.savefig.html
+# https://matplotlib.org/examples/pylab_examples/plotfile_demo.html
+# From ars at https://stackoverflow.com/questions/1186789/what-is-the-best-way-to-call-a-python-script-from-another-python-script
 
-import plotly.offline as py
-import plotly.graph_objs as go
-import plotly.figure_factory as FF
-import numpy as np
-import pandas as pd
+# Variables
 
-#import matplotlib.pyplot as plt # nonnative # https://matplotlib.org/users/installing.html
+file = '20171016141044.csv'
 
-input='test.csv'
-df = pd.read_csv(input)
 
-# Export table in html
-#df_external_source = FF.create_table(df.head())
-#py.plot(df_external_source, filename='midnight-riders-table-'+input+'.html')
+def plotaspng(input):
+    # Import modules
+    import pandas as pd  # Data Analysis
+    import matplotlib.pyplot as plt  # Plotting
 
-# Plot each score as a line graph
-trace0 = go.Scatter(x = list(range(0,7)), y = df["'R1'"], name='R1')
-trace1 = go.Scatter(x = list(range(0,7)), y = df["'M1'"], name='M1')
-trace2 = go.Scatter(x = list(range(0,7)), y = df["'R2'"], name='R2')
-trace3 = go.Scatter(x = list(range(0,7)), y = df["'M2'"], name='M2')
-trace4 = go.Scatter(x = list(range(0,7)), y = df["'R3'"], name='R3')
-trace5 = go.Scatter(x = list(range(0,7)), y = df["'M3'"], name='M3')
-trace6 = go.Scatter(x = list(range(0,7)), y = df["'R4'"], name='R4')
-trace7 = go.Scatter(x = list(range(0,7)), y = df["'M4'"], name='M4')
-layout = go.Layout(title=input, 
-  plot_bgcolor='rgb(230, 230,230)', showlegend=True)
-fig = go.Figure(data=[trace0, trace1, trace2, trace3, trace4, trace5, trace6, 
-  trace7], layout=layout)
+    # Read from csv file
+    df = pd.read_csv(input, index_col=0)
 
-# Display line graph
-py.plot(fig, filename='midnight-riders-'+input+'.html')
+    # Plot data from csv
+    df.plot(x=df.index, y=df.columns)
+
+    plt.figure()
+    df.plot()
+
+    # Graph labels
+    plt.xlabel('Events')
+    plt.ylabel('Score')
+    plt.title(input)
+    plt.legend(loc='upper left')
+
+    # Save output as png.
+    plt.savefig(input+'.png')
+
+if __name__ == '__main__':
+    plotaspng(file)
 
