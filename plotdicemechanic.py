@@ -1,5 +1,5 @@
 # plotdicemechanic.py
-# Plot Dice Mechanic v0.5
+# Plot Dice Mechanic v1.0
 
 # Michael McMahon
 
