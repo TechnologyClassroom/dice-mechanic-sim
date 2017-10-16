@@ -14,7 +14,7 @@ Goals for the game mechanics to become more fun and balanced:
 5) Low probability of leaving a player left behind
 
 Data analysis can be achieved by watching simulations over time and with data
-analysis and graphing libraries (numpy and matplotlib).
+analysis and graphing libraries (matplotlib).
 
 # Road map to dicemechanicsim.py v1.0:
 -Event 7 edge cases need to be addressed
