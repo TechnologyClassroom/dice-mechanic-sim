@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# builddatapack.sh
+# builddatapack.sh v1.0
 
 # Michael McMahon
 
