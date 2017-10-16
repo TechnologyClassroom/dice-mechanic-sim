@@ -15,7 +15,6 @@ Michael McMahon
 - Player number of happenings occur for each event.
 
 # Happening Steps (Loop)
-- If any players' score is less than minimum Score, change to minimum score.
 - Player rolls a D4 and a D12 to choose a happening.
 - The happening adds a modifier to the round. (Skip in simulation)
 - Player decides to play for Reputation or Madness.
@@ -24,6 +23,7 @@ Michael McMahon
 - Player tells a story with others resulting in conflict. (Skip in simulation)
 - Players roll on conflict.
 - Player gains or loses Reputation or Madness based on win or lose.
+- If any players' score is less than minimum Score, change to minimum score.
 - Save output scores in CSV format.
 
 # Win conditions and event 7
