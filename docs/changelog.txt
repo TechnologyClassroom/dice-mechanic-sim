@@ -1,4 +1,11 @@
 Change log dicemechanicsim v0.96:
+-Python 3 only
+-Runs plotdicemechanic at completion
+
+Change log plotdicemechanic v1.0:
+-Parse csv file to output graph as .png file with matplotlib.
+
+Change log dicemechanicsim v0.96:
 -Added a new scoring table
 -Changed game order to separate points from opponent.
 -Static NPC choices can easily be set for player 1, late game, or all players.
