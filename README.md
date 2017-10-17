@@ -68,7 +68,7 @@ Loop the script every two seconds (GNU/Linux or UNIX):
 
 ```watch -n 2 python3 dicemechanicsim.py```
 
-Loop the script 40 times and packages as a data pack (GNU/Linux or UNIX):
+Loop the script 40 times and package the results as a data pack (GNU/Linux or UNIX):
 
 ```bash builddatapack.sh```
 
