@@ -19,13 +19,27 @@ Tested with python versions 3.5.2, but should work with 3.2+.
 
 Python is probably already installed on your GNU/Linux system.  You can check that Python is installed by running this command from a terminal:
 
-    python3 -V
+```
+python3 -V
+```
+
+Install all dependencies for Debian 9
+
+```
+apt install -y python3-pip
+apt install -y python3-tk
+pip3 install pandas
+pip3 install matplotlib
+apt install -y gpicview
+```
 
   * Mac Installation Instructions
 
 Python is already installed on your system.  You can check that Python is installed by running this command from the terminal:
 
-    python3 -V
+```
+python3 -V
+```
 
 If you would like to use IDLE, install [version 3 from python.org](https://www.python.org/downloads/mac-osx/).  
 
