@@ -34,20 +34,23 @@ analysis and graphing libraries (matplotlib).
 - dicemechanicsim.py
   - Easy: Run plotdicemechanic.py at the end of dicemechanicsim.py.
   - Medium: Event 7 is a best 2 out of 3.
-  - Medium: Proposed changes for dice tiers and points
-   - ~~Change point system for PC vs PC based on dice advantage~~
-      - If you have a higher dice than PC, 1 point.
-      - If you have the same dice as PC, 2 points.
-      - If you have 1 lower dice than PC, 3 points.
-      - If you have 2 lower dice than PC, 4 points.
-   - Loss table
+   - Best 2 out of 3
+   - d12 to settle ties
+  - Medium: Fight a random number of opponents
+  - Easy: Propose changes for dice tiers and points
+  - ~~Change point system for PC vs PC based on dice advantage~~
+    - If you have a higher dice than PC, 1 point.
+    - If you have the same dice as PC, 2 points.
+    - If you have 1 lower dice than PC, 3 points.
+    - If you have 2 lower dice than PC, 4 points.
+  - ~~Medium: Loss table~~
 ```
       PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
       d6        3           2           1           1
       d8        5           4           3           1
       d10       7           6           5           4
 ```
-   - ~~Higher point table~~
+   - ~~Medium: Higher point table~~
 ```
       PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
       d4        3           4           5           6
@@ -56,6 +59,8 @@ analysis and graphing libraries (matplotlib).
       d10       1           1           2           3
 ```
 - plotdicemechanic.py
+  - Easy: Analyze a given csv with an argument
+    python3 plotdicemechanic.py 20170106.csv
   - ~~Medium: Change plotdicemechanic.py from plotly to matplotlib.~~
   - ~~Medium: Output graph of simulation output in .png format instead of html.~~
   - Medium: Analyze and plot averages from multiple csv files.
@@ -73,7 +78,3 @@ analysis and graphing libraries (matplotlib).
   * ~~What are the results of all players choosing minimum points?~~
 
 4) Event 7 resolution methods
-
-  * Best 2 out of 3
-
-  * d12 to settle ties
