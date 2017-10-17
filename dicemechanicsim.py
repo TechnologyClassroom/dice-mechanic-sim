@@ -7,7 +7,7 @@
 # This script can be used to balance dice based RPGs and board games.
 
 
-# Tested with python versions 3.5.2.
+# Tested with Python v3.5.2, pandas v0.20.3, matplotlib v2.1.0, and Debian v9.2.
 
 # Run with this command:
 #   python dicemechanicsim.py
@@ -36,6 +36,73 @@ from time import strftime, localtime  # Name output file with timestamp
 import plotdicemechanic  # Python 3
 
 
+
+
+# Variables
+# Modify the numbers in this section to experiment with game settings
+
+# Number of Players
+N = randrange(3, 6)  # Choose number of players randomly (3-5)
+# N = 4  # Static number of players
+# Uncomment the line above to assign a specific number of palyers.
+
+# Happenings
+H = N * 6  # Happenings = Players * Events
+# Increase Event number to add more conflicts to compensate for multiple player battles.
+
+# Starting Score DEBUG
+SS = 3
+
+# Minimum Score DEBUG
+MS = 1
+
+#  PC Dice tiers example
+#   0      = d4
+#   1 -  6 = d6
+#   7 - 24 = d8
+#  25+     = d10
+
+#  PC Dice tiers variables table
+#  tier0         = d4
+#  tier0 - tier1 = d6
+#  tier1 - tier2 = d8
+#  tier2+        = d10
+
+# Dice tier variables DEBUG
+tier0 = 1
+tier1 = 5
+tier2 = 10
+#tier3 = 30
+#tier4 = 40
+
+# PC vs PC point variables table
+#  PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
+#  d4     pointD      pointC      pointB      pointA
+#  d6     pointE      pointD      pointC      pointB
+#  d8     pointF      pointE      pointD      pointC
+#  d10    pointF      pointF      pointE      pointD
+
+# PC vs PC points DEBUG
+pointA = 6
+pointB = 5
+pointC = 4
+pointD = 3
+pointE = 2
+pointF = 1
+pointG = 0
+
+# PC vs NPC point table
+#       vs NPC d4     vs NPC d6    vs NPC d8
+# PC     pointO        pointN       pointM
+
+# PC vs NPC points DEBUG
+pointM = 3
+pointN = 2
+pointO = 1
+
+
+
+
 # argparse
 # This section adds switches -h, and -v, and --verbose to the script.
 parser = argparse.ArgumentParser(
@@ -44,25 +111,10 @@ parser.add_argument('-v', '--verbose',
                     help='Show all information.', action="store_true")
 args = parser.parse_args()
 
-
-# Variables
-N = randrange(3, 6)  # Choose number of players randomly (3-5)
-N = 4  # Static number of players
-# Uncomment the line above to assign a specific number of palyers.
-
-H = N * 6  # Happenings = Players * Events
-
+# Starting game information
 if args.verbose:
     print(str(N) + " players and " + str(H) + " happenings.")
-
-SS = 3  # Starting Score
-
-MS = 3  # Minimum Score
-MS = 0  # Minimum Score DEBUG
-
-if args.verbose:
     print("Starting score:" + str(SS) + " Minimum score:" + str(MS) + ".")
-
 
 # csv file output
 time = strftime("%Y%m%d%H%M%S", localtime())  # Time variable
@@ -117,26 +169,9 @@ def roll(diefaces):
     return randrange(1, int(diefaces + 1))
 
 
-#  Dice chart
-#   1 -  6 = d6
-#   7 - 13 = d8
-#  14+     = d10
-
-# Debug Dice Chart
-#   0      = d4
-#   1 -  6 = d6
-#   7 - 24 = d8
-#  25+     = d10
-
-# Dice tier variables
-# Modify these to experiment with different dice tiers easily # DEBUG
-tier0 = 0
-tier1 = 6
-tier2 = 24
-#tier3 = 30
-#tier4 = 40
 
 # Find dice tier
+# Variables are at the top of this script.
 def dicetier(pc):
     level = score[(2 * pc) - 1 + rpmd]  # PC level variable
     if level <= tier0:
@@ -279,30 +314,33 @@ for x in range(0, H):
         # Determine dice tier difference.
         delta = pctier - optier
 
+        # PC vs PC scoring
         # Amount of difference sets point difference as challenge value.
-        # chlng is short for challenge and how much is at risk. # DEBUG
+        # chlng is short for challenge and how much is at risk.
         # gnlhc is chlng backwards and is how much the Opponent is risking.
         if delta == 0:
-            chlng = 3
-            gnlhc = 3
+            chlng = pointD
+            gnlhc = pointD
         elif delta == -1:
-            chlng = 4
-            gnlhc = 2
+            chlng = pointC
+            gnlhc = pointE
         elif delta == -2:
-            chlng = 5
-            gnlhc = 1
+            chlng = pointB
+            gnlhc = pointF
         elif delta == -3:
-            chlng = 6
-            gnlhc = 1
+            chlng = pointA
+            gnlhc = pointF
         elif delta == 1:
-            chlng = 2
-            gnlhc = 4
+            chlng = pointE
+            gnlhc = pointC
         elif delta == 2:
-            chlng = 1
-            gnlhc = 5
+            chlng = pointF
+            gnlhc = pointB
         elif delta == 3:
-            chlng = 1
-            gnlhc = 6
+            chlng = pointF
+            gnlhc = pointA
+        else:
+            print("ERROR: Dice Tier difference is unexpected!!!")
 
     else:
         if args.verbose:
@@ -325,13 +363,17 @@ for x in range(0, H):
         if args.verbose:
             print("NPC challenge rating: " + str(chlng))
 
+        # PC vs NPC scoring DEBUG
         # Calculate opposing NPC dice class and roll
         if chlng == 1:
             oproll = roll(4)
+            chlng = pointO
         elif chlng == 2:
             oproll = roll(6)
+            chlng = pointN
         elif chlng == 3:
             oproll = roll(8)
+            chlng = pointM
         else:
             print("ERROR: chlng is not 1-3!!")
 
