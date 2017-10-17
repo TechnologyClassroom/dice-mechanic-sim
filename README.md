@@ -9,11 +9,7 @@ This script can be used to balance dice based RPGs and board games.
 
 DMS boils the game down to only the game mechanics by removing the theme and the characters.
 
-Tested with:
-* Python v3.5.2
-* pandas v0.20.3
-* matplotlib v2.1.0
-* Debian v8 & v9
+Tested with Python v3.5.2, pandas v0.20.3, matplotlib v2.1.0, and Debian v8 & v9.
 
 <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt">Change log</a>
 
