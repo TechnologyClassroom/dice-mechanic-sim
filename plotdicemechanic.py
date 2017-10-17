@@ -13,11 +13,6 @@
 # Install dependencies
 #  pip3 install matplotlib --upgrade
 #  pip3 install pandas --upgrade
-#  Additional system dependencies may be needed for Debian:
-#    apt-get install -y libpng12-dev libfreetype6-dev pkg-config
-#    apt-get install -y libffi-dev
-#    pip3 install cairocffi
-#    apt-get install python-gobject-cairo
 
 # Resources
 # Example 3 http://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html
@@ -56,4 +51,3 @@ def plotaspng(input):
 
 if __name__ == '__main__':
     plotaspng(file)
-
