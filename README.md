@@ -31,6 +31,7 @@ apt install -y python3-tk
 pip3 install pandas
 pip3 install matplotlib
 apt install -y gpicview
+apt install -y zip
 ```
 
   * Mac Installation Instructions
