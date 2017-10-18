@@ -192,7 +192,7 @@ def dicetier(pc):
 # Find PC roll
 def pcdice(pc):
     level = score[(2 * pc) - 1 + rpmd]  # PC level variable
-    if level == tier0:
+    if level <= tier0:
         if args.verbose:
             print("Rolling a D4...")
         return roll(4)
