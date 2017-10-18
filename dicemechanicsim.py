@@ -46,21 +46,21 @@ N = randrange(3, 6)  # Choose number of players randomly (3-5)
 # N = 4  # Static number of players
 # Uncomment the line above to assign a specific number of palyers.
 
-# Happenings
-H = N * 6  # Happenings = Players * Events
+# Scenes
+H = N * 8  # Scene = Players * Events
 # Increase Event number to add more conflicts to compensate for multiple player battles.
 
 # Starting Score DEBUG
-SS = 3
+SS = 0
 
 # Minimum Score DEBUG
-MS = 1
+MS = 0
 
 #  PC Dice tiers example
 #   0      = d4
-#   1 -  6 = d6
-#   7 - 24 = d8
-#  25+     = d10
+#   1 -  5 = d6
+#   6 - 12 = d8
+#  13+     = d10
 
 #  PC Dice tiers variables table
 #  tier0         = d4
@@ -69,11 +69,11 @@ MS = 1
 #  tier2+        = d10
 
 # Dice tier variables DEBUG
-tier0 = 1
+tier0 = 0
 tier1 = 5
-tier2 = 10
-#tier3 = 30
-#tier4 = 40
+tier2 = 12
+#tier3 = 20
+#tier4 = 30
 
 # PC vs PC point variables table
 #  PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
@@ -391,7 +391,8 @@ for x in range(0, H):
         elif pcroll < oproll:
             if args.verbose:
                 print("LOSE!")
-            score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
+            #score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
+            print("debug")
         elif pcroll == oproll:
             if args.verbose:
                 print("TIE!")
@@ -402,7 +403,8 @@ for x in range(0, H):
             else:
                 if args.verbose:
                     print("LOSE!")
-                score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
+                #score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
+                print("debug")
         else:
             print("ERROR: pcroll or oproll is invalid!")
     else:
@@ -410,11 +412,11 @@ for x in range(0, H):
             if args.verbose:
                 print("WIN!")
             score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng
-            score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] - gnlhc
+            #score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] - gnlhc
         elif pcroll < oproll:
             if args.verbose:
                 print("LOSE!")
-            score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
+            #score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
             score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] + gnlhc
         elif pcroll == oproll:
             if args.verbose:
@@ -423,21 +425,26 @@ for x in range(0, H):
                 if args.verbose:
                     print("WIN!")
                 score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng
-                score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] - gnlhc
+                #score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] - gnlhc
             else:
                 if args.verbose:
                     print("LOSE!")
-                score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
+                #score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
                 score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] + gnlhc
         else:
             print("ERROR: pcroll or oproll is invalid!")
 
     # Results
 
-    # If a score value is below the minimum score, bump up to minimum.
+    # If a score value is below zero at the end of a scene, bump up to zero.
     for checkms in score[1:]:
-        if checkms < MS:
+        if checkms < 0:
             score[score.index(checkms)] = MS
+
+    # If a score value is less than the minimum score at the end of an event, return to minimum score. 
+    #for checkms in score[1:] and turn == 1:
+    #    if checkms < MS:
+    #        score[score.index(checkms)] = MS
 
     # Score after each happening
     if args.verbose:
