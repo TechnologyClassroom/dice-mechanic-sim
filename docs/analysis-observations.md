@@ -1,5 +1,7 @@
 # Data Analysis Observations and Findings
 
+* No point losses makes an interesting graph.
+
 * Problem: No one gets to roll a d10 ever with this dice chart:
 ```
    1 -  6 = d6
