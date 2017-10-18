@@ -42,7 +42,7 @@ cp ../builddatapack.sh .
 zip -r data$pack.zip ./*
 
 # Remove temp directory and work files
-mv data$pack.zip ..
+mv data$pack.zip ../data/
 cd ..
 rm -fr $pack
 
