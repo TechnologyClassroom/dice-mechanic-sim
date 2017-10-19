@@ -63,8 +63,7 @@ analysis and graphing libraries (matplotlib).
    [yapf](https://github.com/google/yapf), and
    [pycodestyle](https://github.com/PyCQA/pycodestyle).
    of 80 characters per line for code and 72 for docstrings/comments.
-* Easy: Analyze a given csv with an argument
-  python3 plotdicemechanic.py 20170106.csv
+* Easy: Analyze a given csv with an argument (python3 plotdicemechanic.py 20170106.csv)
 * ~~Medium: Change plotdicemechanic.py from plotly to matplotlib.~~
 * ~~Medium: Export a simulation .csv file directly to a graph in .png format~~
 * ~~Medium: Output graph of simulation output in .png format instead of html.~~
@@ -72,14 +71,12 @@ analysis and graphing libraries (matplotlib).
 
 # Experiments
 
-1) New ways of calculating scores (The "underdog" comeback scoring mechanism)
+* What are the results when only PC vs PC occurs?
 
-2) What are the results when only PC vs PC occurs?
+* What are the results when only PC vs NPC occurs?
 
-3) What are the results when only PC vs NPC occurs?
+* What are the results of all players choosing maximum points?
 
-  * ~~What are the results of all players choosing maximum points?~~
+* What are the results of all players choosing minimum points?
 
-  * ~~What are the results of all players choosing minimum points?~~
-
-4) Event 7 resolution methods
+* Compare Event 7 resolution methods
