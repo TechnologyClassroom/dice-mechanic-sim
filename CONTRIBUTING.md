@@ -10,8 +10,8 @@ stated goals.  Goals for the project can be found in the [goals.md file](https:/
 
 * [Make a GitHub account](https://github.com/signup/free).
 * (Optional) Check the [Issues page](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues)
-for something you can contribute towards.
-  * (Optional) Submit a [new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new)
+or the [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md) for something you can contribute towards.
+  * (Optional) If you do not see the item that you would like changed on those lists, submit a [new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new)
   for something that you would like to see changed.
 * Create a fork of the repository on GitHub.  This will redirect you to a new
 page titled YOURUSERNAME / dice-mechanic-sim.
@@ -25,7 +25,7 @@ intend to change such as fixing-spelling-errors.
 * Explain the reasoning behind the change in the pull request.
 
 ## After the pull request
-(Optional) After a change is merged, you can delete the branch.  If you are
+(Optional) After a change is merged, you can delete the branch and make a new branch for the next change.  If you are
 done working on the fork after the change, the repository can be deleted.
 
 ## Low hanging fruit
@@ -37,7 +37,6 @@ you do not understand something enough to add clarity, submit a [new issue](http
 * Check the [stated goals](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
 for lines starting with the "Easy" label.
 
-
 ## Style
 
 As of this time, I am very loosely using [pep 8](https://www.python.org/dev/peps/pep-0008/)
@@ -46,4 +45,3 @@ If everything around your contributions is in all lowercase letters and your
 contribution is all capital letters, it will look bad.  I would probably still
 accept pull requests if they worked towards the [stated goals](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
 regardless of style.
-
