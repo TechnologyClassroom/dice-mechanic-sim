@@ -40,7 +40,6 @@ analysis and graphing libraries (matplotlib).
   - Easy: Run plotdicemechanic.py at the end of dicemechanicsim.py.
   
   -Medium: Event 7 is a best 2 out of 3.
-  
     -Best 2 out of 3
     
     -d12 to settle ties
