@@ -4,6 +4,9 @@
 
 # Michael McMahon
 
+# This script only works with GNU/Linux.  To run this on Mac and GNU/Linux distros
+# without gpicview, remove all lines that reference gpicview.
+
 # builddatapack works with dicemechanicsim to run tests, display the output, and
 # package the contents.
 
@@ -45,4 +48,3 @@ zip -r data$pack.zip ./*
 mv data$pack.zip ../data/
 cd ..
 rm -fr $pack
-
