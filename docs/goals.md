@@ -33,24 +33,27 @@ analysis and graphing libraries (matplotlib).
 - Easy: Only load pieces of libraries that are used to speed up processing time
 - dicemechanicsim.py
   - Easy: Run plotdicemechanic.py at the end of dicemechanicsim.py.
-  - Medium: Event 7 is a best 2 out of 3.
-   - Best 2 out of 3
-   - d12 to settle ties
-  - Medium: Fight a random number of opponents
-  - Easy: Propose changes for dice tiers and points
-  - ~~Change point system for PC vs PC based on dice advantage~~
-    - If you have a higher dice than PC, 1 point.
-    - If you have the same dice as PC, 2 points.
-    - If you have 1 lower dice than PC, 3 points.
-    - If you have 2 lower dice than PC, 4 points.
-  - ~~Medium: Loss table~~
+  -Medium: Event 7 is a best 2 out of 3.
+    -Best 2 out of 3
+    -d12 to settle ties
+  -Medium: Fight a random number of opponents
+  -Medium: Fake AI that makes better decisions than random
+    -A new array could be created at the end of each conflict filled with each stat's
+    dice tier.  When deciding an opponent, the new array could be analyzed for best points.
+  -Easy: Propose changes for dice tiers and points
+  -~~Change point system for PC vs PC based on dice advantage~~
+    -If you have a higher dice than PC, 1 point.
+    -If you have the same dice as PC, 2 points.
+    -If you have 1 lower dice than PC, 3 points.
+    -If you have 2 lower dice than PC, 4 points.
+  -~~Medium: Loss table~~
 ```
       PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
       d6        3           2           1           1
       d8        5           4           3           1
       d10       7           6           5           4
 ```
-   - ~~Medium: Higher point table~~
+   -~~Medium: Higher point table~~
 ```
       PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
       d4        3           4           5           6
