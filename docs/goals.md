@@ -19,27 +19,27 @@ analysis and graphing libraries (matplotlib).
 
 # dicemechanicsim.py Feature requests
 * Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
- * [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
- * A few automatic code analyzers are [autopep8](https://github.com/hhatto/autopep8),
+  * [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
+  * A few automatic code analyzers are [autopep8](https://github.com/hhatto/autopep8),
    [yapf](https://github.com/google/yapf), and
    [pycodestyle](https://github.com/PyCQA/pycodestyle).
    of 80 characters per line for code and 72 for docstrings/comments.
 * Easy: Only load pieces of libraries that are used to speed up processing time
 * Easy: Run plotdicemechanic.py at the end of dicemechanicsim.py.
 * Medium: Event 7 is a best 2 out of 3.
- * Best 2 out of 3
- * d12 to settle ties
+  * Best 2 out of 3
+  * d12 to settle ties
 * Medium: Event 7 edge cases need to be addressed
 * Medium: Fight a random number of opponents
 * Medium: Fake AI that makes better decisions than random
- * A new array could be created at the end of each conflict filled with each stat's
+  * A new array could be created at the end of each conflict filled with each stat's
    dice tier.  When deciding an opponent, the new array could be analyzed for best points.
 * Easy: Propose changes for dice tiers and points
- * ~~Change point system for PC vs PC based on dice advantage~~
-  * If you have a higher dice than PC, 1 point.
-  * If you have the same dice as PC, 2 points.
-  * If you have 1 lower dice than PC, 3 points.
-  * If you have 2 lower dice than PC, 4 points.
+  * ~~Change point system for PC vs PC based on dice advantage~~
+   * If you have a higher dice than PC, 1 point.
+   * If you have the same dice as PC, 2 points.
+   * If you have 1 lower dice than PC, 3 points.
+   * If you have 2 lower dice than PC, 4 points.
     
 * ~~Medium: Loss table~~
 ```
@@ -58,8 +58,8 @@ analysis and graphing libraries (matplotlib).
 ```
 # plotdicemechanic.py Feature requests
 * Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
- * [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
- * A few automatic code analyzers are [autopep8](https://github.com/hhatto/autopep8),
+  * [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
+  * A few automatic code analyzers are [autopep8](https://github.com/hhatto/autopep8),
    [yapf](https://github.com/google/yapf), and
    [pycodestyle](https://github.com/PyCQA/pycodestyle).
    of 80 characters per line for code and 72 for docstrings/comments.
