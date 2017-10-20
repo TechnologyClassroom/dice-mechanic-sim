@@ -34,29 +34,13 @@ analysis and graphing libraries (matplotlib).
 * Medium: Fake AI that makes better decisions than random
   * A new array could be created at the end of each conflict filled with each stat's
    dice tier.  When deciding an opponent, the new array could be analyzed for best points.
-* Medium: Relational NPC scoring with one point less than PC table scores
 * Easy: Propose changes for dice tiers and points
+* See tables section below
   * ~~Change point system for PC vs PC based on dice advantage~~
-   * If you have a higher dice than PC, 1 point.
-   * If you have the same dice as PC, 2 points.
-   * If you have 1 lower dice than PC, 3 points.
-   * If you have 2 lower dice than PC, 4 points.
-    
-* ~~Medium: Loss table~~
-```
-      PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
-      d6        3           2           1           1
-      d8        5           4           3           1
-      d10       7           6           5           4
-```
-* ~~Medium: Higher point table~~
-```
-      PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
-      d4        3           4           5           6
-      d6        2           3           4           5
-      d8        1           2           3           4
-      d10       1           1           2           3
-```
+  * Medium: Relational NPC scoring with one point less than PC table scores
+  * ~~Medium: Loss table~~
+  * ~~Medium: Higher point table~~
+
 # plotdicemechanic.py Feature requests
 * Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
   * [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
@@ -81,3 +65,27 @@ analysis and graphing libraries (matplotlib).
 * What are the results of all players choosing minimum points?
 
 * Compare Event 7 resolution methods
+
+# Example score tables
+
+* ~~Medium: Loss table~~
+```
+      PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
+      d6        3           2           1           1
+      d8        5           4           3           1
+      d10       7           6           5           4
+```
+* ~~Medium: Higher point table~~
+```
+      PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
+      d4        3           4           5           6
+      d6        2           3           4           5
+      d8        1           2           3           4
+      d10       1           1           2           3
+```
+
+* Early concept
+If you have a higher dice than PC, 1 point.
+If you have the same dice as PC, 2 points.
+If you have 1 lower dice than PC, 3 points.
+If you have 2 lower dice than PC, 4 points.
