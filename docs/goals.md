@@ -34,6 +34,7 @@ analysis and graphing libraries (matplotlib).
 * Medium: Fake AI that makes better decisions than random
   * A new array could be created at the end of each conflict filled with each stat's
    dice tier.  When deciding an opponent, the new array could be analyzed for best points.
+* Relational NPC scoring
 * Easy: Propose changes for dice tiers and points
   * ~~Change point system for PC vs PC based on dice advantage~~
    * If you have a higher dice than PC, 1 point.
