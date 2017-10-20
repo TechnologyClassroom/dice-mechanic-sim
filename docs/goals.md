@@ -85,11 +85,7 @@ analysis and graphing libraries (matplotlib).
 ```
 
 * Early concept
-
-If you have a higher dice than PC, 1 point.
-
-If you have the same dice as PC, 2 points.
-
-If you have 1 lower dice than PC, 3 points.
-
-If you have 2 lower dice than PC, 4 points.
+  * If you have a higher dice than PC, 1 point.
+  * If you have the same dice as PC, 2 points.
+  * If you have 1 lower dice than PC, 3 points.
+  * If you have 2 lower dice than PC, 4 points.
