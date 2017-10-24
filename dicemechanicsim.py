@@ -181,7 +181,7 @@ def roll(diefaces):
 
 # Find dice tier
 # Variables are at the top of this script.
-def dicetier(pc):
+def dicetier(level):
     if level <= tier0:
         return 0
     elif tier0 < level <= tier1:
