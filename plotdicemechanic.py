@@ -40,7 +40,7 @@ args = parser.parse_args()
 # Variables
 file = args.csvfile
 
-
+# Plot csv spreadsheet as png picture module
 def plotaspng(input):
     # Import modules
     import pandas as pd  # Data Analysis
