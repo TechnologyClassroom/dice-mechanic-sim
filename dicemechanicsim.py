@@ -102,6 +102,13 @@ fourpen = 2
 # Difference in PC vs NPC table
 npcpen = 1
 
+# Current Relational Point Table
+# PC   vsPCd4   vsPCd6   vsPCd8   vsPCd10   vsNPCd4   vsNPCd6   vsNPCd8
+# d4     1        1        2        2          1         1         2
+# d6     2        3        4        4          1         2         3
+# d8     1        2        3        4          0         1         2
+# d10    1        1        2        3          0         0         1
+
 
 
 
