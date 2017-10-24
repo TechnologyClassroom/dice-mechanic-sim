@@ -381,9 +381,13 @@ for x in range(0, H):
 
     # Penalty for first tier dice
     if pctier == 0:
-        gnlhc = chlng - fourpen
-    if optier == 0 and opp > 0:
         gnlhc = gnlhc - fourpen
+        if optier == 1:
+            chlng = chlng - 1
+    if optier == 0:
+        gnlhc = gnlhc - fourpen
+        if pctier == 1:
+            gnlhc = gnlhc - 1
 
     # Difference in PC vs NPC table
     if opp == 0 and pctier > 0:
@@ -548,4 +552,3 @@ file.close()
 
 # (Optional) run python script on csv to graph results.
 plotdicemechanic.plotaspng(filename)  # Python 3
-
