@@ -91,14 +91,16 @@ pointE = 2
 pointF = 1
 pointG = 0
 
+# Penalty for d4 PC vs PC dice
+fourpen = 2
+
 # PC vs NPC point table
 #       vs NPC d4     vs NPC d6    vs NPC d8
 # PC     pointO        pointN       pointM
 
 # PC vs NPC points DEBUG
-pointM = 3
-pointN = 2
-pointO = 1
+# Difference in PC vs NPC table
+npcpen = 1
 
 
 
@@ -310,39 +312,8 @@ for x in range(0, H):
             print("Player chose to go up against player " + str(opp) + "!")
             print("Opponent dice tier: " + str(pctier))
         oproll = pcdice(opp)
-
-        # Determine dice tier difference.
-        delta = pctier - optier
-
-        # PC vs PC scoring
-        # Amount of difference sets point difference as challenge value.
-        # chlng is short for challenge and how much is at risk.
-        # gnlhc is chlng backwards and is how much the Opponent is risking.
-        if delta == 0:
-            chlng = pointD
-            gnlhc = pointD
-        elif delta == -1:
-            chlng = pointC
-            gnlhc = pointE
-        elif delta == -2:
-            chlng = pointB
-            gnlhc = pointF
-        elif delta == -3:
-            chlng = pointA
-            gnlhc = pointF
-        elif delta == 1:
-            chlng = pointE
-            gnlhc = pointC
-        elif delta == 2:
-            chlng = pointF
-            gnlhc = pointB
-        elif delta == 3:
-            chlng = pointF
-            gnlhc = pointA
-        else:
-            print("ERROR: Dice Tier difference is unexpected!!!")
-
-    else:
+    
+    if opp == 0:
         if args.verbose:
             print("PC vs NPC")
         # Choose NPC difficulty and risk
@@ -366,16 +337,54 @@ for x in range(0, H):
         # PC vs NPC scoring DEBUG
         # Calculate opposing NPC dice class and roll
         if chlng == 1:
-            oproll = roll(4)
-            chlng = pointO
+            optier = 0
         elif chlng == 2:
-            oproll = roll(6)
-            chlng = pointN
+            optier = 1
         elif chlng == 3:
-            oproll = roll(8)
-            chlng = pointM
+            optier = 2
         else:
             print("ERROR: chlng is not 1-3!!")
+
+    # Determine dice tier difference.
+    delta = pctier - optier
+
+    # PC vs PC scoring
+    # Amount of difference sets point difference as challenge value.
+    # chlng is short for challenge and how much is at risk.
+    # gnlhc is chlng backwards and is how much the Opponent is risking.
+    if delta == 0:
+        chlng = pointD
+        gnlhc = pointD
+    elif delta == -1:
+        chlng = pointC
+        gnlhc = pointE
+    elif delta == -2:
+        chlng = pointB
+        gnlhc = pointF
+    elif delta == -3:
+        chlng = pointA
+        gnlhc = pointF
+    elif delta == 1:
+        chlng = pointE
+        gnlhc = pointC
+    elif delta == 2:
+        chlng = pointF
+        gnlhc = pointB
+    elif delta == 3:
+        chlng = pointF
+        gnlhc = pointA
+    else:
+        print("ERROR: Dice Tier difference is unexpected!!!")
+
+    # Penalty for first tier dice
+    if pctier == 0 and opp > 0:
+        gnlhc = chlng - fourpen
+    if optier == 0 and opp > 0:
+        gnlhc = gnlhc - fourpen
+
+    # Difference in PC vs NPC table
+    if opp == 0:
+        chlng = chlng - npcpen
 
     if args.verbose:
         print("PC rolls " + str(pcroll) + "!")
@@ -536,3 +545,4 @@ file.close()
 
 # (Optional) run python script on csv to graph results.
 plotdicemechanic.plotaspng(filename)  # Python 3
+
