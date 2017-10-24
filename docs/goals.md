@@ -83,8 +83,16 @@ analysis and graphing libraries (matplotlib).
       d8        1           2           3           4
       d10       1           1           2           3
 ```
+* Relational Point Chart
+```
+PC    vsPCd4    vsPCd6    vsPCd8    vsPCd10    vsNPCd4    vsNPCd6    vsNPCd8
+d4      1         1         2         2           1          1          2
+d6      2         3         4         4           1          2          3
+d8      1         2         3         4           0          1          2
+d10     1         1         2         3           0          0          1
+```
 
-* Early concept
+* ~~Early concept~~
   * If you have a higher dice than PC, 1 point.
   * If you have the same dice as PC, 2 points.
   * If you have 1 lower dice than PC, 3 points.
