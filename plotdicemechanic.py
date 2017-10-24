@@ -3,7 +3,7 @@
 
 # Michael McMahon
 
-# PDM Visualize csv data with plotly for Midnight Riders.
+# PDM visualizes Midnight Riders csv data using matplotlib.
 
 # Tested with python 3 and matplotlib 2.1.0
 
