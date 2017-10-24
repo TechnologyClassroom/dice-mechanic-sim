@@ -70,7 +70,7 @@ MS = 0
 
 # Dice tier variables DEBUG
 tier0 = 0
-tier1 = 5
+tier1 = 6
 tier2 = 12
 #tier3 = 20
 #tier4 = 30
@@ -83,8 +83,8 @@ tier2 = 12
 #  d10    pointF      pointF      pointE      pointD
 
 # PC vs PC points DEBUG
-pointA = 6
-pointB = 5
+pointA = 4
+pointB = 4
 pointC = 4
 pointD = 3
 pointE = 2
