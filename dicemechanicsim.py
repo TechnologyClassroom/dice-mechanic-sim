@@ -182,7 +182,6 @@ def roll(diefaces):
 # Find dice tier
 # Variables are at the top of this script.
 def dicetier(pc):
-    level = score[(2 * pc) - 1 + rpmd]  # PC level variable
     if level <= tier0:
         return 0
     elif tier0 < level <= tier1:
@@ -304,7 +303,8 @@ for x in range(0, H):
             print("Rolling for Madness!")
 
     # Calculate PC dice tier and roll
-    pctier = dicetier(turn)
+    level = score[(2 * turn) - 1 + rpmd]  # opp level variable
+    pctier = dicetier(level)
     if args.verbose:
         print("PC dice tier: " + str(pctier))
     pcroll = pcdice(turn)
@@ -313,7 +313,8 @@ for x in range(0, H):
     opp = OpposingForce()
 
     if opp > 0:
-        optier = dicetier(opp)
+        level = score[(2 * opp) - 1 + rpmd]  # opp level variable
+        optier = dicetier(level)
         if args.verbose:
             print("PC vs PC")
             print("Player chose to go up against player " + str(opp) + "!")
