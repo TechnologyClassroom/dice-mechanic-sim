@@ -184,8 +184,8 @@ def dicetier(pc):
         return 2
     elif tier2 < level:
         return 3
-    # elif tier3 < level <= tier4:
-    #     return 4
+    elif tier3 < level <= tier4:
+        return 4
     # elif tier4 < level:
     #     return 5
     else:
@@ -337,10 +337,13 @@ for x in range(0, H):
         # PC vs NPC scoring DEBUG
         # Calculate opposing NPC dice class and roll
         if chlng == 1:
+            oproll = roll(4)
             optier = 0
         elif chlng == 2:
+            oproll = roll(6)
             optier = 1
         elif chlng == 3:
+            oproll = roll(8)
             optier = 2
         else:
             print("ERROR: chlng is not 1-3!!")
