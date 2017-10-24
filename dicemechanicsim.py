@@ -415,7 +415,7 @@ for x in range(0, H):
             if args.verbose:
                 print("LOSE!")
             #score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
-            print("debug")
+            print("PC lost against NPC!")
         elif pcroll == oproll:
             if args.verbose:
                 print("TIE!")
@@ -427,7 +427,7 @@ for x in range(0, H):
                 if args.verbose:
                     print("LOSE!")
                 #score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
-                print("debug")
+                print("PC lost against NPC!")
         else:
             print("ERROR: pcroll or oproll is invalid!")
     else:
@@ -464,10 +464,13 @@ for x in range(0, H):
         if checkms < 0:
             score[score.index(checkms)] = MS
 
-    # If a score value is less than the minimum score at the end of an event, return to minimum score. 
-    #for checkms in score[1:] and turn == 1:
-    #    if checkms < MS:
-    #        score[score.index(checkms)] = MS
+    # AI: Calculate each dice tier for all stats into an array (Overwrite array from last scene)
+    tiers = []
+    for scores in score[1:]:
+        tiers.append(dicetier(scores))
+    # DEBUG
+    print("Dice tiers for AI")
+    print(tiers)
 
     # Score after each happening
     if args.verbose:
