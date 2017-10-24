@@ -69,6 +69,14 @@ analysis and graphing libraries (matplotlib).
 
 # Example score tables
 
+* ~~Relational Point Chart~~
+```
+PC    vsPCd4    vsPCd6    vsPCd8    vsPCd10    vsNPCd4    vsNPCd6    vsNPCd8
+d4      1         1         2         2           1          1          2
+d6      2         3         4         4           1          2          3
+d8      1         2         3         4           0          1          2
+d10     1         1         2         3           0          0          1
+```
 * ~~Medium: Loss table~~
 ```
       PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
@@ -83,14 +91,6 @@ analysis and graphing libraries (matplotlib).
       d6        2           3           4           5
       d8        1           2           3           4
       d10       1           1           2           3
-```
-* ~~Relational Point Chart~~
-```
-PC    vsPCd4    vsPCd6    vsPCd8    vsPCd10    vsNPCd4    vsNPCd6    vsNPCd8
-d4      1         1         2         2           1          1          2
-d6      2         3         4         4           1          2          3
-d8      1         2         3         4           0          1          2
-d10     1         1         2         3           0          0          1
 ```
 
 * ~~Early concept~~
