@@ -83,7 +83,7 @@ analysis and graphing libraries (matplotlib).
       d8        1           2           3           4
       d10       1           1           2           3
 ```
-* Relational Point Chart
+* ~~Relational Point Chart~~
 ```
 PC    vsPCd4    vsPCd6    vsPCd8    vsPCd10    vsNPCd4    vsNPCd6    vsNPCd8
 d4      1         1         2         2           1          1          2
