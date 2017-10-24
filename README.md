@@ -78,7 +78,7 @@ Alternatively, open the file in IDLE, make changes, save, and press F5 to run th
 
 -The game results are recorded as a spreadsheet in csv format and as a graph in png format.
 
--No AI is present.  All decisions are made randomly.
+-No AI is present yet.  All decisions are made randomly.
 
 -Static choices can be selected for player 1, late game, and all players for NPC interactions.
 
