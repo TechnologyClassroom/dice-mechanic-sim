@@ -76,9 +76,7 @@ Alternatively, open the file in IDLE, make changes, save, and press F5 to run th
 
 ## Features
 
--The game results are recorded into a .csv file
-
--The script works on all major operating systems (GNU/Linux, Mac, UNIX, and Windows)
+-The game results are recorded as a spreadsheet in csv format and as a graph in png format.
 
 -No AI is present.  All decisions are made randomly.
 
@@ -90,7 +88,7 @@ Feature requests can be found in the <a href="https://github.com/TechnologyClass
 
 # How to analyze data generated from this script
 
-Open the [data folder](https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data), download, and extract a data pack for example data.
+Open the [data folder](https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data), download, and extract the most recent data pack for example data.
 
 What is a CSV file?  CSV stands for comma separated values.  It is a very simple spreadsheet with each row being a new line and each column separated by commas.
 
@@ -98,7 +96,7 @@ The csv files can be opened with popular spreadsheet software such as LibreOffic
 
 Data analysis software and programming languages can be used to parse the data.
 
-Data can be graphed with spreadsheet software or within python through matplotlib, plotly, networkx, or igraph.
+Data is graphed with from within python through matplotlib.
 
 ## Game Logic
 
