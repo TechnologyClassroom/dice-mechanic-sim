@@ -279,7 +279,6 @@ for x in range(0, H):
     if turn == 1:
         score[0] = score[0] + 1
 
-
     if args.verbose:
         # Insert a blank line for new events when in verbose
         if turn == 1:
@@ -293,6 +292,8 @@ for x in range(0, H):
     h2 = roll(12)
     if args.verbose:
         print("Happening modifiers: " + str(h1) + " & " + str(h2))
+
+    # Incomplete: Use tiers from AI to decide to inform decisions next two decisions
 
     # Decide to go for Reputation or Madness
     rpmd = randrange(0, 2)
@@ -469,9 +470,9 @@ for x in range(0, H):
     tiers = []
     for scores in score[1:]:
         tiers.append(dicetier(scores))
-    # DEBUG
-    print("Dice tiers for AI")
-    print(tiers)
+    if args.verbose:
+        print("Dice tiers for AI")
+        print(tiers)
 
     # Score after each happening
     if args.verbose:
