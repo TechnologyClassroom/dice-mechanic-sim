@@ -27,6 +27,7 @@
 
 
 
+
 # Import libraries
 from random import randrange  # dice rolls and probability
 import argparse  # Add switch arguments for python v2.7 and v3.2+
@@ -176,6 +177,7 @@ writer.writerow(score)
 def roll(diefaces):
     return randrange(1, int(diefaces + 1))
 
+
 # Find dice tier
 # Variables are at the top of this script.
 def dicetier(level):
@@ -193,6 +195,7 @@ def dicetier(level):
     #     return 5
     else:
         return "ERROR: level is not a number!!"
+
 
 # Find PC roll
 def pcdice(pc):
@@ -244,6 +247,7 @@ def OpposingForce():
                 print("You tried to fight yourself.  Reroll for a new opponent!")
             return OpposingForce()
 
+
 # Tie breaker
 # In the event of a tie, both players roll a D12.
 def tiebreak():
@@ -262,7 +266,9 @@ def tiebreak():
             print("Tie again!")
         tiebreak()
 
-        
+
+
+
 # Game loop plays through 6 events.
 # Each loop is one happening.
 for x in range(0, H):
@@ -558,6 +564,8 @@ else:
 
 # Report if there is a winner
 print("Winner:," + str(win))
+
+
 
 
 # Close csv file lock
