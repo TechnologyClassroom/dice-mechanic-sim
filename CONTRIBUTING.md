@@ -39,6 +39,8 @@ for lines starting with the "Easy" label.
 
 ## Style
 
+Large sections are separated by 4 line breaks.  Small sections are separated by 2 line breaks.
+
 As of this time, I am very loosely using [pep 8](https://www.python.org/dev/peps/pep-0008/)
 as a style guide.  Attempt to make contributions loosely fit in.  Example:
 If everything around your contributions is in all lowercase letters and your
