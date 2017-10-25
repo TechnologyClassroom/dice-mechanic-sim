@@ -36,13 +36,7 @@ apt install -y zip
 
   * Mac Installation Instructions
 
-Python is already installed on your system.  You can check that Python is installed by running this command from the terminal:
-
-```
-python3 -V
-```
-
-If you would like to use IDLE, install [version 3 from python.org](https://www.python.org/downloads/mac-osx/).  
+To install the dependencies, you need [homebrew](http://brew.sh/) which requires Xcode which requires the latest macOS.  Apple should serve snapshots of older Xcode packages for old releases purely for this reason.  If your computer cannot run the latest macOS, I would suggest [dual-booting GNU/Linux](https://github.com/TechnologyClassroom/SetupNotes/blob/master/GNULinux/GNULinuxOnMacbooks.md) instead of trading in for a new Mac.
 
   * Windows Installation Instructions
 
