@@ -112,8 +112,8 @@ npcpen = 1
 
 
 
-# argparse
-# This section adds switches -h, and -v, and --verbose to the script.
+# argparse module
+# argparse adds switches -h, and -v, and --verbose to the script.
 parser = argparse.ArgumentParser(
     description='DMS tests game mechanics for the RPG Midnight Riders.')
 parser.add_argument('-v', '--verbose',
@@ -136,13 +136,10 @@ file = open(filename, "w", newline="")  # Python 3
 writer = csv.writer(file, delimiter=',', quotechar="'",
                     quoting=csv.QUOTE_NONNUMERIC)
 
-
 # Build a score array with (2 x the number of players) length filled with SS.
 score = []
-
 for x in range(0, N * 2):
     score.append(SS)
-
 
 # Build a Score Key that will contain cell headers.
 score_key = []
@@ -170,14 +167,14 @@ print(','.join(map(str, score)))
 writer.writerow(score)
 
 
+
+
 # Functions
 
 # Die roll function
 # This function rolls polyhedral dice.  Example: To roll a d8, use roll(8).
 def roll(diefaces):
     return randrange(1, int(diefaces + 1))
-
-
 
 # Find dice tier
 # Variables are at the top of this script.
@@ -247,7 +244,6 @@ def OpposingForce():
                 print("You tried to fight yourself.  Reroll for a new opponent!")
             return OpposingForce()
 
-
 # Tie breaker
 # In the event of a tie, both players roll a D12.
 def tiebreak():
@@ -266,7 +262,7 @@ def tiebreak():
             print("Tie again!")
         tiebreak()
 
-
+        
 # Game loop plays through 6 events.
 # Each loop is one happening.
 for x in range(0, H):
@@ -293,7 +289,7 @@ for x in range(0, H):
     if args.verbose:
         print("Happening modifiers: " + str(h1) + " & " + str(h2))
 
-    # Incomplete: Use tiers from AI to decide to inform decisions next two decisions
+    # Incomplete: Use tiers from AI to decide to inform decisions next three decisions
 
     # Decide to go for Reputation or Madness
     rpmd = randrange(0, 2)
@@ -313,6 +309,7 @@ for x in range(0, H):
     # Choose opponent
     opp = OpposingForce()
 
+    # PC opponent level, dicetier, and roll.
     if opp > 0:
         level = score[(2 * opp) - 1 + rpmd]  # opp level variable
         optier = dicetier(level)
@@ -321,10 +318,12 @@ for x in range(0, H):
             print("Player chose to go up against player " + str(opp) + "!")
             print("Opponent dice tier: " + str(pctier))
         oproll = pcdice(opp)
-    
+
+    # NPC opponent
     if opp == 0:
         if args.verbose:
             print("PC vs NPC")
+
         # Choose NPC difficulty and risk
         # Static choices can be selected for player 1, late game, or all players.
         if turn == 1:  # Experiment with Player 1 static choices
@@ -344,7 +343,7 @@ for x in range(0, H):
             print("NPC challenge rating: " + str(chlng))
 
         # PC vs NPC scoring DEBUG
-        # Calculate opposing NPC dice class and roll
+        # Calculate NPC opponent dicetier and roll
         if chlng == 1:
             oproll = roll(4)
             optier = 0
@@ -404,7 +403,6 @@ for x in range(0, H):
 
     if args.verbose:
         print("PC rolls " + str(pcroll) + "!")
-    if args.verbose:
         print("Opponent rolls " + str(oproll))
 
     # Compare rolls and add / remove challenge points.
@@ -459,6 +457,7 @@ for x in range(0, H):
         else:
             print("ERROR: pcroll or oproll is invalid!")
 
+
     # Results
 
     # If a score value is below zero at the end of a scene, bump up to zero.
@@ -484,6 +483,8 @@ for x in range(0, H):
             print("Final event scores:")
         print(','.join(map(str, score)))
         writer.writerow(score)
+
+
 
 
 # Events 1-6 are complete.
