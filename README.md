@@ -36,7 +36,7 @@ apt install -y zip
 
   * Mac Installation Instructions
 
-To install the dependencies, you need [homebrew](http://brew.sh/) which requires Xcode which requires the latest macOS.  Apple should serve snapshots of older Xcode packages for old releases purely for this reason.  If your computer cannot run the latest macOS, I would suggest [dual-booting GNU/Linux](https://github.com/TechnologyClassroom/SetupNotes/blob/master/GNULinux/GNULinuxOnMacbooks.md) instead of trading in for a new Mac.
+To install the dependencies, you need [homebrew](http://brew.sh/) which requires [XCode](http://developer.apple.com/xcode/) which requires the latest macOS.  Apple should serve snapshots of older XCode packages for old releases purely for this reason.  If your computer cannot run the latest macOS, I would suggest [dual-booting GNU/Linux](https://github.com/TechnologyClassroom/SetupNotes/blob/master/GNULinux/GNULinuxOnMacbooks.md) instead of trading in for a new Mac.
 
   * Windows Installation Instructions
 
