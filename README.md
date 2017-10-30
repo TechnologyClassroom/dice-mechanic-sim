@@ -59,6 +59,7 @@ adware.  The ninite download program can be left on your system and used as an
 updater in the future.
 
 * If DMS is not compatible with your system...
+
 You can setup a Debian Virtual Machine (VM) or I can upload a Debian Virtual
 Machine (VM) that is configured with all of the dependencies for you.
 
