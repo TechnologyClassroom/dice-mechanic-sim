@@ -3,6 +3,8 @@ DMS tests game mechanics for Midnight Riders, the upcoming pen and paper RPG.
 
 Michael McMahon
 
+![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/data/20171030125109.csv.png?raw=true "Plot of 20171030125109.csv")
+
 This code is released under the [AGPL 3.0 license](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/LICENSE).
 
 This script can be used to balance dice based RPGs and board games.
