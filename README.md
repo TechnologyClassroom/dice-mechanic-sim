@@ -28,6 +28,7 @@ python3 -V
 Install all dependencies for Debian 9
 
 ```
+apt update
 apt install -y python3-pip
 apt install -y python3-tk
 pip3 install pandas
