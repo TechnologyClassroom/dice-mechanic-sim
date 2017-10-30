@@ -27,6 +27,8 @@ Ways to view and analyze the data:
 * Data can be graphed with spreadsheet software or within python through matplotlib, plotly, networkx, or igraph.
 * Data analysis software and programming languages can be used to parse the data.
 
+Goals for the data can be found in the [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
+
 ## Observations and Findings
 
 Observations and findings are recorded in the [analysis-observations](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/analysis-observations.md).
