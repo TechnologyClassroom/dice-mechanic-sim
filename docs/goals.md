@@ -28,7 +28,7 @@ analysis.
 * Easy: Only load pieces of libraries that are used to speed up processing time
 * Medium: Update Event 7
   * ~~Check if there is a winner before event 7.~~
-  * Bracket system that pits all runners up PCs against each other to decide who faces
+  * Bracket system that pits all runner up PCs against each other to decide who faces
   the player with the highest madness.
   * Final Event 7 battle is a best 2 out of 3 with the highest madness player against
   the winner of the bracket.
