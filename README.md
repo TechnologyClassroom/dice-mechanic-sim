@@ -17,9 +17,9 @@ v9.2.1.
 
 <a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt">Change log</a>
 
-## How to install Python
+## How to setup a development environment
 
-  * GNU/Linux Installation Instructions
+* GNU/Linux Installation Instructions
 
 Python is probably already installed on your GNU/Linux system.  You can check if
 Python is installed by running this command from a terminal:
@@ -40,7 +40,7 @@ apt install -y gpicview
 apt install -y zip
 ```
 
-  * Mac Installation Instructions
+* Mac Installation Instructions
 
 To install the dependencies, you need [homebrew](http://brew.sh/) which requires
 [XCode](http://developer.apple.com/xcode/) which requires the latest macOS.
@@ -50,13 +50,17 @@ this reason.  If your computer cannot run the latest macOS, I would suggest
 or using a [Virtual Machine (VM)](https://www.virtualbox.org/wiki/Downloads)
 instead of trading in for a new Mac.
 
-  * Windows Installation Instructions
+* Windows Installation Instructions
 
 The easiest way to install Python (and many other common programs) for Windows
 is through <a href="https://ninite.com/python/">ninite.  Ninite</a> is a website
 that allows you to install many programs at once without accidentally installing
 adware.  The ninite download program can be left on your system and used as an
 updater in the future.
+
+* If DMS is not compatible with your system...
+You can setup a Debian Virtual Machine (VM) or I can upload a Debian Virtual
+Machine (VM) that is configured with all of the dependencies for you.
 
 ## How to run this script
 
