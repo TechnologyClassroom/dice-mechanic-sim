@@ -113,6 +113,12 @@ d4d6pen = 1
 # d8     1        2        3        4          0         1         2
 # d10    1        1        2        3          0         0         1
 
+# Percentage of NPC battles
+# 25 would be ~25% chance of facing NPCs each scene.
+# 0 would be all PC vs PC conflicts.
+# 100 would be all PC vs NPC conflicts.
+npcchance = 25
+
 # npctiers aids in upcoming addition of AI.
 # Each NPC has an appended dice tier in the tiers array.
 npctiers = [0,0,1,1,2,2]
@@ -239,20 +245,27 @@ def pcdice(pc):
 def OpposingForce():
     # Control the chances of fighting NPCs.
     chance = roll(100)
-    if chance < 26:  # 75% chance of rerolling if NPC is chosen.
-    # Change above from 26 to 0, to remove NPC conflicts entirely.
+    if chance < (npcchance + 1):  # Chance of not facing NPC.
         return 0
     else:
         # Pick an opposing player randomly.
         of = randrange(0, (N + 1))
 
-        # Check to see if you picked yourself.
-        if int(of) != int(turn):
-            return of
+        # NPC
+        if of == 0:
+            # Control the chances of fighting NPCs.
+            chance = roll(100)
+            if chance < (npcchance + 1):  # Chance of rerolling if NPC is chosen.
+                return 0
         else:
-            if args.verbose:
-                print("You tried to fight yourself.  Reroll for a new opponent!")
             return OpposingForce()
+    # Check to see if you picked yourself.
+    elif if int(of) != int(turn):
+        return of
+    else:
+        if args.verbose:
+            print("You tried to fight yourself.  Reroll for a new opponent!")
+        return OpposingForce()
 
 
 # Tie breaker
