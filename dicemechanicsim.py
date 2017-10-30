@@ -21,8 +21,8 @@
 # Python 2 Information
 # To run dms with python 2, remove, change, comment these three lines:
 # Remove "import plotdicemechanic"
-# Change this line "file = open(filename, "w", newline="")  # Python 3"
-# to this "file = open(filename, "wb")  # Python 2"
+# Change this line 'file = open(filename, "w", newline="")  # Python 3'
+# to this 'file = open(filename, "wb")  # Python 2'
 # Remove "plotdicemechanic.plotaspng(filename)"
 
 
