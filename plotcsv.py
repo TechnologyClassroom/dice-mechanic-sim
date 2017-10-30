@@ -3,7 +3,7 @@
 
 # Michael McMahon
 
-# Plot CSV visualizes Midnight Riders csv data using matplotlib.
+# Plot CSV visualizes csv data using matplotlib.
 
 # Tested with python 3 and matplotlib 2.1.0
 
@@ -32,7 +32,7 @@ import argparse  # Add switch arguments for python v2.7 and v3.2+
 # argparse
 # This section adds switch -h and argument to the script.
 parser = argparse.ArgumentParser(
-    description='Plot CSV visualizes Midnight Riders csv data using matplotlib.')
+    description='Plot CSV visualizes csv data using matplotlib.')
 parser.add_argument('csvfile', metavar='N', type=str,
                     help='a csv spreadsheet to be graphed')
 args = parser.parse_args()
@@ -66,4 +66,3 @@ def plotaspng(input):
 
 if __name__ == '__main__':
     plotaspng(file)
-
