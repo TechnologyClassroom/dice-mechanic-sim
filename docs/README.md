@@ -1,4 +1,4 @@
-# Docs
+# docs folder
 
 [analysis-observations.md](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/analysis-observations.md)
 has observations and findings from data analysis.
