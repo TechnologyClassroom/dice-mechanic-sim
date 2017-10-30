@@ -19,33 +19,36 @@ analysis.
 
 # dicemechanicsim.py Feature requests
 * Medium: Fake AI that makes better decisions than random
-  * ~~A new array could be created at the end of each conflict filled with each stat's
-   dice tier.~~
-  * A new array will be created at the beginning of each scene that would calculate
-  the possible scores for each conflict.
-  * Applying strategy involves the PC choosing the opponent that yields a balance of
-  the highests points with lowest risk.
-* Easy: Only load pieces of libraries that are used to speed up processing time
+  * ~~A new array could be created at the end of each conflict filled with each
+  score's dice tier.~~
+  * A new array will be created at the beginning of each scene that would
+  calculate   the possible scores for each conflict.
+  * Applying strategy involves the PC choosing the opponent that yields a
+  balance of the highests points with lowest risk.
+* Easy: Only load pieces of libraries that are used to speed up processing
+time.
 * Medium: Update Event 7
   * ~~Check if there is a winner before event 7.~~
-  * Bracket system that pits all runner up PCs against each other to decide who faces
-  the player with the highest madness.
-  * Final Event 7 battle is a best 2 out of 3 with the highest madness player against
-  the winner of the bracket.
+  * Bracket system that pits all runner up PCs against each other to decide
+  who faces the player with the highest madness.
+  * The last two players in the bracket may team up.
+  * Final Event 7 battle is a best 2 out of 3 with the highest madness
+  player against the winner of the bracket.
   * D12 will settle ties during event 7.
-  * Event 7 edge case: If 2 or more players tie for highest madness, roll off with D12.
-  The winner of all D12 rolls has the highest madness and must be stopped by the winner
-  of the bracket.
-  * Event 7 edge case: What happens when two players tie for highest madness and
-  repuatation?
+  * Event 7 edge case: If 2 or more players tie for highest madness, roll
+  off with D12.  The winner of all D12 rolls has the highest madness and
+  must be stopped by the winner of the bracket.
+  * Event 7 edge case: What happens when two players tie for highest
+  madness and repuatation?
 * Medium: Fight a random number of opponents in special happenings
 * Easy: Propose changes for dice tiers and points
 * Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
   * [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
-  * A few automatic code analyzers are [autopep8](https://github.com/hhatto/autopep8),
-   [yapf](https://github.com/google/yapf), and
-   [pycodestyle](https://github.com/PyCQA/pycodestyle).
-   of 80 characters per line for code and 72 for docstrings/comments.
+  of 80 characters per line for code and 72 for docstrings/comments.
+  * A few automatic code analyzers are
+  [autopep8](https://github.com/hhatto/autopep8),
+  [yapf](https://github.com/google/yapf), and
+  [pycodestyle](https://github.com/PyCQA/pycodestyle).
 * ~~Easy: Run plotdicemechanic.py at the end of dicemechanicsim.py.~~
 * See tables section below
   * ~~Change point system for PC vs PC based on dice advantage~~
@@ -55,12 +58,16 @@ analysis.
 
 # plotdicemechanic.py Feature requests
 * Medium: Analyze and plot averages from multiple csv files.
+* Advanced: Create a secondary system that analyzes the data and changes the
+variables in dicemechanicsim.py autonomously.
 * Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
   * [Maximum line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length)
-  * A few automatic code analyzers are [autopep8](https://github.com/hhatto/autopep8),
-   [yapf](https://github.com/google/yapf), and
-   [pycodestyle](https://github.com/PyCQA/pycodestyle).
-   of 80 characters per line for code and 72 for docstrings/comments.* ~~Easy: Analyze a given csv with an argument (python3 plotdicemechanic.py 20170106.csv)~~
+  of 80 characters per line for code and 72 for docstrings/comments.
+  * A few automatic code analyzers are
+  [autopep8](https://github.com/hhatto/autopep8),
+  [yapf](https://github.com/google/yapf), and
+  [pycodestyle](https://github.com/PyCQA/pycodestyle).
+* ~~Easy: Analyze a given csv with an argument (python3 plotdicemechanic.py 20170106.csv)~~
 * ~~Medium: Change plotdicemechanic.py from plotly to matplotlib.~~
 * ~~Medium: Export a simulation .csv file directly to a graph in .png format~~
 * ~~Medium: Output graph of simulation output in .png format instead of html.~~
