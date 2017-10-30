@@ -15,7 +15,7 @@ characters.
 Tested with Python v3.5.2, pandas v0.20.3, matplotlib v2.1.0, and Debian v8 &
 v9.2.1.
 
-<a href="https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt">Change log</a>
+[Change log](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt)
 
 ## How to setup a development environment
 
