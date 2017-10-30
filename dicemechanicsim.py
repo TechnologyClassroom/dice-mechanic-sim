@@ -103,6 +103,9 @@ fourpen = 2
 # Difference in PC vs NPC table
 npcpen = 1
 
+# d4 against d6 has an added penalty to match chart.
+d4d6pen = 1
+
 # Current Relational Point Table
 # PC   vsPCd4   vsPCd6   vsPCd8   vsPCd10   vsNPCd4   vsNPCd6   vsNPCd8
 # d4     1        1        2        2          1         1         2
@@ -397,11 +400,11 @@ for x in range(0, H):
     if pctier == 0:
         gnlhc = gnlhc - fourpen
         if optier == 1:
-            chlng = chlng - 1
+            chlng = chlng - d4d6pen
     if optier == 0:
         gnlhc = gnlhc - fourpen
         if pctier == 1:
-            gnlhc = gnlhc - 1
+            gnlhc = gnlhc - d4d6pen
 
     # Difference in PC vs NPC table
     if opp == 0 and pctier > 0:
