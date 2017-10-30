@@ -10,7 +10,8 @@ stated goals.  Goals for the project can be found in the [goals.md file](https:/
 
 * [Make a GitHub account](https://github.com/signup/free).
 * (Optional) Check the [Issues page](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues)
-or the [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md) for something you can contribute towards.
+or the [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
+for something you can contribute towards.
   * (Optional) If you do not see the item that you would like changed on those lists, submit a [new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new)
   for something that you would like to see changed.
 * Create a fork of the repository on GitHub.  This will redirect you to a new
@@ -25,8 +26,9 @@ intend to change such as fixing-spelling-errors.
 * Explain the reasoning behind the change in the pull request.
 
 ## After the pull request
-(Optional) After a change is merged, you can delete the branch and make a new branch for the next change.  If you are
-done working on the fork after the change, the repository can be deleted.
+(Optional) After a change is merged, you can delete the branch and make a new
+branch for the next change.  If you are done working on the fork after the
+change, the repository can be deleted.
 
 ## Low hanging fruit
 
@@ -39,7 +41,8 @@ for lines starting with the "Easy" label.
 
 ## Style
 
-Large sections are separated by 4 line breaks.  Small sections are separated by 2 line breaks.
+Large sections are separated by 4 line breaks.  Small sections are separated by
+2 line breaks.
 
 As of this time, I am very loosely using [pep 8](https://www.python.org/dev/peps/pep-0008/)
 as a style guide.  Attempt to make contributions loosely fit in.  Example:
