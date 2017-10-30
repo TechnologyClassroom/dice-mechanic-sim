@@ -113,6 +113,8 @@ d4d6pen = 1
 # d8     1        2        3        4          0         1         2
 # d10    1        1        2        3          0         0         1
 
+# npctiers aids in upcoming addition of AI.
+# Each NPC has an appended dice tier in the tiers array.
 npctiers = [0,0,1,1,2,2]
 
 
