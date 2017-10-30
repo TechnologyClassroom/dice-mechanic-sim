@@ -495,7 +495,7 @@ for x in range(0, H):
     tiers = []
     for scores in score[1:]:
         tiers.append(dicetier(scores))
-    tiers = tiers + npctiers # [0,0,1,1,2,2]
+    tiers = tiers + npctiers  # [0,0,1,1,2,2]
     if args.verbose:
         print("Dice tiers for AI")
         print(tiers)
