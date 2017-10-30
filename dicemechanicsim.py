@@ -260,7 +260,7 @@ def OpposingForce():
         else:
             return OpposingForce()
     # Check to see if you picked yourself.
-    elif if int(of) != int(turn):
+    elif int(of) != int(turn):
         return of
     else:
         if args.verbose:
