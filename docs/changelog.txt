@@ -1,7 +1,8 @@
 Change log dicemechanicsim v0.97:
 -Most variables have been moved to the top for quick and easy manipulation.
 -NPC scoring is now relational to the player.
--The scoring table now matches the first publishing of Midnight Riders.
+-The scoring table now matches the first publishing of Midnight Riders and
+is represented by data20171030-1553.zip.
 -Groundwork for informed decisions (AI) has been introduced, but the data
 is not yet implemented.
 
