@@ -6,7 +6,7 @@ Each data pack includes:
 * Each csv file is a simulation of an entire game.  csv files named with timestamp of when they were created.
 * dicemechanicsim.py pyhon script with the same settings as the data
 
-What is a CSV file?  CSV stands for comma separated values.  It is a very simple spreadsheet with each row being a new line and each column separated by commas.  [This is an example of one csv file]().
+What is a CSV file?  CSV stands for comma separated values.  It is a very simple spreadsheet with each row being a new line and each column separated by commas.  [This is an example of one csv file](https://raw.githubusercontent.com/TechnologyClassroom/dice-mechanic-sim/master/data/20171030121104.csv).
 
 This is an example of a plot from a csv:
 ![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/data/20171030121104.csv.png?raw=true "Plot of 20171030121104.csv")
