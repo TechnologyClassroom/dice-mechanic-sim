@@ -109,10 +109,10 @@ Feature requests can be found in the [goals.md file](https://github.com/Technolo
 
 # How to analyze data generated from this script
 
+Note: Programming experience is not required to participate with data analysis.
+
 Open the [data folder](https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data)
 , download, and extract the most recent data pack for example data.
-
-Note: Programming experience is not required to participate with data analysis.
 
 What is a CSV file?  CSV stands for comma separated values.  It is a very simple
 spreadsheet with each row being a new line and each column separated by commas.
