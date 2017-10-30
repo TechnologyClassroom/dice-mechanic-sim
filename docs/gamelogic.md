@@ -1,4 +1,4 @@
-# gamelogic.txt
+# gamelogic.md
 
 Game logic for dice-mechanic-simulator
 
