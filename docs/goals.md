@@ -21,12 +21,23 @@ analysis.
 * Medium: Fake AI that makes better decisions than random
   * ~~A new array could be created at the end of each conflict filled with each stat's
    dice tier.~~
-  * When deciding an opponent, the new array could be analyzed for best strategy.
+  * A new array will be created at the beginning of each scene that would calculate
+  the possible scores for each conflict.
+  * Applying strategy involves the PC choosing the opponent that yields a balance of
+  the highests points with lowest risk.
 * Easy: Only load pieces of libraries that are used to speed up processing time
-* Medium: Final Event 7 battle is a best 2 out of 3.
-  * d12 to settle ties
-* Medium: Event 7 edge cases need to be addressed
-  * Bracket system that pits all runners up against each other.
+* Medium: Update Event 7
+  * ~~Check if there is a winner before event 7.~~
+  * Bracket system that pits all runners up PCs against each other to decide who faces
+  the player with the highest madness.
+  * Final Event 7 battle is a best 2 out of 3 with the highest madness player against
+  the winner of the bracket.
+  * D12 will settle ties during event 7.
+  * Event 7 edge case: If 2 or more players tie for highest madness, roll off with D12.
+  The winner of all D12 rolls has the highest madness and must be stopped by the winner
+  of the bracket.
+  * Event 7 edge case: What happens when two players tie for highest madness and
+  repuatation?
 * Medium: Fight a random number of opponents in special happenings
 * Easy: Propose changes for dice tiers and points
 * Easy: Change code to [pep 8 style](https://www.python.org/dev/peps/pep-0008)
