@@ -48,7 +48,7 @@ N = randrange(3, 6)  # Choose number of players randomly (3-5)
 # Uncomment the line above to assign a specific number of palyers.
 
 # Scenes
-H = N * 8  # Scene = Players * Events
+H = N * 6  # Scene = Players * Events
 # Increase Event number to add more conflicts to compensate for multiple player battles.
 
 # Starting Score DEBUG
@@ -570,6 +570,8 @@ else:
 
 # Report if there is a winner
 print("Winner:," + str(win))
+
+# (Optional) Print the score table
 
 
 
