@@ -11,6 +11,10 @@ What is a CSV file?  CSV stands for comma separated values.  It is a very simple
 This is an example of a plot from a csv:
 ![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/data/20171030121104.csv.png?raw=true "Plot of 20171030121104.csv")
 
+R1 is the Reputation score for Player 1.
+M1 is the Madness score for Player 1.
+R3 is the Reputation score for Player 3.
+
 ## How to analyze data generated in data packs
 
 Download and extract a data pack for example data.
