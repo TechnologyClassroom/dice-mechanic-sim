@@ -10,10 +10,7 @@
 # PDM uses python 3 because of the dependencies.  Tested with v3.5.2.
 
 # Run with this command:
-#   python3 plotdicemechanicsim.py INSERTCSVFILENAMEHERE
-#
-# View help:
-#   python3 plotdicemechanic.py -h
+#   python3 plotdicemechanicsim.py
 
 # Install dependencies
 #  pip3 install matplotlib --upgrade
