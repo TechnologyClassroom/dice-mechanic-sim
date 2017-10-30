@@ -26,19 +26,8 @@
 # https://matplotlib.org/examples/pylab_examples/plotfile_demo.html
 # From ars at https://stackoverflow.com/questions/1186789/what-is-the-best-way-to-call-a-python-script-from-another-python-script
 
-# Import libraries
-import argparse  # Add switch arguments for python v2.7 and v3.2+
-
-# argparse
-# This section adds switch -h and argument to the script.
-parser = argparse.ArgumentParser(
-    description='PDM visualizes Midnight Riders csv data using matplotlib.')
-parser.add_argument('csvfile', metavar='N', type=str,
-                    help='a csv spreadsheet to be graphed')
-args = parser.parse_args()
-
 # Variables
-file = args.csvfile
+file = 'data/20171030121104.csv'
 
 # Plot csv spreadsheet as png picture module
 def plotaspng(input):
