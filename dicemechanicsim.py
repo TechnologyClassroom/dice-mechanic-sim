@@ -113,6 +113,8 @@ d4d6pen = 1
 # d8     1        2        3        4          0         1         2
 # d10    1        1        2        3          0         0         1
 
+npctiers = [0,0,1,1,2,2]
+
 
 
 
@@ -478,7 +480,7 @@ for x in range(0, H):
     tiers = []
     for scores in score[1:]:
         tiers.append(dicetier(scores))
-    tiers.append([0,0,1,1,2,2])
+    tiers = tiers + npctiers # [0,0,1,1,2,2]
     if args.verbose:
         print("Dice tiers for AI")
         print(tiers)
