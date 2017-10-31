@@ -43,3 +43,8 @@ Observations and findings are recorded in the [analysis-observations](https://gi
 
 If you have any observations, you can submit them as a pull request or submit a
 [new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new).
+
+## Rebuilding datapacks
+
+Datapacks that are built with early iterations or python 2 can be graphed
+using the rebuilddatapack.sh and plotcsv.py files.
