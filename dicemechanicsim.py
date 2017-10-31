@@ -113,11 +113,14 @@ d4d6pen = 1
 # d8     1        2        3        4          0         1         2
 # d10    1        1        2        3          0         0         1
 
-# Percentage of NPC battles
+# Chance of NPC battles
 # 25 would be ~25% chance of facing NPCs each scene.
-# 0 would be all PC vs PC conflicts.
-# 100 would be all PC vs NPC conflicts.
-npcchance = 25
+# npcchance1 = 0 would be all PC vs PC conflicts.
+# npcchance1 = 100 would be all PC vs NPC conflicts.
+npcchance1 = 25
+npcchance2 = 25
+# npcchance1 allows a hard percentage before any opponents are picked.
+# npcchance2 allows a chance to reroll if an NPC is picked.
 
 # npctiers aids in upcoming addition of AI.
 # Each NPC has an appended dice tier in the tiers array.
@@ -245,7 +248,7 @@ def pcdice(pc):
 def OpposingForce():
     # Control the chances of fighting NPCs.
     chance = roll(100)
-    if chance < (npcchance + 1):  # Chance of not facing NPC.
+    if chance < (npcchance1 + 1):  # Chance of not facing NPC.
         return 0
     else:
         # Pick an opposing player randomly.
@@ -255,7 +258,7 @@ def OpposingForce():
         if of == 0:
             # Control the chances of fighting NPCs.
             chance = roll(100)
-            if chance < (npcchance + 1):  # Chance of rerolling if NPC is chosen.
+            if chance < (npcchance2 + 1):  # Chance of rerolling if NPC is chosen.
                 return 0
             else:
                 of = randrange(1, (N + 1))
