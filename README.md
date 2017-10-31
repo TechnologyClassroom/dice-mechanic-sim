@@ -1,5 +1,5 @@
 # dice-mechanic-sim
-DMS tests game mechanics for Midnight Riders, the upcoming pen and paper RPG.
+Dice Mechanic Simulator (DMS) tests game mechanics for Midnight Riders, the upcoming pen and paper RPG.
 
 Michael McMahon
 
