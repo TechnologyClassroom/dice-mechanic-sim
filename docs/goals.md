@@ -22,8 +22,9 @@ analysis.
 * Medium: Fake AI that makes better decisions than random
   * ~~A new array could be created at the end of each conflict filled with each
   score's dice tier.~~
+  * Turn delta section into a function.
   * A new array will be created at the beginning of each scene that would
-  calculate   the possible scores for each conflict.
+  calculate the possible scores for each conflict.
   * Applying strategy involves the PC choosing the opponent that yields a
   balance of the highests points with lowest risk.
 * Easy: Only load pieces of libraries that are used to speed up processing
