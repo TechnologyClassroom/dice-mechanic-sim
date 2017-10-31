@@ -7,8 +7,8 @@
 # This script only works with GNU/Linux.  To run this on Mac and GNU/Linux distros
 # without gpicview, remove all lines that reference gpicview.
 
-# builddatapack works with DMS datapacks that do not contain graphs, plot, display,
-# and package the contents again.
+# rebuilddatapack works with DMS datapacks that do not contain graphs, plot,
+# display, and package the contents again.
 
 # To run, open a terminal and enter:
 #   bash rebuilddatapack.sh datapack.zip
