@@ -5,6 +5,10 @@
 
 # PDM visualizes Midnight Riders csv data using matplotlib.
 
+# Another version of PDM exists that can take arguments.
+# Find plotcsv.py at
+# https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/data/plotcsv.py
+
 # Tested with python 3 and matplotlib 2.1.0
 
 # PDM uses python 3 because of the dependencies.  Tested with v3.5.2.
