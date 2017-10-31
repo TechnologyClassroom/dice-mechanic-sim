@@ -258,7 +258,14 @@ def OpposingForce():
             if chance < (npcchance + 1):  # Chance of rerolling if NPC is chosen.
                 return 0
             else:
-                return OpposingForce()
+                of = randrange(1, (N + 1))
+                # Check to see if you picked yourself.
+                if int(of) != int(turn):
+                    return of
+                else:
+                    if args.verbose:
+                        print("You tried to fight yourself.  Reroll for a new opponent!")
+                    return OpposingForce()
         # Check to see if you picked yourself.
         elif int(of) != int(turn):
             return of
