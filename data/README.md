@@ -6,6 +6,7 @@ optimization.
 Each data pack includes:
 * Each csv file is a simulation of an entire game.  csv files are named with a
 timestamp of when they were created.
+* Plotted graph in png file.
 * dicemechanicsim.py pyhon script with the same settings as the data
 
 What is a CSV file?  CSV stands for comma separated values.  It is a very simple
