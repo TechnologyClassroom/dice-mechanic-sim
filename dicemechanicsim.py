@@ -136,7 +136,7 @@ args = parser.parse_args()
 
 # Starting game information
 if args.verbose:
-    print(str(N) + " players and " + str(H) + " happenings.")
+    print(str(N) + " players and " + str(H) + " scenes.")
     print("Starting score:" + str(SS) + " Minimum score:" + str(MS) + ".")
 
 # csv file output
@@ -297,10 +297,10 @@ def tiebreak():
 
 
 # Game loop plays through 6 events.
-# Each loop is one happening.
+# Each loop is one Scene.
 for x in range(0, H):
     # Loop Variables
-    current = x + 1  # Happening variable
+    current = x + 1  # Scene variable
 
     turn = ((current - 1) % N) + 1  # Player turn variable
 
@@ -313,14 +313,15 @@ for x in range(0, H):
         if turn == 1:
             print("")
         print("Current Event: " + str(score[0]))
-        print("Current Happening: " + str(current))
+        print("Current Scene: " + str(current))
         print("Turn: Player " + str(turn))
 
     # Rolling for happening modifier (ignored in simulation)
-    h1 = roll(4)
-    h2 = roll(12)
-    if args.verbose:
-        print("Happening modifiers: " + str(h1) + " & " + str(h2))
+    if turn == 1:  # Only occurs at the beginning of each Event.
+        h1 = roll(4)
+        h2 = roll(12)
+        if args.verbose:
+            print("Happening modifiers: " + str(h1) + " & " + str(h2))
 
     # Incomplete: Use tiers from AI to decide to inform decisions next three decisions
 
@@ -507,7 +508,7 @@ for x in range(0, H):
         print("Dice tiers for AI")
         print(tiers)
 
-    # Score after each happening
+    # Score after each Scene
     if args.verbose:
         print(','.join(map(str, score)))
 
