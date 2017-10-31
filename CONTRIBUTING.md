@@ -1,7 +1,7 @@
 # Contributing to DMS
 
 If you would like to make a contribution to Midnight Riders, you could be a
-part of a published game!
+part of a published game!  The first publication date is November 3rd, 2017.
 
 Pull requests will be accepted as long as they are working towards the
 stated goals.  Goals for the project can be found in the [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
