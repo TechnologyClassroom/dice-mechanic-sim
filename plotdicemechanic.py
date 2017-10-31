@@ -36,6 +36,9 @@ def plotaspng(input):
     import pandas as pd  # Data Analysis
     import matplotlib.pyplot as plt  # Plotting
 
+    # (Optional) xkcd format
+    #plt.xkcd()
+
     # Read from csv file
     df = pd.read_csv(input, index_col=0)
 
