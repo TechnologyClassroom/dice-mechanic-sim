@@ -142,6 +142,7 @@ if args.verbose:
     print(str(N) + " players and " + str(H) + " scenes.")
     print("Starting score:" + str(SS) + " Minimum score:" + str(MS) + ".")
 
+
 # csv file output
 time = strftime("%Y%m%d%H%M%S", localtime())  # Time variable
 filename = str(time) + '.csv'
