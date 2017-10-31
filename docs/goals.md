@@ -18,6 +18,7 @@ analysis.
 
 
 # dicemechanicsim.py Feature requests
+* Easy: Change variable H to S.
 * Medium: Fake AI that makes better decisions than random
   * ~~A new array could be created at the end of each conflict filled with each
   score's dice tier.~~
