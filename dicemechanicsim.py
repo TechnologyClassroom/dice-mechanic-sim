@@ -118,7 +118,7 @@ d4d6pen = 1
 # npcgate2 allows a chance to reroll if an NPC is picked.
 npcgate1 = 20
 npcgate2 = 25
-# Probability of facing NPC = (npcgate1/100)+(1-npcgate1/100)*(1/(N+1))*(npcgate2/100)
+# Probability of facing NPC = (gate1/100)+(1-gate1/100)*(1/(N+1))*(gate2/100)
 # The resulting probability is listed at the end of each simulation.
 
 # npctiers aids in upcoming addition of AI.
