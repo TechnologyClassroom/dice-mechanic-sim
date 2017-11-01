@@ -5,6 +5,7 @@ Change log dicemechanicsim v0.97:
 is represented by data20171030-1553.zip.
 -Groundwork for informed decisions (AI) has been introduced, but the data
 is not yet implemented.
+-NPC probability can be finely tuned.
 
 Change log plotcsv v1.0:
 -Accept filename argument to analyze data of arbitrary csv files.
