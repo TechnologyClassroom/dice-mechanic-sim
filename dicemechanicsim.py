@@ -452,7 +452,7 @@ for x in range(0, H):
             if args.verbose:
                 print("LOSE!")
             #score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
-            print("PC lost against NPC!")
+            t = 0  # Do nothing machine
         elif pcroll == oproll:
             if args.verbose:
                 print("TIE!")
@@ -464,7 +464,7 @@ for x in range(0, H):
                 if args.verbose:
                     print("LOSE!")
                 #score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng
-                print("PC lost against NPC!")
+                t = 0  # Do nothing machine
         else:
             print("ERROR: pcroll or oproll is invalid!")
     else:
