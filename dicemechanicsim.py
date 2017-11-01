@@ -121,6 +121,7 @@ npcgate1 = 25
 npcgate2 = 25
 # npcgate1 allows a hard percentage before any opponents are picked.
 # npcgate2 allows a chance to reroll if an NPC is picked.
+# probability of facing NPC = (npcgate1/100)+(1-npcgate1/100)*(1/(N+1))*(npcgate2/100)
 
 # npctiers aids in upcoming addition of AI.
 # Each NPC has an appended dice tier in the tiers array.
