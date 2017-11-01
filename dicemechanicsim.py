@@ -509,7 +509,7 @@ for x in range(0, H):
     tiers = tiers + npctiers  # [0,0,1,1,2,2]
     if args.verbose:
         print("Dice tiers for AI")
-        print(tiers)
+        print(','.join(map(str, tiers)))
 
     # Score after each Scene
     if args.verbose:
