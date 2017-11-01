@@ -114,14 +114,12 @@ d4d6pen = 1
 # d10    1        1        2        3          0         0         1
 
 # Chance of NPC battles
-# 25 would be ~25% chance of facing NPCs each scene.
-# npcgate1 = 0 would be all PC vs PC conflicts.
-# npcgate1 = 100 would be all PC vs NPC conflicts.
-npcgate1 = 25
-npcgate2 = 25
 # npcgate1 allows a hard percentage before any opponents are picked.
 # npcgate2 allows a chance to reroll if an NPC is picked.
-# probability of facing NPC = (npcgate1/100)+(1-npcgate1/100)*(1/(N+1))*(npcgate2/100)
+npcgate1 = 25
+npcgate2 = 25
+# Probability of facing NPC = (npcgate1/100)+(1-npcgate1/100)*(1/(N+1))*(npcgate2/100)
+# The resulting probability is listed at the end of each simulation.
 
 # npctiers aids in upcoming addition of AI.
 # Each NPC has an appended dice tier in the tiers array.
