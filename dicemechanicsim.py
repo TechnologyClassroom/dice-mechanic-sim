@@ -513,6 +513,7 @@ for x in range(0, H):
 
     # Score after each Scene
     if args.verbose:
+        print("Scene scores")
         print(','.join(map(str, score)))
 
     # Score after each event
