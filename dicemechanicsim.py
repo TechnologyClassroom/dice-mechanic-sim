@@ -549,20 +549,20 @@ print("Highest Reputation:," + str(mev6rep))
 topmad = []
 toprep = []
 
-# Record player or players with highest reputation.
-for i, j in enumerate(ev6rep):
-    if j == mev6rep:
-        toprep.append(i + 1)
-
 # Record player or players with highest madness.
 for i, j in enumerate(ev6mad):
     if j == mev6mad:
         topmad.append(i + 1)
 
-print("Player(s) with highest Reputation:," + str(toprep))
-print("Player(s) with highest Madness:," + str(topmad))
+# Record player or players with highest reputation.
+for i, j in enumerate(ev6rep):
+    if j == mev6rep:
+        toprep.append(i + 1)
 
-# if a player has the highest repuation and madness, there is no event 7.
+print("Player(s) with highest Madness:," + str(topmad))
+print("Player(s) with highest Reputation:," + str(toprep))
+
+# if a player has the highest madness and reputation, there is no event 7.
 if len(toprep) == len(topmad) == 1 and toprep == topmad:
     win = topmad[0]
 # Event 7
