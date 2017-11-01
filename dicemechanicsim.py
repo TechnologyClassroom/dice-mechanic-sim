@@ -164,9 +164,9 @@ score_key = []
 # Generate column headers for each player.  R1,M1,R2,M2,...,RN,MN
 for cell in score:
     if len(score_key) % 2 == 0:
-        score_key.append("R" + str(int(len(score_key) / 2) + 1))
-    else:
         score_key.append("M" + str(int(len(score_key) / 2) + 1))
+    else:
+        score_key.append("R" + str(int(len(score_key) / 2) + 1))
 
 # Add an index in column 0 for data analysis
 index = "Event"
@@ -332,9 +332,9 @@ for x in range(0, H):
     rpmd = randrange(0, 2)
     if args.verbose:
         if rpmd == 0:
-            print("Rolling for Reputation!")
-        else:
             print("Rolling for Madness!")
+        else:
+            print("Rolling for Reputation!")
 
     # Calculate PC dice tier and roll
     level = score[(2 * turn) - 1 + rpmd]  # opp level variable
@@ -531,23 +531,23 @@ for x in range(0, H):
 
 # Calculate max Repuation and Madness after 6 events
 
-# Make new arrays for Reputation and Madness
-ev6rep = score[1::2]
-ev6mad = score[2::2]
+# Make new arrays for Madness and Reputation
+ev6mad = score[1::2]
+ev6rep = score[2::2]
 
 if args.verbose:
-    print("Event 6 Reputation: " + str(ev6rep))
     print("Event 6 Madness: " + str(ev6mad))
+    print("Event 6 Reputation: " + str(ev6rep))
 
-mev6rep = max(ev6rep)
 mev6mad = max(ev6mad)
+mev6rep = max(ev6rep)
 
-print("Highest Reputation:," + str(mev6rep))
 print("Highest Madness:," + str(mev6mad))
+print("Highest Reputation:," + str(mev6rep))
 
 # Find player or players that have max scores
-toprep = []
 topmad = []
+toprep = []
 
 # Record player or players with highest reputation.
 for i, j in enumerate(ev6rep):
