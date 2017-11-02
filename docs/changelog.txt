@@ -6,7 +6,7 @@ is represented by data20171030-1553.zip.
 -Groundwork for informed decisions (AI) has been introduced, but the data
 is not yet implemented.
 -Battles do not result in point loss.
--NPC probability can be finely tuned.
+-NPC probability can be finely tuned and the result is stated at the end.
 -Swapped Madness and Reputation order.
 
 Change log plotcsv v1.0:
