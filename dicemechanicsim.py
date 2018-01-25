@@ -601,6 +601,7 @@ print("Winner:," + str(win))
 # (Optional) Print the score table
 
 # Probability of facing NPCs
+# Probability of facing NPC = (gate1/100)+(1-gate1/100)*(1/(N+1))*(gate2/100)
 print("Probability of choosing NPC as a random opponent is " + str(round(100*((npcgate1/100)+(1-npcgate1/100)*(1/(N+1))*(npcgate2/100)),1)) + "%.")
 
 
