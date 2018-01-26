@@ -128,7 +128,7 @@ files quickly.
 
 Data analysis software and programming languages can be used to parse the data.
 
-Data is graphed with from within python through matplotlib.
+Data is graphed within python through matplotlib.
 
 ## Game Logic
 
