@@ -21,14 +21,15 @@
 #  pip3 install pandas --upgrade
 
 # Resources
-# Example 3 http://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html
+# Example 3 http://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html  # noqa: E501
 # https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.html
 # https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.savefig.html
 # https://matplotlib.org/examples/pylab_examples/plotfile_demo.html
-# From ars at https://stackoverflow.com/questions/1186789/what-is-the-best-way-to-call-a-python-script-from-another-python-script
+# From ars at https://stackoverflow.com/questions/1186789/what-is-the-best-way-to-call-a-python-script-from-another-python-script  # noqa: E501
 
 # Variables
 file = 'data/20171030125109.csv'
+
 
 # Plot csv spreadsheet as png picture module
 def plotaspng(input):
@@ -37,7 +38,7 @@ def plotaspng(input):
     import matplotlib.pyplot as plt  # Plotting
 
     # (Optional) xkcd format
-    #plt.xkcd()
+    # plt.xkcd()
 
     # Read from csv file
     df = pd.read_csv(input, index_col=0)
@@ -56,6 +57,7 @@ def plotaspng(input):
 
     # Save output as png.
     plt.savefig(input+'.png')
+
 
 if __name__ == '__main__':
     plotaspng(file)
