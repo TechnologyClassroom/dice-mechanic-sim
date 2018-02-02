@@ -5,7 +5,7 @@ Goals for the game mechanics to become more fun and balanced:
 
 1) Numbers and dice should consistently increase as the game progresses
 
-2) Close matches
+2) The game should end in close matches
 
 3) High probability of event 7
 
@@ -17,8 +17,13 @@ Data analysis can be achieved by watching simulations over time or with data
 analysis.
 
 
+# builddatapack.sh Feature requests
+* Medium: Convert to pure python without gpicview dependency.
+* Medium: Before zip, combine event 6 from data sets into database and graph.
+
 # dicemechanicsim.py Feature requests
 * Easy: Change variable H to S.
+* Easy: Separate roll function into separate roll.py module.
 * Medium: Fake AI that makes better decisions than random
   * ~~A new array could be created at the end of each conflict filled with each
   score's dice tier.~~
