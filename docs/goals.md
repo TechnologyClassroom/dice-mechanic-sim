@@ -4,13 +4,9 @@
 Goals for the game mechanics to become more fun and balanced:
 
 1) Numbers and dice should consistently increase as the game progresses
-
 2) The game should end in close matches
-
 3) High probability of event 7
-
 4) Low probability of getting stuck at the first dice tier
-
 5) Low probability of leaving a player left behind
 
 Data analysis can be achieved by watching simulations over time or with data
