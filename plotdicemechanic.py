@@ -36,7 +36,7 @@ def plotaspng(input):
     # Import modules
     import matplotlib.pyplot as plt  # Plotting
     import pandas as pd  # Data Analysis
-    
+
     # (Optional) xkcd format
     # plt.xkcd()
 
