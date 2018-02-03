@@ -34,9 +34,9 @@ file = 'data/20171030125109.csv'
 # Plot csv spreadsheet as png picture module
 def plotaspng(input):
     # Import modules
-    import pandas as pd  # Data Analysis
     import matplotlib.pyplot as plt  # Plotting
-
+    import pandas as pd  # Data Analysis
+    
     # (Optional) xkcd format
     # plt.xkcd()
 
