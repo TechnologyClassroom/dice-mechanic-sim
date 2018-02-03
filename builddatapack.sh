@@ -23,7 +23,7 @@ do
   # Run dms
   python3 dicemechanicsim.py 2>/dev/null
   # Display the latest png file
-  ls -tr | tail -n 1 | xargs gpicview &
+  ls -tr | tail -n 1 | xargs gpicview 2>/dev/null &
   # From bmb at https://stackoverflow.com/questions/1587059/bash-find-highest-numbered-filename-in-a-directory-where-names-start-with-digit
   # Wait 2 second
   sleep 2
