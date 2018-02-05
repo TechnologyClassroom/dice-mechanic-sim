@@ -57,7 +57,7 @@ def plotaspng(csvfile):
     plt.legend(loc='upper left')
 
     # Save output as png.
-    plt.savefig(csvfile+'.png')
+    plt.savefig(csvfile + '.png')
 
 
 if __name__ == '__main__':
