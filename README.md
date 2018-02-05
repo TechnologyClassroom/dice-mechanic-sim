@@ -4,8 +4,9 @@ and paper RPG.
 
 Michael McMahon
 
-Support the developers of Midnight Riders by purchasing a book at [Etsy](https://www.etsy.com/listing/576575261/midnight-riders-role-playing-game)
-and [DriveThruRPG](http://www.drivethrurpg.com/product/225714/Midnight-Riders)
+Support the developers of Midnight Riders by purchasing a physical book at
+[Etsy](https://www.etsy.com/listing/576575261/midnight-riders-role-playing-game),
+an ebook at [DriveThruRPG](http://www.drivethrurpg.com/product/225714/Midnight-Riders),
 or developing with us on [Github](https://github.com/GhostCityGames/Midnight-Riders).
 
 ![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/data/20171030125109.csv.png?raw=true "Plot of 20171030125109.csv")
@@ -16,9 +17,6 @@ This script can be used to balance dice based RPGs and board games.
 
 DMS boils the game down to only the game mechanics by removing the theme and the
 characters.
-
-Tested with Python v3.5.2, pandas v0.20.3, matplotlib v2.1.0, and Debian v8 &
-v9.2.1.
 
 [Change log](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt)
 
@@ -55,6 +53,8 @@ this reason.  If your computer cannot run the latest macOS, I would suggest
 or using a [Virtual Machine (VM)](https://www.virtualbox.org/wiki/Downloads)
 instead of trading in for a new Mac.
 
+Try to run the dicemechanicsim.py and solve each dependency.
+
 * Windows Installation Instructions
 
 The easiest way to install Python (and many other common programs) for Windows
@@ -62,6 +62,8 @@ is through <a href="https://ninite.com/python/">ninite.  Ninite</a> is a website
 that allows you to install many programs at once without accidentally installing
 adware.  The ninite download program can be left on your system and used as an
 updater in the future.
+
+Try to run the dicemechanicsim.py and solve each dependency.
 
 * If DMS is not compatible with your system...
 
