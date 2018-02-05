@@ -35,18 +35,18 @@ change, the repository can be deleted.
 * I use minimalistic text editors without spell check.  US grammar corrections
 will be accepted.
 * If something is worded awkwardly, submit a pull request to add clarity.  If
-you do not understand something enough to add clarity, submit a [new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new).
-* Check the [stated goals](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
+you do not understand something enough to add clarity, submit a
+[new issue](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new).
+* Check the
+[stated goals](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
 for lines starting with the "Easy" label.
 
 ## Style
 
-Large sections are separated by 4 line breaks.  Small sections are separated by
-2 line breaks.
-
-As of this time, I am very loosely using [pep 8](https://www.python.org/dev/peps/pep-0008/)
-as a style guide.  Attempt to make contributions loosely fit in.  Example:
-If everything around your contributions is in all lowercase letters and your
-contribution is all capital letters, it will look bad.  I would probably still
-accept pull requests if they worked towards the [stated goals](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
+I am very loosely using [pep 8](https://www.python.org/dev/peps/pep-0008/) and
+flake8 and pylint as a style guide.  Attempt to make contributions loosely fit
+in.  Example: If everything around your contributions is in all lowercase letters
+and your contribution is all capital letters, it will look bad.  I would probably
+still accept pull requests if they worked towards the
+[stated goals](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md)
 regardless of style.
