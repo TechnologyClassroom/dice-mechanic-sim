@@ -18,7 +18,6 @@ analysis.
 
 # dicemechanicsim.py Feature requests
 * Easy: Change variable H to S.
-* Easy: Separate roll function into separate roll.py module.
 * Medium: Fake AI that makes better decisions than random
   * Turn delta section into a function.
   * A new array will be created at the beginning of each scene that would
