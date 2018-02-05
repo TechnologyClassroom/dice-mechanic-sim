@@ -1,9 +1,11 @@
+#!/usr/bin/env python
+"""dicemechanicsim (DMS) tests game mechanics for the RPG Midnight Riders."""
+
 # dicemechanicsim.py
 # Dice Mechanic Simulation v0.97
 
 # Michael McMahon
 
-# DMS tests game mechanics for the RPG Midnight Riders.
 # This script can be used to balance dice based RPGs and board games.
 
 # Tested with Python v3.5.2, pandas v0.20.3, matplotlib v2.1.0, and Debian v9.
@@ -28,11 +30,11 @@
 import argparse  # Add switch arguments for python v2.7 and v3.2+
 import csv  # Export to csv format
 # from csv import writer, writerow  # Export to csv format
-import plotdicemechanic  # Python 3
 from random import randrange  # dice rolls and probability
-from roll import roll
 from time import localtime  # Name output file with timestamp
 from time import strftime  # Name output file with timestamp
+from plotdicemechanic import plotaspng  # Python 3
+from roll import roll
 
 # Variables
 # Modify the numbers in this section to experiment with game settings
@@ -60,36 +62,36 @@ MS = 0
 #  13+     = d10
 
 #  PC Dice tiers variables table
-#  tier0         = d4
-#  tier0 - tier1 = d6
-#  tier1 - tier2 = d8
-#  tier2+        = d10
+#  TIER0         = d4
+#  TIER0 - TIER1 = d6
+#  TIER1 - TIER2 = d8
+#  TIER2+        = d10
 
 # Dice tier variables DEBUG
-tier0 = 0
-tier1 = 6
-tier2 = 12
-# tier3 = 20
-# tier4 = 30
+TIER0 = 0
+TIER1 = 6
+TIER2 = 12
+# TIER3 = 20
+# TIER4 = 30
 
 # PC vs PC point variables table
 #  PC    vs PC d4    vs PC d6    vs PC d8    vs PC d10
-#  d4     pointD      pointC      pointB      pointA
-#  d6     pointE      pointD      pointC      pointB
-#  d8     pointF      pointE      pointD      pointC
-#  d10    pointF      pointF      pointE      pointD
+#  d4     POINTD      POINTC      POINTB      POINTA
+#  d6     POINTE      POINTD      POINTC      POINTB
+#  d8     POINTF      POINTE      POINTD      POINTC
+#  d10    POINTF      POINTF      POINTE      POINTD
 
 # PC vs PC points DEBUG
-pointA = 4
-pointB = 4
-pointC = 4
-pointD = 3
-pointE = 2
-pointF = 1
-pointG = 0
+POINTA = 4
+POINTB = 4
+POINTC = 4
+POINTD = 3
+POINTE = 2
+POINTF = 1
+POINTG = 0
 
 # Penalty for d4 PC vs PC dice
-fourpen = 2
+FOURPEN = 2
 
 # PC vs NPC point table
 #       vs NPC d4     vs NPC d6    vs NPC d8
@@ -97,10 +99,10 @@ fourpen = 2
 
 # PC vs NPC points DEBUG
 # Difference in PC vs NPC table
-npcpen = 1
+NPCPEN = 1
 
 # d4 against d6 has an added penalty to match chart.
-d4d6pen = 1
+D4D6PEN = 1
 
 # Current Relational Point Table
 # PC   vsPCd4   vsPCd6   vsPCd8   vsPCd10   vsNPCd4   vsNPCd6   vsNPCd8
@@ -110,178 +112,179 @@ d4d6pen = 1
 # d10    1        1        2        3          0         0         1
 
 # Chance of NPC battles
-# npcgate1 allows a hard percentage before any opponents are picked.
-# npcgate2 allows a chance to reroll if an NPC is picked.
-npcgate1 = 20
-npcgate2 = 25
+# NPCGATE1 allows a hard percentage before any opponents are picked.
+# NPCGATE2 allows a chance to reroll if an NPC is picked.
+NPCGATE1 = 20
+NPCGATE2 = 25
 # Probability of facing NPC = (gate1/100)+(1-gate1/100)*(1/(N+1))*(gate2/100)
 # The resulting probability is listed at the end of each simulation.
 
-# npctiers aids in upcoming addition of AI.
+# NPCTIERS aids in upcoming addition of AI.
 # Each NPC has an appended dice tier in the tiers array.
-npctiers = [0, 0, 1, 1, 2, 2]
+NPCTIERS = [0, 0, 1, 1, 2, 2]
 
 # argparse module
 # argparse adds switches -h, and -v, and --verbose to the script.
-parser = argparse.ArgumentParser(
+PARSER = argparse.ArgumentParser(
     description='DMS tests game mechanics for the RPG Midnight Riders.')
-parser.add_argument('-v', '--verbose',
+PARSER.add_argument('-v', '--verbose',
                     help='Show all information.', action="store_true")
-args = parser.parse_args()
+ARGS = PARSER.parse_args()
 
 # Starting game information
-if args.verbose:
+if ARGS.verbose:
     print(str(N) + " players and " + str(H) + " scenes.")
-    print("Starting score:" + str(SS) + " Minimum score:" + str(MS) + ".")
+    print("Starting SCORE:" + str(SS) + " Minimum SCORE:" + str(MS) + ".")
 
 # csv file output
-time = strftime("%Y%m%d%H%M%S", localtime())  # Time variable
-filename = str(time) + '.csv'
-print(filename)
+TIME = strftime("%Y%m%d%H%M%S", localtime())  # Time variable
+FILENAME = str(TIME) + '.csv'
+print(FILENAME)
 
 # Open new csv file
-file = open(filename, "w", newline="")  # Python 3
+FILE = open(FILENAME, "w", newline="")  # Python 3
 # Choose csv settings as comma, single quote, and only quote nonnumeric data.
-writer = csv.writer(file, delimiter=',', quotechar="'",
+WRITER = csv.writer(FILE, delimiter=',', quotechar="'",
                     quoting=csv.QUOTE_NONNUMERIC)
 
-# Build a score array with (2 x the number of players) length filled with SS.
-score = []
+# Build a SCORE array with (2 x the number of players) length filled with SS.
+SCORE = []
 for x in range(0, N * 2):
-    score.append(SS)
+    SCORE.append(SS)
 
 # Build a Score Key that will contain cell headers.
-score_key = []
+SCORE_KEY = []
 
 # Generate column headers for each player.  R1,M1,R2,M2,...,RN,MN
-for cell in score:
-    if len(score_key) % 2 == 0:
-        score_key.append("M" + str(int(len(score_key) / 2) + 1))
+for cell in SCORE:
+    if len(SCORE_KEY) % 2 == 0:
+        SCORE_KEY.append("M" + str(int(len(SCORE_KEY) / 2) + 1))
     else:
-        score_key.append("R" + str(int(len(score_key) / 2) + 1))
+        SCORE_KEY.append("R" + str(int(len(SCORE_KEY) / 2) + 1))
 
 # Add an index in column 0 for data analysis
-index = "Event"
-score_key = [index] + score_key
-index = 0
-score = [index] + score
-# From Rohit Jain at https://stackoverflow.com/questions/17911091/append-integer-to-beginning-of-list-in-python  # noqa: E501
+INDEX = "Event"
+SCORE_KEY = [INDEX] + SCORE_KEY
+INDEX = 0
+SCORE = [INDEX] + SCORE
+# From Rohit Jain at https://stackoverflow.com/questions/17911091
 
 # CSV header
 # Prints a line at the top of the CSV which labels each column.
-print(','.join(map(str, score_key)))
-writer.writerow(score_key)
-# Starting scores
-print(','.join(map(str, score)))
-writer.writerow(score)
+print(','.join(map(str, SCORE_KEY)))
+WRITER.writerow(SCORE_KEY)
+# Starting SCOREs
+print(','.join(map(str, SCORE)))
+WRITER.writerow(SCORE)
 
 # Functions
 
 
-# Find dice tier
 # Variables are at the top of this script.
 def dicetier(level):
-    if level <= tier0:
+    """Find dice tier"""
+    if level <= TIER0:
         return 0
-    elif tier0 < level <= tier1:
+    elif TIER0 < level <= TIER1:
         return 1
-    elif tier1 < level <= tier2:
+    elif TIER1 < level <= TIER2:
         return 2
-    elif tier2 < level:
+    elif TIER2 < level:
         return 3
-    # elif tier3 < level <= tier4:
+    # elif TIER3 < level <= TIER4:
     #     return 4
-    # elif tier4 < level:
+    # elif TIER4 < level:
     #     return 5
-    else:
-        return "ERROR: level is not a number!!"
+    print("ERROR: level is not a number!!")
+    return None
 
 
-# Find PC roll
-def pcdice(pc):
-    level = score[(2 * pc) - 1 + rpmd]  # PC level variable
-    if level <= tier0:
-        if args.verbose:
+def pcdice(pcr):
+    """Find PC roll"""
+    level = SCORE[(2 * pcr) - 1 + rpmd]  # PC level variable
+    if level <= TIER0:
+        if ARGS.verbose:
             print("Rolling a D4...")
         return roll(4)
-    elif tier0 < level <= tier1:
-        if args.verbose:
+    elif TIER0 < level <= TIER1:
+        if ARGS.verbose:
             print("Rolling a D6...")
         return roll(6)
-    elif tier1 < level <= tier2:
-        if args.verbose:
+    elif TIER1 < level <= TIER2:
+        if ARGS.verbose:
             print("Rolling a D8...")
         return roll(8)
-    elif tier2 < level:
-        if args.verbose:
+    elif TIER2 < level:
+        if ARGS.verbose:
             print("Rolling a D10...")
         return roll(10)
-    # elif tier3 < level <= tier4:
-    #     if args.verbose:
+    # elif TIER3 < level <= TIER4:
+    #     if ARGS.verbose:
     #         print("Rolling a D12...")
     #     return roll(12)
-    # elif tier4 < level:
-    #     if args.verbose:
+    # elif TIER4 < level:
+    #     if ARGS.verbose:
     #         print("Rolling a D20...")
     #     return roll(20)
-    else:
-        return "ERROR: level is not a number!!"
+    print("ERROR: level is not a number!!")
+    return None
 
 
-# Choose an opponent to battle
-def OpposingForce():
+def opposingforce():
+    """Choose an opponent to battle"""
     # Control the chances of fighting NPCs.
     chance = roll(100)
-    if chance < (npcgate1 + 1):  # Chance of not facing NPC.
+    if chance < (NPCGATE1 + 1):  # Chance of not facing NPC.
         return 0
     else:
         # Pick an opposing player randomly.
-        of = randrange(0, (N + 1))
+        ofo = randrange(0, (N + 1))
 
         # NPC
-        if of == 0:
+        if ofo == 0:
             # Control the chances of fighting NPCs.
             chance = roll(100)
             # Chance of rerolling if NPC is chosen.
-            if chance < (npcgate2 + 1):
+            if chance < (NPCGATE2 + 1):
                 return 0
             else:
-                of = randrange(1, (N + 1))
+                ofo = randrange(1, (N + 1))
                 # Check to see if you picked yourself.
-                if int(of) != int(turn):
-                    return of
+                if int(ofo) != int(TURN):
+                    return ofo
                 else:
-                    if args.verbose:
+                    if ARGS.verbose:
                         print("You tried to fight yourself!")
                         print("Rerolling for a new opponent...")
-                    return OpposingForce()
+                    return opposingforce()
         # Check to see if you picked yourself.
-        elif int(of) != int(turn):
-            return of
+        elif int(ofo) != int(TURN):
+            return ofo
         else:
-            if args.verbose:
+            if ARGS.verbose:
                 print("You tried to fight yourself!")
                 print("Rerolling for a new opponent...")
-            return OpposingForce()
+            return opposingforce()
 
 
-# Tie breaker
 # In the event of a tie, both players roll a D12.
 def tiebreak():
+    """Tie breaker"""
     player1 = roll(12)
     player2 = roll(12)
     if player1 > player2:
-        if args.verbose:
-            print("Player " + str(turn) + " wins the tie!")
+        if ARGS.verbose:
+            print("Player " + str(TURN) + " wins the tie!")
         return True
     elif player1 < player2:
-        if args.verbose:
+        if ARGS.verbose:
             print("Player " + str(opp) + " wins the tie!")
         return False
     else:
-        if args.verbose:
+        if ARGS.verbose:
             print("Tie again!")
         tiebreak()
+        return None
 
 
 # Game loop plays through 6 events.
@@ -290,52 +293,52 @@ for x in range(0, H):
     # Loop Variables
     current = x + 1  # Scene variable
 
-    turn = ((current - 1) % N) + 1  # Player turn variable
+    TURN = ((current - 1) % N) + 1  # Player turn variable
 
     # Increase event index by one at the beginning of a new event
-    if turn == 1:
-        score[0] = score[0] + 1
+    if TURN == 1:
+        SCORE[0] = SCORE[0] + 1
 
-    if args.verbose:
+    if ARGS.verbose:
         # Insert a blank line for new events when in verbose
-        if turn == 1:
+        if TURN == 1:
             print("")
-        print("Current Event: " + str(score[0]))
+        print("Current Event: " + str(SCORE[0]))
         print("Current Scene: " + str(current))
-        print("Turn: Player " + str(turn))
+        print("Turn: Player " + str(TURN))
 
     # Rolling for happening modifier (ignored in simulation)
-    if turn == 1:  # Only occurs at the beginning of each Event.
+    if TURN == 1:  # Only occurs at the beginning of each Event.
         h1 = roll(4)
         h2 = roll(12)
-        if args.verbose:
+        if ARGS.verbose:
             print("Happening modifiers: " + str(h1) + " & " + str(h2))
 
     # Incomplete AI: Use tiers to inform the next three decisions
 
     # Decide to go for Reputation or Madness
     rpmd = randrange(0, 2)
-    if args.verbose:
+    if ARGS.verbose:
         if rpmd == 0:
             print("Rolling for Madness!")
         else:
             print("Rolling for Reputation!")
 
     # Calculate PC dice tier and roll
-    level = score[(2 * turn) - 1 + rpmd]  # opp level variable
-    pctier = dicetier(level)
-    if args.verbose:
+    opplevel = SCORE[(2 * TURN) - 1 + rpmd]  # opp level variable
+    pctier = dicetier(opplevel)
+    if ARGS.verbose:
         print("PC dice tier: " + str(pctier))
-    pcroll = pcdice(turn)
+    pcroll = pcdice(TURN)
 
     # Choose opponent
-    opp = OpposingForce()
+    opp = opposingforce()
 
     # PC opponent level, dicetier, and roll.
     if opp > 0:
-        level = score[(2 * opp) - 1 + rpmd]  # opp level variable
-        optier = dicetier(level)
-        if args.verbose:
+        opplevel = SCORE[(2 * opp) - 1 + rpmd]  # opp level variable
+        optier = dicetier(opplevel)
+        if ARGS.verbose:
             print("PC vs PC")
             print("Player chose to go up against player " + str(opp) + "!")
             print("Opponent dice tier: " + str(pctier))
@@ -343,12 +346,12 @@ for x in range(0, H):
 
     # NPC opponent
     if opp == 0:
-        if args.verbose:
+        if ARGS.verbose:
             print("PC vs NPC")
 
         # Choose NPC difficulty and risk
         # Static choices can be selected for player 1, late game, or all PCs.
-        if turn == 1:  # Experiment with Player 1 static choices
+        if TURN == 1:  # Experiment with Player 1 static choices
             chlng = roll(3)  # Default action
             # chlng = 3 # Static choice
             # Uncomment the above line to set a static challenge for Player 1.
@@ -361,7 +364,7 @@ for x in range(0, H):
             # chlng = 3
             # Uncomment the above line to set a static challenge choice.
 
-        if args.verbose:
+        if ARGS.verbose:
             print("NPC challenge rating: " + str(chlng))
 
         # PC vs NPC scoring DEBUG
@@ -386,207 +389,209 @@ for x in range(0, H):
     # chlng is short for challenge and how much is at risk.
     # gnlhc is chlng backwards and is how much the Opponent is risking.
     if delta == 0:
-        chlng = pointD
-        gnlhc = pointD
+        chlng = POINTD
+        gnlhc = POINTD
     elif delta == -1:
-        chlng = pointC
-        gnlhc = pointE
+        chlng = POINTC
+        gnlhc = POINTE
     elif delta == -2:
-        chlng = pointB
-        gnlhc = pointF
+        chlng = POINTB
+        gnlhc = POINTF
     elif delta == -3:
-        chlng = pointA
-        gnlhc = pointF
+        chlng = POINTA
+        gnlhc = POINTF
     elif delta == 1:
-        chlng = pointE
-        gnlhc = pointC
+        chlng = POINTE
+        gnlhc = POINTC
     elif delta == 2:
-        chlng = pointF
-        gnlhc = pointB
+        chlng = POINTF
+        gnlhc = POINTB
     elif delta == 3:
-        chlng = pointF
-        gnlhc = pointA
+        chlng = POINTF
+        gnlhc = POINTA
     else:
         print("ERROR: Dice Tier difference is unexpected!!!")
 
     # Penalty for first tier dice
     if pctier == 0:
-        gnlhc = gnlhc - fourpen
+        gnlhc = gnlhc - FOURPEN
         if optier == 1:
-            chlng = chlng - d4d6pen
+            chlng = chlng - D4D6PEN
     if optier == 0:
-        gnlhc = gnlhc - fourpen
+        gnlhc = gnlhc - FOURPEN
         if pctier == 1:
-            gnlhc = gnlhc - d4d6pen
+            gnlhc = gnlhc - D4D6PEN
 
     # Difference in PC vs NPC table
     if opp == 0 and pctier > 0:
-        chlng = chlng - npcpen
+        chlng = chlng - NPCPEN
 
-    if args.verbose:
+    if ARGS.verbose:
         print("PC rolls " + str(pcroll) + "!")
         print("Opponent rolls " + str(oproll))
 
     # Compare rolls and add / remove challenge points.
     if opp == 0:
         if pcroll > oproll:
-            if args.verbose:
+            if ARGS.verbose:
                 print("WIN!")
-            score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng
+            SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] + chlng
         elif pcroll < oproll:
-            if args.verbose:
+            if ARGS.verbose:
                 print("LOSE!")
-            # score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng  # noqa: E501
+            # SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] - chlng  # noqa: E501
             t = 0  # Do nothing machine
         elif pcroll == oproll:
-            if args.verbose:
+            if ARGS.verbose:
                 print("TIE!")
             if tiebreak() is True:
-                if args.verbose:
+                if ARGS.verbose:
                     print("WIN!")
-                score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng  # noqa: E501
+                SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] + chlng  # noqa: E501
             else:
-                if args.verbose:
+                if ARGS.verbose:
                     print("LOSE!")
-                # score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng  # noqa: E501
+                # SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] - chlng  # noqa: E501
                 t = 0  # Do nothing machine
         else:
             print("ERROR: pcroll or oproll is invalid!")
     else:
         if pcroll > oproll:
-            if args.verbose:
+            if ARGS.verbose:
                 print("WIN!")
-            score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng
-            # score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] - gnlhc
+            SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] + chlng
+            # SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 * opp) - 1 + rpmd] - gnlhc
         elif pcroll < oproll:
-            if args.verbose:
+            if ARGS.verbose:
                 print("LOSE!")
-            # score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng  # noqa: E501
-            score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] + gnlhc
+            # SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] - chlng  # noqa: E501
+            SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 * opp) - 1 + rpmd] + gnlhc
         elif pcroll == oproll:
-            if args.verbose:
+            if ARGS.verbose:
                 print("TIE!")
             if tiebreak() is True:
-                if args.verbose:
+                if ARGS.verbose:
                     print("WIN!")
-                score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] + chlng  # noqa: E501
-                # score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] - gnlhc  # noqa: E501
+                SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] + chlng  # noqa: E501
+                # SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 * opp) - 1 + rpmd] - gnlhc  # noqa: E501
             else:
-                if args.verbose:
+                if ARGS.verbose:
                     print("LOSE!")
-                # score[(2 * turn) - 1 + rpmd] = score[(2 * turn) - 1 + rpmd] - chlng  # noqa: E501
-                score[(2 * opp) - 1 + rpmd] = score[(2 * opp) - 1 + rpmd] + gnlhc  # noqa: E501
+                # SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] - chlng  # noqa: E501
+                SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 * opp) - 1 + rpmd] + gnlhc  # noqa: E501
         else:
             print("ERROR: pcroll or oproll is invalid!")
 
     # Results
 
-    # If a score value is below zero at the end of a scene, bump up to zero.
-    for checkms in score[1:]:
+    # If a SCORE value is below zero at the end of a scene, bump up to zero.
+    for checkms in SCORE[1:]:
         if checkms < 0:
-            score[score.index(checkms)] = MS
+            SCORE[SCORE.index(checkms)] = MS
 
     # AI: Calculate dice tiers for all stats and overwrite list
     tiers = []
-    for scores in score[1:]:
-        tiers.append(dicetier(scores))
-    tiers = tiers + npctiers  # [0,0,1,1,2,2]
-    if args.verbose:
+    for SCOREs in SCORE[1:]:
+        tiers.append(dicetier(SCOREs))
+    tiers = tiers + NPCTIERS  # [0,0,1,1,2,2]
+    if ARGS.verbose:
         print("Dice tiers for AI")
         print(','.join(map(str, tiers)))
 
     # Score after each Scene
-    if args.verbose:
-        print("Scene scores")
-        print(','.join(map(str, score)))
+    if ARGS.verbose:
+        print("Scene SCOREs")
+        print(','.join(map(str, SCORE)))
 
     # Score after each event
-    if turn == N:
-        if args.verbose:
-            print("Final event scores:")
-        print(','.join(map(str, score)))
-        writer.writerow(score)
+    if TURN == N:
+        if ARGS.verbose:
+            print("Final event SCOREs:")
+        print(','.join(map(str, SCORE)))
+        WRITER.writerow(SCORE)
 
 # Events 1-6 are complete.
-# Find winner or play event 7
+# Find WINner or play event 7
 
 # Calculate max Repuation and Madness after 6 events
 
 # Make new arrays for Madness and Reputation
-ev6mad = score[1::2]
-ev6rep = score[2::2]
+EV6MAD = SCORE[1::2]
+EV6REP = SCORE[2::2]
 
-if args.verbose:
-    print("Event 6 Madness: " + str(ev6mad))
-    print("Event 6 Reputation: " + str(ev6rep))
+if ARGS.verbose:
+    print("Event 6 Madness: " + str(EV6MAD))
+    print("Event 6 Reputation: " + str(EV6REP))
 
-mev6mad = max(ev6mad)
-mev6rep = max(ev6rep)
+MEV6MAD = max(EV6MAD)
+MEV6REP = max(EV6REP)
 
-print("Highest Madness:," + str(mev6mad))
-print("Highest Reputation:," + str(mev6rep))
+print("Highest Madness:," + str(MEV6MAD))
+print("Highest Reputation:," + str(MEV6REP))
 
-# Find player or players that have max scores
-topmad = []
-toprep = []
+# Find player or players that have max SCOREs
+TOPMAD = []
+TOPREP = []
 
 # Record player or players with highest madness.
-for i, j in enumerate(ev6mad):
-    if j == mev6mad:
-        topmad.append(i + 1)
+for i, j in enumerate(EV6MAD):
+    if j == MEV6MAD:
+        TOPMAD.append(i + 1)
 
 # Record player or players with highest reputation.
-for i, j in enumerate(ev6rep):
-    if j == mev6rep:
-        toprep.append(i + 1)
+for i, j in enumerate(EV6REP):
+    if j == MEV6REP:
+        TOPREP.append(i + 1)
 
-print("Player(s) with highest Madness:," + str(topmad))
-print("Player(s) with highest Reputation:," + str(toprep))
+print("Player(s) with highest Madness:," + str(TOPMAD))
+print("Player(s) with highest Reputation:," + str(TOPREP))
 
 # if a player has the highest madness and reputation, there is no event 7.
-if len(toprep) == len(topmad) == 1 and toprep == topmad:
-    win = topmad[0]
+if len(TOPREP) == len(TOPMAD) == 1 and TOPREP == TOPMAD:
+    WIN = TOPMAD[0]
 # Event 7
-elif len(topmad) == 1 and len(toprep) == 1:
+elif len(TOPMAD) == 1 and len(TOPREP) == 1:
     # The player with the highest madness rolls a D12 + madness
-    ev7mad = roll(12) + mev6mad
+    EV7MAD = roll(12) + MEV6MAD
     # The player with the highest reputation rolls a D12 + reputation
-    ev7rep = roll(12) + mev6rep
+    EV7REP = roll(12) + MEV6REP
 
     # Winner takes all
-    if ev7mad > ev7rep:
-        if args.verbose:
+    if EV7MAD > EV7REP:
+        if ARGS.verbose:
             print("WIN!")
-        win = topmad[0]
-    elif ev7mad < ev7rep:
-        if args.verbose:
+        WIN = TOPMAD[0]
+    elif EV7MAD < EV7REP:
+        if ARGS.verbose:
             print("LOSE!")
-        win = toprep[0]
-    elif ev7mad == ev7rep:
-        if args.verbose:
+        WIN = TOPREP[0]
+    elif EV7MAD == EV7REP:
+        if ARGS.verbose:
             print("TIE!")
         if tiebreak() is True:
-            if args.verbose:
+            if ARGS.verbose:
                 print("WIN!")
-            win = topmad[0]
+            WIN = TOPMAD[0]
         else:
-            if args.verbose:
+            if ARGS.verbose:
                 print("LOSE!")
-            win = toprep[0]
+            WIN = TOPREP[0]
 else:
-    win = "EVENT 7 EDGE CASE!"
+    WIN = "EVENT 7 EDGE CASE!"
 
-# Report if there is a winner
-print("Winner:," + str(win))
+# Report if there is a WINner
+print("Winner:," + str(WIN))
 
-# (Optional) Print the score table
+# (Optional) Print the SCORE table
 
 # Probability of facing NPCs
 # Probability of facing NPC = (gate1/100)+(1-gate1/100)*(1/(N+1))*(gate2/100)
-print("Probability of choosing NPC as a random opponent is " + str(round(100*((npcgate1/100)+(1-npcgate1/100)*(1/(N+1))*(npcgate2/100)), 1)) + "%.")  # noqa: E501
+print("Probability of choosing NPC as a random opponent is " +
+      str(round(100 * ((NPCGATE1 / 100) + (1 - NPCGATE1 / 100) * (1 / (N + 1))
+                       * (NPCGATE2 / 100)), 1)) + "%.")
 
 # Close csv file lock
-file.close()
+FILE.close()
 
 # (Optional) run python script on csv to graph results.
-plotdicemechanic.plotaspng(filename)  # Python 3
+plotaspng(FILENAME)  # Python 3
