@@ -595,13 +595,10 @@ print("Winner:," + str(WIN))
 
 # Probability of facing NPCs
 # Probability of facing NPC = (gate1/100)+(1-gate1/100)*(1/(N+1))*(gate2/100)
+PROB = round(100 * ((NPCGATE1 / 100) + (1 - NPCGATE1 / 100) * (1 / (N + 1)) *
+                    (NPCGATE2 / 100)), 1)
 print("Probability of choosing NPC as a random opponent is " +
-      str(round(100 * ((NPCGATE1 /
-                        100) + (1 -
-                                NPCGATE1 / 100) * (1 /
-                                                   (N +
-                                                    1)) * (NPCGATE2 /
-                                                           100)), 1)) + "%.")
+      str(PROB) + "%.")
 
 # Close csv file lock
 FILE.close()
