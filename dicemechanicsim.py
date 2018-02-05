@@ -30,6 +30,7 @@ import csv  # Export to csv format
 # from csv import writer, writerow  # Export to csv format
 import plotdicemechanic  # Python 3
 from random import randrange  # dice rolls and probability
+from roll import roll
 from time import localtime  # Name output file with timestamp
 from time import strftime  # Name output file with timestamp
 
@@ -175,12 +176,6 @@ print(','.join(map(str, score)))
 writer.writerow(score)
 
 # Functions
-
-
-# Die roll function
-# This function rolls polyhedral dice.  Example: To roll a d8, use roll(8).
-def roll(diefaces):
-    return randrange(1, int(diefaces + 1))
 
 
 # Find dice tier
