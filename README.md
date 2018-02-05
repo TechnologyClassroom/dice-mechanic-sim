@@ -63,6 +63,9 @@ that allows you to install many programs at once without accidentally installing
 adware.  The ninite download program can be left on your system and used as an
 updater in the future.
 
+For all python files, use Notepad++ to change the end of line from UNIX / OS X
+Format to Windows Format.
+
 Try to run the dicemechanicsim.py and solve each dependency.
 
 * If DMS is not compatible with your system...
