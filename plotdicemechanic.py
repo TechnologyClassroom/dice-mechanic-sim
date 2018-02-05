@@ -26,6 +26,7 @@
 # https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.html
 # https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.savefig.html
 # https://matplotlib.org/examples/pylab_examples/plotfile_demo.html
+# From ars at https://stackoverflow.com/questions/1186789
 
 # Variables
 EXAMPLECSV = 'data/20171030125109.csv'
