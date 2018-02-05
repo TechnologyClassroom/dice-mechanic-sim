@@ -439,7 +439,8 @@ for x in range(0, H):
         elif pcroll < oproll:
             if ARGS.verbose:
                 print("LOSE!")
-            # SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] - chlng  # noqa: E501
+            # SCORE[(2 * TURN) - 1 + rpmd] =
+            # SCORE[(2 * TURN) - 1 + rpmd] - chlng
             t = 0  # Do nothing machine
         elif pcroll == oproll:
             if ARGS.verbose:
@@ -447,11 +448,13 @@ for x in range(0, H):
             if tiebreak() is True:
                 if ARGS.verbose:
                     print("WIN!")
-                SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] + chlng  # noqa: E501
+                SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 *
+                                                      TURN) - 1 + rpmd] + chlng
             else:
                 if ARGS.verbose:
                     print("LOSE!")
-                # SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] - chlng  # noqa: E501
+                # SCORE[(2 * TURN) - 1 + rpmd] =
+                #     SCORE[(2 * TURN) - 1 + rpmd] - chlng
                 t = 0  # Do nothing machine
         else:
             print("ERROR: pcroll or oproll is invalid!")
@@ -464,7 +467,8 @@ for x in range(0, H):
         elif pcroll < oproll:
             if ARGS.verbose:
                 print("LOSE!")
-            # SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] - chlng  # noqa: E501
+            # SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 *
+            #                                       TURN) - 1 + rpmd] - chlng
             SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 * opp) - 1 + rpmd] + gnlhc
         elif pcroll == oproll:
             if ARGS.verbose:
@@ -472,13 +476,18 @@ for x in range(0, H):
             if tiebreak() is True:
                 if ARGS.verbose:
                     print("WIN!")
-                SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] + chlng  # noqa: E501
-                # SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 * opp) - 1 + rpmd] - gnlhc  # noqa: E501
+                SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 *
+                                                      TURN) - 1 + rpmd] + chlng
+                # SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 *
+                #                                      opp) - 1 + rpmd] - gnlhc
             else:
                 if ARGS.verbose:
                     print("LOSE!")
-                # SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 * TURN) - 1 + rpmd] - chlng  # noqa: E501
-                SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 * opp) - 1 + rpmd] + gnlhc  # noqa: E501
+                # SCORE[(2 *
+                #        TURN) - 1 + rpmd] = SCORE[(2 *
+                #                                   TURN) - 1 + rpmd] - chlng
+                SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 *
+                                                     opp) - 1 + rpmd] + gnlhc
         else:
             print("ERROR: pcroll or oproll is invalid!")
 
@@ -491,8 +500,8 @@ for x in range(0, H):
 
     # AI: Calculate dice tiers for all stats and overwrite list
     tiers = []
-    for SCOREs in SCORE[1:]:
-        tiers.append(dicetier(SCOREs))
+    for SCORES in SCORE[1:]:
+        tiers.append(dicetier(SCORES))
     tiers = tiers + NPCTIERS  # [0,0,1,1,2,2]
     if ARGS.verbose:
         print("Dice tiers for AI")
@@ -500,13 +509,13 @@ for x in range(0, H):
 
     # Score after each Scene
     if ARGS.verbose:
-        print("Scene SCOREs")
+        print("Scene scores")
         print(','.join(map(str, SCORE)))
 
     # Score after each event
     if TURN == N:
         if ARGS.verbose:
-            print("Final event SCOREs:")
+            print("Final event scores:")
         print(','.join(map(str, SCORE)))
         WRITER.writerow(SCORE)
 
@@ -587,8 +596,12 @@ print("Winner:," + str(WIN))
 # Probability of facing NPCs
 # Probability of facing NPC = (gate1/100)+(1-gate1/100)*(1/(N+1))*(gate2/100)
 print("Probability of choosing NPC as a random opponent is " +
-      str(round(100 * ((NPCGATE1 / 100) + (1 - NPCGATE1 / 100) * (1 / (N + 1))
-                       * (NPCGATE2 / 100)), 1)) + "%.")
+      str(round(100 * ((NPCGATE1 /
+                        100) + (1 -
+                                NPCGATE1 / 100) * (1 /
+                                                   (N +
+                                                    1)) * (NPCGATE2 /
+                                                           100)), 1)) + "%.")
 
 # Close csv file lock
 FILE.close()
