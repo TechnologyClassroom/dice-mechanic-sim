@@ -29,7 +29,7 @@ analysis.
     balance of the highests points with lowest risk.
 * Easy: Only load pieces of libraries that are used to speed up processing
   time.
-* Medium: Update Event 7
+* Medium: Update Event 7 to match first printing
   * Bracket system that pits all runner up PCs against each other to decide
     who faces the player with the highest madness.
   * The last two players in the bracket may team up.
@@ -41,7 +41,8 @@ analysis.
     must be stopped by the winner of the bracket.
   * Event 7 edge case: What happens when two players tie for highest
     madness and repuatation?
-* Medium: Fight a random number of opponents in special happenings
+* Medium: Apply happening modifiers to the simulation.
+  * Medium: Fight a random number of opponents in special happenings
 * Easy: Propose changes for dice tiers and points
 * Advanced: Include CI workflow with tox.ini
 * Advanced: Add an option for interactive play.
