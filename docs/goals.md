@@ -45,6 +45,7 @@ analysis.
 * Advanced: Add an option for interactive play.
 
 # Data Analysis Feature requests
+* Easy: Update example picture to match the new 1M, 1R header format.
 * Medium: Analyze and plot averages from multiple csv files by combining event
   6 from all data sets.
 * Advanced: Create a secondary system that analyzes the output and changes the
