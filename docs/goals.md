@@ -14,7 +14,8 @@ analysis.
 
 
 # builddatapack.sh Feature requests
-* Medium: Convert to pure python without gpicview dependency.
+* Medium: Convert to pure python without gpicview or zip dependency.
+  * Replace zip with zipfile module
 
 # dicemechanicsim.py Feature requests
 * Easy: Change variable H to S.
