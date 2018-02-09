@@ -186,13 +186,13 @@ def dicetier(level):
     """Find dice tier"""
     if level <= TIER0:
         return 0
-    elif TIER0 < level <= TIER1:
+    elif level <= TIER1:
         return 1
-    elif TIER1 < level <= TIER2:
+    elif level <= TIER2:
         return 2
     elif TIER2 < level:
         return 3
-    # elif TIER3 < level <= TIER4:
+    # elif level <= TIER4:
     #     return 4
     # elif TIER4 < level:
     #     return 5
@@ -200,18 +200,18 @@ def dicetier(level):
     return None
 
 
-def pcdice(pcr):
+def pcdice(pcl):
     """Find PC roll"""
-    level = SCORE[(2 * pcr) - 1 + rpmd]  # PC level variable
+    level = SCORE[(2 * pcl) - 1 + rpmd]  # PC level variable
     if level <= TIER0:
         if ARGS.verbose:
             print("Rolling a D4...")
         return roll(4)
-    elif TIER0 < level <= TIER1:
+    elif level <= TIER1:
         if ARGS.verbose:
             print("Rolling a D6...")
         return roll(6)
-    elif TIER1 < level <= TIER2:
+    elif level <= TIER2:
         if ARGS.verbose:
             print("Rolling a D8...")
         return roll(8)
@@ -219,7 +219,7 @@ def pcdice(pcr):
         if ARGS.verbose:
             print("Rolling a D10...")
         return roll(10)
-    # elif TIER3 < level <= TIER4:
+    # elif level <= TIER4:
     #     if ARGS.verbose:
     #         print("Rolling a D12...")
     #     return roll(12)
