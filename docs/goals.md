@@ -48,6 +48,7 @@ analysis.
   6 from all data sets.
 * Advanced: Create a secondary system that analyzes the output and changes the
   variables in dicemechanicsim.py autonomously.
+* Move all datapacks to a different repository to lower repository size.
 
 # Experiments
 
