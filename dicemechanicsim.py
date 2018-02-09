@@ -155,12 +155,13 @@ for x in range(0, N * 2):
 # Build a Score Key that will contain cell headers.
 SCORE_KEY = []
 
-# Generate column headers for each player.  R1,M1,R2,M2,...,RN,MN
+# Generate column headers for each player.  1R,1M,2R,2M,...,nR,nM
+# The header format is player number followed by type of point.
 for cell in SCORE:
     if len(SCORE_KEY) % 2 == 0:
-        SCORE_KEY.append("M" + str(int(len(SCORE_KEY) / 2) + 1))
+        SCORE_KEY.append(str(int(len(SCORE_KEY) / 2) + 1) + "M")
     else:
-        SCORE_KEY.append("R" + str(int(len(SCORE_KEY) / 2) + 1))
+        SCORE_KEY.append(str(int(len(SCORE_KEY) / 2) + 1) + "R")
 
 # Add an index in column 0 for data analysis
 INDEX = "Event"
