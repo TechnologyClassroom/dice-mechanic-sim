@@ -9,7 +9,7 @@ Support the developers of Midnight Riders by purchasing a physical book at
 an ebook at [DriveThruRPG](http://www.drivethrurpg.com/product/225714/Midnight-Riders),
 or developing with us on [Github](https://github.com/GhostCityGames/Midnight-Riders).
 
-![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/data/20171030125109.csv.png?raw=true "Plot of 20171030125109.csv")
+![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/20171030125109.csv.png?raw=true "Plot of 20171030125109.csv")
 
 This code is released under the [AGPL 3.0 license](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/LICENSE).
 
@@ -115,13 +115,15 @@ interactions.
 -The simulation runs in milliseconds instead of hours.  This allows for fast
 experimentation with rule changes instead of months of gameplay tests.
 
-Feature requests can be found in the [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
+Feature requests can be found in the
+[goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
 
 # How to analyze data generated from this script
 
 Note: Programming experience is not required to participate with data analysis.
 
-Open the [data folder](https://github.com/TechnologyClassroom/dice-mechanic-sim/tree/master/data)
+Open the
+[dice-mechanic-datapacks repository](https://github.com/TechnologyClassroom/dice-mechanic-datapacks)
 , download, and extract the most recent data pack for example data.
 
 What is a CSV file?  CSV stands for comma separated values.  It is a very simple
@@ -137,16 +139,19 @@ Data is graphed within python through matplotlib.
 
 ## Game Logic
 
-The logic behind the game can be seen in the [gamelogic.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md).
+The logic behind the game can be seen in the
+[gamelogic.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md).
 
 ## Goals
 
-Goals for the project can be found in the [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
+Goals for the project can be found in the
+[goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
 
 ## Contributing
 
 [*Imposter syndrome disclaimer*](https://github.com/adriennefriend/imposter-syndrome-disclaimer):
 I want your help.  No really, I do.
 
-See the [CONTRIBUTING.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/CONTRIBUTING.md)
+See the
+[CONTRIBUTING.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/CONTRIBUTING.md)
 for loose guidelines on how you can help.
