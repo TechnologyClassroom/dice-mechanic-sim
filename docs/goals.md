@@ -19,6 +19,7 @@ analysis.
 
 # dicemechanicsim.py Feature requests
 * Easy: Change variable H to S.
+* Easy: Add demo using [asciinema](https://asciinema.org/)
 * Medium: Change variable numbers to improve 
 [game balance](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md#game-balance-goals).
 * Medium: Fake AI that makes better decisions than random
