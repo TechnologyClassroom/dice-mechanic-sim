@@ -52,6 +52,10 @@ analysis.
 * Easy: Update example picture to match the new 1M, 1R header format.
 * Medium: Analyze and plot averages from multiple csv files by combining event
   6 from all data sets.
+* Easy: Run simple statistics of each simulation including:
+  * Average score
+  * Variance
+  * Standard Deviation
 * Advanced: Create a secondary system that analyzes the output and changes the
   variables in dicemechanicsim.py autonomously.
 * Move all datapacks to a different repository to lower repository size.
