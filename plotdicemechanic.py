@@ -8,7 +8,7 @@
 
 # Another version of PDM exists that can take arguments.
 # Find plotcsv.py at
-# https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/data/plotcsv.py
+# https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/plotcsv.py
 
 # Tested with python 3 and matplotlib 2.1.0
 
@@ -33,7 +33,7 @@ EXAMPLECSV = 'data/20171030125109.csv'
 
 
 def plotaspng(csvfile):
-    """Plot csv spreadsheet as png picture module"""
+    """Plot csv spreadsheet as png picture module."""
     # Import modules
     import matplotlib.pyplot as plt  # Plotting
     import pandas as pd  # Data Analysis
