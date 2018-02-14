@@ -30,6 +30,7 @@ analysis.
     balance of the highests points with lowest risk.
 * Easy: Only load pieces of libraries that are used to speed up processing
   time.
+* Medium: Create a player generator to add flavor from MR using classes
 * Medium: Update Event 7 to match first printing
   * Bracket system that pits all runner up PCs against each other to decide
     who faces the player with the highest madness.
