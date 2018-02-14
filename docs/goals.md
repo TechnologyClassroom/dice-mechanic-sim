@@ -59,7 +59,7 @@ analysis.
   * Standard Deviation
 * Advanced: Create a secondary system that analyzes the output and changes the
   variables in dicemechanicsim.py autonomously.
-* Move all datapacks to a different repository to lower repository size.
+* Remove the data/ folder and its history from the DMS repository to decrease size.
 
 # Experiments
 
