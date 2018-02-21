@@ -1,6 +1,7 @@
 # Goals & Feature requests
 
-# Game balance goals
+## Game balance goals
+
 Goals for the game mechanics to become more fun and balanced:
 
 1) Numbers and dice should consistently increase as the game progresses
@@ -12,16 +13,17 @@ Goals for the game mechanics to become more fun and balanced:
 Data analysis can be achieved by watching simulations over time or with data
 analysis.
 
+## builddatapack.sh Feature requests
 
-# builddatapack.sh Feature requests
 * Medium: Convert to pure python without gpicview or zip dependency.
   * Replace zip with zipfile module
 
-# dicemechanicsim.py Feature requests
+## dicemechanicsim.py Feature requests
+
 * Easy: Change variable H to S.
 * Easy: Add demo using [asciinema](https://asciinema.org/)
-* Medium: Change variable numbers to improve 
-[game balance](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md#game-balance-goals).
+* Medium: Change variable numbers to improve
+  [game balance](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md#game-balance-goals).
 * Medium: Fake AI that makes better decisions than random
   * Turn delta section into a function.
   * A new array will be created at the beginning of each scene that would
@@ -49,7 +51,8 @@ analysis.
 * Advanced: Include CI workflow with tox.ini
 * Advanced: Add an option for interactive play.
 
-# Data Analysis Feature requests
+## Data Analysis Feature requests
+
 * Easy: Update example picture to match the new 1M, 1R header format.
 * Medium: Analyze and plot averages from multiple csv files by combining event
   6 from all data sets.
@@ -59,9 +62,10 @@ analysis.
   * Standard Deviation
 * Advanced: Create a secondary system that analyzes the output and changes the
   variables in dicemechanicsim.py autonomously.
-* Remove the data/ folder and its history from the DMS repository to decrease size.
+* Remove the data/ folder and its history from the DMS repository to decrease
+  size.
 
-# Experiments
+## Experiments
 
 * What are the results when only PC vs PC occurs?
 * What are the results when only PC vs NPC occurs?
