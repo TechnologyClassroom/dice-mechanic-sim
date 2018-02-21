@@ -1,16 +1,16 @@
-The datapacks from this directory have moved to the [dice-mechanic-datapacks](ht
-tps://github.com/technologyclassroom/dice-mechanic-datapacks) repository!!!
+The datapacks from this directory have moved to the
+[dice-mechanic-datapacks](https://github.com/technologyclassroom/dice-mechanic-datapacks) repository!!!
 
 # dice-mechanic-datapacks
 
 This folder will contain data sets for making informed decisions regarding rule
-optimization for [Midnight Riders](https://github.com/GhostCityGames/Midnight-Ri
-ders) when builddatapack.sh is used. Custom datapacks can be created with [dice-
-mechanic-sim](https://github.com/TechnologyClassroom/dice-mechanic-sim).
+optimization for
+[Midnight Riders](https://github.com/GhostCityGames/Midnight-Riders) when
+builddatapack.sh is used. Custom datapacks can be created with
+[dice-mechanic-sim](https://github.com/TechnologyClassroom/dice-mechanic-sim).
 
 This is an example of a plot from a csv:
-![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blo
-b/master/20180219214011.csv.png?raw=true "Plot of 20180219214011.csv")
+![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/20180219214011.csv.png?raw=true "Plot of 20180219214011.csv")
 
 Each datapack includes:
 
@@ -23,8 +23,7 @@ Each datapack includes:
 
 What is a CSV file?  CSV stands for comma separated values.  It is a very simple
 spreadsheet with each row being a new line and each column separated by commas.
-[This is an example of one csv file](https://raw.githubusercontent.com/Technolog
-yClassroom/dice-mechanic-sim/master/data/20180219214011.csv).
+[This is an example of one csv file](https://raw.githubusercontent.com/TechnologyClassroom/dice-mechanic-sim/master/data/20180219214011.csv).
 
 ## Understanding the key
 
@@ -51,18 +50,16 @@ Ways to view and analyze the data:
 * Data analysis software and programming languages can be used to parse the
   data.
 
-Goals for the data can be found in the [goals.md file](https://github.com/Techno
-logyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
+Goals for the data can be found in the
+[goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
 
 ## Observations and Findings
 
-Observations and findings are recorded in the [analysis-observations](https://gi
-thub.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/analysis-observa
-tions.md).
+Observations and findings are recorded in the
+[analysis-observations](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/analysis-observations.md).
 
 If you have any observations, you can submit them as a pull request or submit a
-[new issue on DMS](https://github.com/TechnologyClassroom/dice-mechanic-sim/issu
-es/new).
+[new issue on DMS](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/new).
 
 ## Rebuilding datapacks
 
