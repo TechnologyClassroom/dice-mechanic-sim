@@ -29,7 +29,7 @@
 # From ars at https://stackoverflow.com/questions/1186789
 
 # Variables
-EXAMPLECSV = 'data/20171030125109.csv'
+EXAMPLECSV = 'data/20180219214011.csv'
 
 
 def plotaspng(csvfile):

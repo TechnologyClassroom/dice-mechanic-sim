@@ -279,7 +279,10 @@ def tiebreak():
         return True
     elif player1 < player2:
         if ARGS.verbose:
-            print("Player " + str(opp) + " wins the tie!")
+            if opp == 0:
+                print("NPC wins the tie!")
+            else:
+                print("Player " + str(opp) + " wins the tie!")
         return False
     else:
         if ARGS.verbose:
@@ -429,7 +432,7 @@ for x in range(0, H):
 
     if ARGS.verbose:
         print("PC rolls " + str(pcroll) + "!")
-        print("Opponent rolls " + str(oproll))
+        print("Opponent rolls " + str(oproll) + "!")
 
     # Compare rolls and add / remove challenge points.
     if opp == 0:
@@ -504,9 +507,9 @@ for x in range(0, H):
     for SCORES in SCORE[1:]:
         tiers.append(dicetier(SCORES))
     tiers = tiers + NPCTIERS  # [0,0,1,1,2,2]
-    if ARGS.verbose:
-        print("Dice tiers for AI")
-        print(','.join(map(str, tiers)))
+    # if ARGS.verbose:
+    #     print("Dice tiers for AI")
+    #     print(','.join(map(str, tiers)))
 
     # Score after each Scene
     if ARGS.verbose:
@@ -589,7 +592,7 @@ elif len(TOPMAD) == 1 and len(TOPREP) == 1:
 else:
     WIN = "EVENT 7 EDGE CASE!"
 
-# Report if there is a WINner
+# Report if there is a winner
 print("Winner:," + str(WIN))
 
 # (Optional) Print the SCORE table
