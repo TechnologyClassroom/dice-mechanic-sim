@@ -22,8 +22,9 @@ analysis.
 
 * Easy: Change variable H to S.
 * Easy: Add demo using [asciinema](https://asciinema.org/)
-* Medium: Change variable numbers to improve
-  [game balance](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md#game-balance-goals).
+* Easy: Change variable numbers to improve
+  [game balance](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md#game-balance-goals)
+  and propose changes for dice tiers and points.
 * Medium: Fake AI that makes better decisions than random
   * Turn delta section into a function.
   * A new array will be created at the beginning of each scene that would
@@ -47,13 +48,11 @@ analysis.
     madness and repuatation?
 * Medium: Apply happening modifiers to the simulation.
   * Medium: Fight a random number of opponents in special happenings
-* Easy: Propose changes for dice tiers and points
 * Advanced: Include CI workflow with tox.ini
 * Advanced: Add an option for interactive play.
 
 ## Data Analysis Feature requests
 
-* Easy: Update example picture to match the new 1M, 1R header format.
 * Medium: Analyze and plot averages from multiple csv files by combining event
   6 from all data sets.
 * Easy: Run simple statistics of each simulation including:
@@ -62,8 +61,6 @@ analysis.
   * Standard Deviation
 * Advanced: Create a secondary system that analyzes the output and changes the
   variables in dicemechanicsim.py autonomously.
-* Remove the data/ folder and its history from the DMS repository to decrease
-  size.
 
 ## Experiments
 
