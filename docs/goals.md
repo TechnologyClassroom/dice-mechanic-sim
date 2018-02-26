@@ -34,7 +34,9 @@ analysis.
 * Easy: Only load pieces of libraries that are used to speed up processing
   time.
 * Medium: Create a player generator to add flavor from MR using classes
-* Medium: Update Event 7 to match first printing
+* Medium: Event 7 needs to match first printing
+  * Update Event 7 in
+    [gamelogic.md](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md).
   * Bracket system that pits all runner up PCs against each other to decide
     who faces the player with the highest madness.
   * The last two players in the bracket may team up.
@@ -48,7 +50,7 @@ analysis.
     madness and repuatation?
 * Medium: Apply happening modifiers to the simulation.
   * Medium: Fight a random number of opponents in special happenings
-* Advanced: Include CI workflow with tox.ini
+* Advanced: Include CI workflow with tox.ini.
 * Advanced: Add an option for interactive play.
 
 ## Data Analysis Feature requests
