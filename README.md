@@ -39,7 +39,8 @@ Goals for the project can be found in the
 [*Imposter syndrome disclaimer*](https://github.com/adriennefriend/imposter-syndrome-disclaimer):
 I want your help.  No really, I do.
 
-See the [CONTRIBUTING.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/CONTRIBUTING.md)
+See the
+[CONTRIBUTING.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/CONTRIBUTING.md)
 for loose guidelines on how you can help.
 
 ## How to setup a development environment
@@ -137,9 +138,8 @@ interactions.
 -The simulation runs in milliseconds instead of hours.  This allows for fast
 experimentation with rule changes instead of months of gameplay tests.
 
-Feature requests can be found in the [goals.md file](
-https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.
-md).
+Feature requests can be found in the
+[goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
 
 ## How to analyze data generated from this script
 
