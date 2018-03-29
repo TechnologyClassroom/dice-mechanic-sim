@@ -15,59 +15,59 @@ analysis.
 
 ## builddatapack.sh Feature requests
 
-* Medium: Convert to pure python without gpicview or zip dependency.
-  * Replace zip with zipfile module
+- [ ] Medium: Convert to pure python without gpicview or zip dependency.
+  - [ ] Replace zip with zipfile module
 
 ## dicemechanicsim.py Feature requests
 
-* Easy: Change variable H to S.
-* Easy: Add demo using [asciinema](https://asciinema.org/)
-* Easy: Change variable numbers to improve
+- [ ] Easy: Change variable H to S.
+- [ ] Easy: Add demo using [asciinema](https://asciinema.org/)
+- [ ] Easy: Change variable numbers to improve
   [game balance](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md#game-balance-goals)
   and propose changes for dice tiers and points.
-* Medium: Fake AI that makes better decisions than random
-  * Turn delta section into a function.
-  * A new array will be created at the beginning of each scene that would
+- [ ] Medium: Fake AI that makes better decisions than random
+  - [ ] Turn delta section into a function.
+  - [ ] A new array will be created at the beginning of each scene that would
     calculate the possible scores for each conflict.
-  * Applying strategy involves the PC choosing the opponent that yields a
+  - [ ] Applying strategy involves the PC choosing the opponent that yields a
     balance of the highests points with lowest risk.
-* Easy: Only load pieces of libraries that are used to speed up processing
+- [ ] Easy: Only load pieces of libraries that are used to speed up processing
   time.
-* Medium: Create a player generator to add flavor from MR using classes
-* Medium: Event 7 needs to match first printing
-  * Update Event 7 in
+- [ ] Medium: Create a player generator to add flavor from MR using classes
+- [ ] Medium: Event 7 needs to match first printing
+  - [ ] Update Event 7 in
     [gamelogic.md](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md).
-  * Bracket system that pits all runner up PCs against each other to decide
+  - [ ] Bracket system that pits all runner up PCs against each other to decide
     who faces the player with the highest madness.
-  * The last two players in the bracket may team up.
-  * Final Event 7 battle is a best 2 out of 3 with the highest madness
+  - [ ] The last two players in the bracket may team up.
+  - [ ] Final Event 7 battle is a best 2 out of 3 with the highest madness
     player against the winner of the bracket.
-  * D12 will settle ties during event 7.
-  * Event 7 edge case: If 2 or more players tie for highest madness, roll
+  - [ ] D12 will settle ties during event 7.
+  - [ ] Event 7 edge case: If 2 or more players tie for highest madness, roll
     off with D12.  The winner of all D12 rolls has the highest madness and
     must be stopped by the winner of the bracket.
-  * Event 7 edge case: What happens when two players tie for highest
+  - [ ] Event 7 edge case: What happens when two players tie for highest
     madness and repuatation?
-* Medium: Apply happening modifiers to the simulation.
-  * Medium: Fight a random number of opponents in special happenings
-* Advanced: Include CI workflow with tox.ini.
-* Advanced: Add an option for interactive play.
+- [ ] Medium: Apply happening modifiers to the simulation.
+  - [ ] Medium: Fight a random number of opponents in special happenings
+- [ ] Advanced: Include CI workflow with tox.ini.
+- [ ] Advanced: Add an option for interactive play.
 
 ## Data Analysis Feature requests
 
-* Medium: Analyze and plot averages from multiple csv files by combining event
-  6 from all data sets.
-* Easy: Run simple statistics of each simulation including:
-  * Average score
-  * Variance
-  * Standard Deviation
-* Advanced: Create a secondary system that analyzes the output and changes the
-  variables in dicemechanicsim.py autonomously.
+- [ ] Medium: Analyze and plot averages from multiple csv files by combining
+  event 6 from all data sets.
+- [ ] Easy: Run simple statistics of each simulation including:
+  - [ ] Average score
+  - [ ] Variance
+  - [ ] Standard Deviation
+- [ ] Advanced: Create a secondary system that analyzes the output and changes
+  the variables in dicemechanicsim.py autonomously.
 
 ## Experiments
 
-* What are the results when only PC vs PC occurs?
-* What are the results when only PC vs NPC occurs?
-* What are the results of all players choosing maximum points?
-* What are the results of all players choosing minimum points?
-* Compare Event 7 resolution methods
+- What are the results when only PC vs PC occurs?
+- What are the results when only PC vs NPC occurs?
+- What are the results of all players choosing maximum points?
+- What are the results of all players choosing minimum points?
+- Compare Event 7 resolution methods

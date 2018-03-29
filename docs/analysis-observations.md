@@ -1,8 +1,8 @@
 # Data Analysis Observations and Findings
 
-* No point losses makes an interesting graph.
+- No point losses makes an interesting graph.
 
-* Problem: No one gets to roll a d10 ever with this dice chart:
+- Problem: No one gets to roll a d10 ever with this dice chart:
 
 ```
    1 -  6 = d6
@@ -18,7 +18,7 @@ Proposed change: Lower d10 entry score.  New proposed chart:
   14+     = d10
 ```
 
-* Problem: Negative scores come up regularly.  The rulebook does not address a
+- Problem: Negative scores come up regularly.  The rulebook does not address a
   minimum score or negative scores.
 
 Solution: We need to add a minimum score to the rules.  The rule could read
@@ -27,12 +27,12 @@ beginning of a new Happening or Event, bring that score back up to three.”
 Three could be replaced with another number, but it is important that we have a
 minimum score even if it is zero.
 
-* Problem: Once reputation or madness reaches 0, there is little chance of
+- Problem: Once reputation or madness reaches 0, there is little chance of
   recovering.
 
 Solution: Experiment with higher minimum scores.
 
-* Test runtime on UNIX based systems using this command:
+- Test runtime on UNIX based systems using this command:
 
 ```
 time python3 dicemechanicsim.py

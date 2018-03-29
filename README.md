@@ -5,7 +5,7 @@ and paper RPG.
 
 Michael McMahon
 
-Support the developers of Midnight Riders by purchasing a physical book at
+Support the developers of Midnight Riders by purchasing a physical zine at
 [Etsy](https://www.etsy.com/listing/576575261/midnight-riders-role-playing-game),
 an ebook at
 [DriveThruRPG](http://www.drivethrurpg.com/product/225714/Midnight-Riders), or
@@ -16,6 +16,11 @@ developing with us on
 
 This code is released under the
 [AGPL 3.0 license](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/LICENSE).
+
+[Slides](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/slides/README.md)
+from talks regarding Midnight Riders can be found in the
+[dice-mechanic-datapacks](https://github.com/TechnologyClassroom/dice-mechanic-datapacks)
+repository.
 
 This script can be used to balance dice based RPGs and board games.
 
@@ -45,7 +50,7 @@ for loose guidelines on how you can help.
 
 ## How to setup a development environment
 
-* GNU/Linux Installation Instructions
+- GNU/Linux Installation Instructions
 
 Python is probably already installed on your GNU/Linux system.  You can check if
 Python is installed by running this command from a terminal:
@@ -66,7 +71,7 @@ apt install -y gpicview
 apt install -y zip
 ```
 
-* Mac Installation Instructions
+- Mac Installation Instructions
 
 To install the dependencies, you need [homebrew](http://brew.sh/) which requires
 [XCode](http://developer.apple.com/xcode/) which requires the latest macOS.
@@ -78,7 +83,7 @@ instead of trading in for a new Mac.
 
 Try to run the dicemechanicsim.py and solve each dependency.
 
-* Windows Installation Instructions
+- Windows Installation Instructions
 
 The easiest way to install Python (and many other common programs) for Windows
 is through [ninite.  Ninite](https://ninite.com/python/) is a website that
@@ -91,7 +96,7 @@ Format to Windows Format.
 
 Try to run the dicemechanicsim.py and solve each dependency.
 
-* If DMS is not compatible with your system...
+- If DMS is not compatible with your system...
 
 You can setup a Debian Virtual Machine (VM) or I can upload a Debian VM that is
 configured with all of the dependencies for you.
