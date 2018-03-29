@@ -27,9 +27,9 @@
 # Remove "plotdicemechanic.plotaspng(filename)"
 
 # Import libraries
-import argparse  # Add switch arguments for python v2.7 and v3.2+
 import csv  # Export to csv format
 # from csv import writer, writerow  # Export to csv format
+from argparse import ArgumentParser  # Add switch arguments for python 2.7&3.2+
 from random import randrange  # dice rolls and probability
 from time import localtime  # Name output file with timestamp
 from time import strftime  # Name output file with timestamp
@@ -125,7 +125,7 @@ NPCTIERS = [0, 0, 1, 1, 2, 2]
 
 # argparse module
 # argparse adds switches -h, and -v, and --verbose to the script.
-PARSER = argparse.ArgumentParser(
+PARSER = ArgumentParser(
     description='DMS tests game mechanics for the RPG Midnight Riders.')
 PARSER.add_argument('-v', '--verbose',
                     help='Show all information.', action="store_true")
