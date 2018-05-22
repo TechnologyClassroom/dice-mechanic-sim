@@ -12,6 +12,8 @@ an ebook at
 developing with us on
 [Github](https://github.com/GhostCityGames/Midnight-Riders).
 
+[![asciicast](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/gifs/mr.gif?raw=true)](https://asciinema.org/a/182976)
+
 ![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/20180219214011.csv.png?raw=true "Plot of 20180219214011.csv")
 
 This code is released under the
