@@ -1,0 +1,11 @@
+# compilation
+__pycache__/
+
+# unittest
+.tox/
+.coverage
+.coverage.*
+.pytest_cache/
+
+# vim
+*.swp
