@@ -35,7 +35,7 @@ characters, and storytelling.
 ## Game Logic
 
 The logic behind the game can be seen in the
-[gamelogic.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md).
+[gamelogic.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md)
 and is the fastest way to catch up if you are not familiar with the rules of
 [Midnight Riders](https://github.com/GhostCityGames/Midnight-Riders).
 
