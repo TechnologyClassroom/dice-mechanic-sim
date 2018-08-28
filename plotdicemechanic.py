@@ -2,7 +2,7 @@
 """PDM visualizes Midnight Riders csv data using matplotlib."""
 
 # plotdicemechanic.py
-# Plot Dice Mechanic v1.0
+# Plot Dice Mechanic v1.1
 
 # Michael McMahon
 
@@ -10,16 +10,15 @@
 # Find plotcsv.py at
 # https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/plotcsv.py
 
-# Tested with python 3 and matplotlib 2.1.0
-
-# PDM uses python 3 because of the dependencies.  Tested with v3.5.2.
+# PDM tested with python 3.5.2, pandas 0.20.3, matplotlib 2.1.0, and Debian 9.
 
 # Run with this command:
 #   python3 plotdicemechanicsim.py
 
 # Install dependencies
-#  pip3 install matplotlib --upgrade
-#  pip3 install pandas --upgrade
+#  pip3 install matplotlib
+#  pip3 install numpy==1.15.0
+#  pip3 install pandas==0.20.3
 
 # Resources
 # Ex 3 http://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html
@@ -35,6 +34,11 @@ EXAMPLECSV = 'data/20180219214011.csv'
 def plotaspng(csvfile):
     """Plot csv spreadsheet as png picture module."""
     # Import modules
+
+    # Force matplotlib to not use the Xwindows backend
+    from matplotlib import use  # Plotting
+    use('Agg')
+
     import matplotlib.pyplot as plt  # Plotting
     import pandas as pd  # Data Analysis
 
@@ -43,6 +47,8 @@ def plotaspng(csvfile):
 
     # Read from csv file
     dfp = pd.read_csv(csvfile, index_col=0)
+
+    # New versions of pandas have trouble understanding the index.
 
     # Plot data from csv
     dfp.plot(x=dfp.index, y=dfp.columns)
