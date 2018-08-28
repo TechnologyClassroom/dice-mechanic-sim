@@ -19,7 +19,11 @@ fi
 apt update
 apt install -y python3-pip
 apt install -y python3-tk
-pip3 install pandas
+pip3 install numpy==1.15.0
+pip3 install pandas==0.20.3
 pip3 install matplotlib
 apt install -y gpicview
 apt install -y zip
+
+echo "To configure tox, run"
+echo "  bash buildtoxtestenvironment.sh"
