@@ -2,13 +2,13 @@
 """dicemechanicsim (DMS) tests game mechanics for the RPG Midnight Riders."""
 
 # dicemechanicsim.py
-# Dice Mechanic Simulation v0.97
+# Dice Mechanic Simulation v0.98
 
 # Michael McMahon
 
-# This script can be used to balance dice based RPGs and board games.
+# DMS can be used to balance dice based RPGs and board games.
 
-# Tested with Python v3.5.2, pandas v0.20.3, matplotlib v2.1.0, and Debian v9.
+# DMS tested with Python 3.5.2, pandas 0.20.3, matplotlib 2.1.0, and Debian 9.
 
 # Run with this command:
 #   python dicemechanicsim.py
@@ -62,10 +62,10 @@ MS = 0
 #  13+     = d10
 
 #  PC Dice tiers variables table
-#  TIER0         = d4
-#  TIER0 - TIER1 = d6
-#  TIER1 - TIER2 = d8
-#  TIER2+        = d10
+#  TIER0               = d4
+#  TIER0 through TIER1 = d6
+#  TIER1 through TIER2 = d8
+#  TIER2+              = d10
 
 # Dice tier variables DEBUG
 TIER0 = 0
@@ -186,15 +186,15 @@ def dicetier(level):
     """Find dice tier"""
     if level <= TIER0:
         return 0
-    elif level <= TIER1:
+    if level <= TIER1:
         return 1
-    elif level <= TIER2:
+    if level <= TIER2:
         return 2
-    elif TIER2 < level:
+    if TIER2 < level:
         return 3
-    # elif level <= TIER4:
+    # if level <= TIER4:
     #     return 4
-    # elif TIER4 < level:
+    # if TIER4 < level:
     #     return 5
     print("ERROR: level is not a number!!")
     return None
@@ -207,23 +207,23 @@ def pcdice(pcl):
         if ARGS.verbose:
             print("Rolling a D4...")
         return roll(4)
-    elif level <= TIER1:
+    if level <= TIER1:
         if ARGS.verbose:
             print("Rolling a D6...")
         return roll(6)
-    elif level <= TIER2:
+    if level <= TIER2:
         if ARGS.verbose:
             print("Rolling a D8...")
         return roll(8)
-    elif TIER2 < level:
+    if TIER2 < level:
         if ARGS.verbose:
             print("Rolling a D10...")
         return roll(10)
-    # elif level <= TIER4:
+    # if level <= TIER4:
     #     if ARGS.verbose:
     #         print("Rolling a D12...")
     #     return roll(12)
-    # elif TIER4 < level:
+    # if TIER4 < level:
     #     if ARGS.verbose:
     #         print("Rolling a D20...")
     #     return roll(20)
@@ -237,35 +237,31 @@ def opposingforce():
     chance = roll(100)
     if chance < (NPCGATE1 + 1):  # Chance of not facing NPC.
         return 0
-    else:
-        # Pick an opposing player randomly.
-        ofo = randrange(0, (N + 1))
+    # Pick an opposing player randomly.
+    ofo = randrange(0, (N + 1))
 
-        # NPC
-        if ofo == 0:
-            # Control the chances of fighting NPCs.
-            chance = roll(100)
-            # Chance of rerolling if NPC is chosen.
-            if chance < (NPCGATE2 + 1):
-                return 0
-            else:
-                ofo = randrange(1, (N + 1))
-                # Check to see if you picked yourself.
-                if int(ofo) != int(TURN):
-                    return ofo
-                else:
-                    if ARGS.verbose:
-                        print("You tried to fight yourself!")
-                        print("Rerolling for a new opponent...")
-                    return opposingforce()
+    # NPC
+    if ofo == 0:
+        # Control the chances of fighting NPCs.
+        chance = roll(100)
+        # Chance of rerolling if NPC is chosen.
+        if chance < (NPCGATE2 + 1):
+            return 0
+        ofo = randrange(1, (N + 1))
         # Check to see if you picked yourself.
-        elif int(ofo) != int(TURN):
+        if int(ofo) != int(TURN):
             return ofo
-        else:
-            if ARGS.verbose:
-                print("You tried to fight yourself!")
-                print("Rerolling for a new opponent...")
-            return opposingforce()
+        if ARGS.verbose:
+            print("You tried to fight yourself!")
+            print("Rerolling for a new opponent...")
+        return opposingforce()
+    # Check to see if you picked yourself.
+    if int(ofo) != int(TURN):
+        return ofo
+    if ARGS.verbose:
+        print("You tried to fight yourself!")
+        print("Rerolling for a new opponent...")
+    return opposingforce()
 
 
 # In the event of a tie, both players roll a D12.
@@ -277,18 +273,17 @@ def tiebreak():
         if ARGS.verbose:
             print("Player " + str(TURN) + " wins the tie!")
         return True
-    elif player1 < player2:
+    if player1 < player2:
         if ARGS.verbose:
             if opp == 0:
                 print("NPC wins the tie!")
             else:
                 print("Player " + str(opp) + " wins the tie!")
         return False
-    else:
-        if ARGS.verbose:
-            print("Tie again!")
-        tiebreak()
-        return None
+    if ARGS.verbose:
+        print("Tie again!")
+    tiebreak()
+    return None
 
 
 # Game loop plays through 6 events.
