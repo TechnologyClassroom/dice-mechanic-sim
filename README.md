@@ -1,6 +1,7 @@
 # dice-mechanic-sim
 
-Dice Mechanic Simulator (DMS) tests game mechanics for Midnight Riders, the pen
+Dice Mechanic Simulator (DMS) tests game mechanics for
+[Midnight Riders](https://github.com/GhostCityGames/Midnight-Riders), the pen
 and paper RPG.
 
 Michael McMahon
@@ -26,8 +27,8 @@ repository.
 
 This script can be used to balance dice based RPGs and board games.
 
-DMS boils the game down to only the game mechanics by removing the theme and the
-characters.
+DMS boils the game down to only the game mechanics by removing theme,
+characters, and storytelling.
 
 [Change log](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt)
 
@@ -35,6 +36,8 @@ characters.
 
 The logic behind the game can be seen in the
 [gamelogic.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md).
+and is the fastest way to catch up if you are not familiar with the rules of
+[Midnight Riders](https://github.com/GhostCityGames/Midnight-Riders).
 
 ## Goals
 
@@ -67,10 +70,17 @@ Install all dependencies for Debian 9
 apt update
 apt install -y python3-pip
 apt install -y python3-tk
-pip3 install pandas
+pip3 install numpy==1.15.0
+pip3 install pandas==0.20.3
 pip3 install matplotlib
 apt install -y gpicview
 apt install -y zip
+```
+
+Configure tox testing environment
+
+```
+bash buildtoxtestenvironment.sh
 ```
 
 - Mac Installation Instructions
@@ -110,40 +120,47 @@ directory with the script.
 
 Run with this command:
 
-```python3 dicemechanicsim.py```
+```
+python3 dicemechanicsim.py
+```
 
 View help:
 
-```python3 dicemechanicsim.py -h```
+```
+python3 dicemechanicsim.py -h
+```
 
 Enable verbose mode:
 
-```python3 dicemechanicsim.py -v```
+```
+python3 dicemechanicsim.py -v
+```
 
 Loop the script every two seconds (GNU/Linux or UNIX):
 
-```watch -n 2 python3 dicemechanicsim.py```
+```
+watch -n 2 python3 dicemechanicsim.py
+```
 
 Loop the script 40 times and package the results as a data pack (GNU/Linux or
 UNIX):
 
-```bash builddatapack.sh```
+```
+bash builddatapack.sh
+```
 
 Alternatively, open the file in IDLE, make changes, save, and press F5 to run
 the script.
 
 ## Features
 
--The game results are recorded as a spreadsheet in csv format and as a graph in
-png format.
-
--No AI is present yet.  All decisions are made randomly.
-
--Static choices can be selected for player 1, late game, and all players for NPC
-interactions.
-
--The simulation runs in milliseconds instead of hours.  This allows for fast
-experimentation with rule changes instead of months of gameplay tests.
+- The game results are recorded as a spreadsheet in csv format and as a graph in
+  png format.
+- No AI is present yet.  All decisions are made randomly.
+- Static choices can be selected for player 1, late game, and all players for
+  NPC interactions.
+- The simulation runs in milliseconds instead of hours.  This allows for fast
+  experimentation with rule changes instead of months of gameplay tests.
 
 Feature requests can be found in the
 [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
@@ -165,4 +182,4 @@ files quickly.
 
 Data analysis software and programming languages can be used to parse the data.
 
-Data is graphed within python through matplotlib.
+Data is graphed within python through pandas and matplotlib.

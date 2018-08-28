@@ -1,3 +1,26 @@
+Change log dicemechanicsim v0.98:
+
+- Removed elif and else after a return (pylint no-else-return).
+
+Change log plotdicemechanic v1.1:
+
+- Removed the need for an Xwindow allowing matplotlib to work headlessly or
+  with tox.
+
+Change log roll.py v1.0:
+
+- Added assert to only allow positive integers.
+
+Change log setupdeb.sh v1.0:
+
+- Added specific versions of numpy and pandas.
+- Added notification about buildtoxtestenvironment.sh
+
+Change log buildtoxtestenvironment.sh v1.0:
+
+- Initial upload.
+- Configures python 3.4, 3.5, and 3.6 with pyenv and tox for Ubuntu and Debian.
+
 Change log dicemechanicsim v0.97:
 
 - Most variables have been moved to the top for quick and easy manipulation.

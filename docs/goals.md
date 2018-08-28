@@ -13,6 +13,14 @@ Goals for the game mechanics to become more fun and balanced:
 Data analysis can be achieved by watching simulations over time or with data
 analysis.
 
+## Experiments
+
+- What are the results when only PC vs PC occurs?
+- What are the results when only PC vs NPC occurs?
+- What are the results of all players choosing maximum points?
+- What are the results of all players choosing minimum points?
+- Compare Event 7 resolution methods
+
 ## builddatapack.sh Feature requests
 
 - [ ] Medium: Convert to pure python without gpicview or zip dependency.
@@ -21,7 +29,8 @@ analysis.
 ## dicemechanicsim.py Feature requests
 
 - [ ] Easy: Change variable H to S.
-- [ ] Easy: Add demo using [asciinema](https://asciinema.org/)
+- [ ] Easy: create setup.py
+- [ ] Easy: Translate this document into github issues
 - [ ] Easy: Change variable numbers to improve
   [game balance](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md#game-balance-goals)
   and propose changes for dice tiers and points.
@@ -35,8 +44,6 @@ analysis.
   time.
 - [ ] Medium: Create a player generator to add flavor from MR using classes
 - [ ] Medium: Event 7 needs to match first printing
-  - [ ] Update Event 7 in
-    [gamelogic.md](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/gamelogic.md).
   - [ ] Bracket system that pits all runner up PCs against each other to decide
     who faces the player with the highest madness.
   - [ ] The last two players in the bracket may team up.
@@ -63,11 +70,23 @@ analysis.
   - [ ] Standard Deviation
 - [ ] Advanced: Create a secondary system that analyzes the output and changes
   the variables in dicemechanicsim.py autonomously.
+- [ ] Advanced: Update code to work with the latest pandas
 
-## Experiments
+## roll Feature requests
 
-- What are the results when only PC vs PC occurs?
-- What are the results when only PC vs NPC occurs?
-- What are the results of all players choosing maximum points?
-- What are the results of all players choosing minimum points?
-- Compare Event 7 resolution methods
+- [ ] Advanced: Add to pip
+
+## Documentation Feature requests
+
+- [ ] Medium: docs/gamelogic Event 7 needs an update to the bracket system from
+  the first edition of Midnight Riders
+- [ ] Update the doc folder to sphinx-doc style documenation
+
+## Testing Feature requests
+- [ ] Easy-Advanced: Write py.test tests for full coverage
+- [ ] Easy: Create test_dicemechanicsim.py
+- [ ] Easy: Create test_plotdicemechanic.py
+- [ ] Easy: Create test_plotcsv.py
+- [ ] Medium: Configure dependencies so output from numpy is not seen
+- [ ] Easy: Add travis-ci to github
+- [ ] Easy: Add CI to gitlab.
