@@ -6,6 +6,9 @@ and paper RPG.
 
 Michael McMahon
 
+Visit us at the [World Maker Faire 2018](https://makerfaire.com/new-york/) at
+the location 3 tent in the games section!
+
 Support the developers of Midnight Riders by purchasing a physical zine with
 [paypal.me](https://www.paypal.me/ghostcitygames),
 an ebook at
