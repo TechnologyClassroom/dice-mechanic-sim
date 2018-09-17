@@ -6,8 +6,8 @@ and paper RPG.
 
 Michael McMahon
 
-Support the developers of Midnight Riders by purchasing a physical zine at
-[Etsy](https://www.etsy.com/listing/576575261/midnight-riders-role-playing-game),
+Support the developers of Midnight Riders by purchasing a physical zine with
+[paypal.me](https://www.paypal.me/ghostcitygames),
 an ebook at
 [DriveThruRPG](http://www.drivethrurpg.com/product/225714/Midnight-Riders), or
 developing with us on
