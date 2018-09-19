@@ -10,7 +10,7 @@ Visit us at the [World Maker Faire 2018](https://makerfaire.com/new-york/) at
 the location 3 tent in the games section!
 
 Support the developers of Midnight Riders by purchasing a physical zine with
-[paypal.me](https://www.paypal.me/ghostcitygames),
+[our GCG Square Store](https://squareup.com/store/ghostcitygames/),
 an ebook at
 [DriveThruRPG](http://www.drivethrurpg.com/product/225714/Midnight-Riders), or
 developing with us on
