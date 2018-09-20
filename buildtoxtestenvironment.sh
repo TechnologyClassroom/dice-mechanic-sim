@@ -85,9 +85,7 @@ echo "Installing multiple Python version..."
 ~/.pyenv/bin/pyenv install 3.6.6
 #~/.pyenv/bin/pyenv install 3.7.0
 
-pyenv shell 3.4.9
-pyenv shell 3.5.6
-pyenv shell 3.6.6
+pyenv shell 3.4.9 3.5.6 3.6.6
 
 echo "Installing tox..."
 sudo pip3 install tox
