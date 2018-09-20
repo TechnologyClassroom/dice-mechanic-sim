@@ -48,7 +48,8 @@ echo "file and remove the comments before all deb-src lines that"
 echo "follow lines that start with 'deb' that are uncommented."
 echo \ 
 sudo apt-get build-deps -y python
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+sudo apt install -y libssl1.0-dev
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev
 # https://github.com/pyenv/pyenv/wiki/common-build-problems
