@@ -64,6 +64,8 @@ echo 'export PATH="/home/user/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 
+exec bash
+
 echo "Updating pyenv..."
 ~/.pyenv/bin/pyenv update
 
@@ -82,6 +84,10 @@ echo "Installing multiple Python version..."
 ~/.pyenv/bin/pyenv install 3.5.6
 ~/.pyenv/bin/pyenv install 3.6.6
 #~/.pyenv/bin/pyenv install 3.7.0
+
+pyenv shell 3.4.9
+pyenv shell 3.5.6
+pyenv shell 3.6.6
 
 echo "Installing tox..."
 sudo pip3 install tox
