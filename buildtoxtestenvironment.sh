@@ -8,8 +8,46 @@
 # To run, open a terminal and enter:
 #   bash buildtoxtestenvironment.sh
 
+
+# Initialization checks
+
+# Check for /bin/bash.
+if [ "$BASH_VERSION" = '' ]; then
+  echo "You are not using bash."
+  echo "Use this syntax instead:"
+  echo "sudo bash bluearchive.sh"
+  exit 1
+fi
+
+# Check networking
+# https://unix.stackexchange.com/questions/190513/shell-scripting-proper-way-to-
+#   check-for-internet-connectivity
+echo Checking network...
+if ping -q -c 1 -W 1 google.com >/dev/null; then
+  echo "The network is up."
+else
+  echo "The network is down."
+  echo "Check connection and restart script!"
+  exit 1
+fi
+
+# Disable screensaver
+echo "Disabling screensaver..."
+xset s off
+xset -dpms
+xset s noblank
+gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
+setterm -blank 0 -powerdown 0  -powersave off
+
 echo "Installing Debian dependencies..."
 sudo apt update
+echo "If you see an error that reads:"
+echo "  E: You must put some 'source' URIs in your sources.list"
+echo "after the next command, edit your /etc/apt/sources.list"
+echo "file and remove the comments before all deb-src lines that"
+echo "follow lines that start with 'deb' that are uncommented."
+echo \ 
+sudo apt-get build-deps -y python
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev
