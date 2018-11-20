@@ -3,9 +3,7 @@
 
 # dicemechanicsim.py
 # Dice Mechanic Simulation v0.98
-
 # Michael McMahon
-
 # DMS can be used to balance dice based RPGs and board games.
 
 # DMS tested with Python 3.5.2, pandas 0.20.3, matplotlib 2.1.0, and Debian 9.
@@ -31,6 +29,12 @@ import csv  # Export to csv format
 # from csv import writer, writerow  # Export to csv format
 from argparse import ArgumentParser  # Add switch arguments for python 2.7&3.2+
 from random import randrange  # dice rolls and probability
+from statistics import mean  # Statistics
+from statistics import median  # Statistics
+from statistics import pstdev  # Statistics
+from statistics import pvariance  # Statistics
+from statistics import stdev  # Statistics
+from statistics import variance  # Statistics
 from time import localtime  # Name output file with timestamp
 from time import strftime  # Name output file with timestamp
 from plotdicemechanic import plotaspng  # Python 3
@@ -262,6 +266,16 @@ def opposingforce():
         print("You tried to fight yourself!")
         print("Rerolling for a new opponent...")
     return opposingforce()
+
+
+def stats(array):
+    """Provide statistics from an array."""
+    print("Mean: " + str(mean(array)))
+    print("Median: " + str(median(array)))
+    print("pstdev: " + str(pstdev(array)))
+    print("pvariance: " + str(pvariance(array)))
+    print("stdev: " + str(stdev(array)))
+    print("variance: " + str(variance(array)))
 
 
 # In the event of a tie, both players roll a D12.
@@ -598,6 +612,14 @@ PROB = round(100 * ((NPCGATE1 / 100) + (1 - NPCGATE1 / 100) * (1 / (N + 1)) *
                     (NPCGATE2 / 100)), 1)
 print("Probability of choosing NPC as a random opponent is " +
       str(PROB) + "%.")
+
+# Statistics
+print("Game statistics:")
+stats(SCORE[1:])
+print("Madness statistics:")
+stats(EV6MAD)
+print("Reputation statistics:")
+stats(EV6REP)
 
 # Close csv file lock
 FILE.close()
