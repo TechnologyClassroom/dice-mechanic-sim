@@ -1,6 +1,13 @@
 # compilation
 __pycache__/
 
+# data
+20*.csv
+20*.csv.png
+
+# pyenv
+pyenv-installer
+
 # unittest
 .tox/
 .coverage
