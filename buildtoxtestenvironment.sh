@@ -31,6 +31,12 @@ else
   exit 1
 fi
 
+# Check for root.
+if [[ $EUID -e 0 ]]; then
+  echo "This script must not be run as root!"
+  exit 1
+fi
+
 # Disable screensaver
 echo "Disabling screensaver..."
 xset s off
