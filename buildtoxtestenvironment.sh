@@ -43,6 +43,8 @@ echo "Installing Debian dependencies..."
 sudo apt update
 echo "If you see an error that reads:"
 echo "  E: You must put some 'source' URIs in your sources.list"
+echo "or" 
+echo "  E: Invalid operation build-deps"
 echo "after the next command, edit your /etc/apt/sources.list"
 echo "file and remove the comments before all deb-src lines that"
 echo "follow lines that start with 'deb' that are uncommented."
@@ -66,7 +68,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 echo 'pyenv shell 3.4.9 3.5.6 3.6.6' >> ~/.bashrc
 
 echo "Reloading bash"
-exec bash
+source ~/.bashrc
 
 echo "Updating pyenv..."
 ~/.pyenv/bin/pyenv update
