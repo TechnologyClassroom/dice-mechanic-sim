@@ -37,4 +37,4 @@ def test_negative_integer():
 def test_string():
     """Test whether rolling a string generates an Exception"""
     with raises(AssertionError):
-        roll(str('Hello, World!'))
+        roll(str("Hello, World!"))

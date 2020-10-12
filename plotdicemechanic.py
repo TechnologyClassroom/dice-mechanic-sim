@@ -28,7 +28,7 @@
 # From ars at https://stackoverflow.com/questions/1186789
 
 # Variables
-EXAMPLECSV = 'data/20180219214011.csv'
+EXAMPLECSV = "data/20180219214011.csv"
 
 
 def plotaspng(csvfile):
@@ -37,7 +37,8 @@ def plotaspng(csvfile):
 
     # Force matplotlib to not use the Xwindows backend
     from matplotlib import use  # Plotting
-    use('Agg')
+
+    use("Agg")
 
     import matplotlib.pyplot as plt  # Plotting
     import pandas as pd  # Data Analysis
@@ -57,14 +58,14 @@ def plotaspng(csvfile):
     dfp.plot()
 
     # Graph labels
-    plt.xlabel('Events')
-    plt.ylabel('Score')
+    plt.xlabel("Events")
+    plt.ylabel("Score")
     plt.title(csvfile)
-    plt.legend(loc='upper left')
+    plt.legend(loc="upper left")
 
     # Save output as png.
-    plt.savefig(csvfile + '.png')
+    plt.savefig(csvfile + ".png")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     plotaspng(EXAMPLECSV)

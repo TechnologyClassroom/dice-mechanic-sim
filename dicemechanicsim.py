@@ -26,6 +26,7 @@
 
 # Import libraries
 import csv  # Export to csv format
+
 # from csv import writer, writerow  # Export to csv format
 from argparse import ArgumentParser  # Add switch arguments for python 2.7&3.2+
 from random import randrange  # dice rolls and probability
@@ -130,9 +131,11 @@ NPCTIERS = [0, 0, 1, 1, 2, 2]
 # argparse module
 # argparse adds switches -h, and -v, and --verbose to the script.
 PARSER = ArgumentParser(
-    description='DMS tests game mechanics for the RPG Midnight Riders.')
-PARSER.add_argument('-v', '--verbose',
-                    help='Show all information.', action="store_true")
+    description="DMS tests game mechanics for the RPG Midnight Riders."
+)
+PARSER.add_argument(
+    "-v", "--verbose", help="Show all information.", action="store_true"
+)
 ARGS = PARSER.parse_args()
 
 # Starting game information
@@ -142,14 +145,15 @@ if ARGS.verbose:
 
 # csv file output
 TIME = strftime("%Y%m%d%H%M%S", localtime())  # Time variable
-FILENAME = str(TIME) + '.csv'
+FILENAME = str(TIME) + ".csv"
 print(FILENAME)
 
 # Open new csv file
 FILE = open(FILENAME, "w", newline="")  # Python 3
 # Choose csv settings as comma, single quote, and only quote nonnumeric data.
-WRITER = csv.writer(FILE, delimiter=',', quotechar="'",
-                    quoting=csv.QUOTE_NONNUMERIC)
+WRITER = csv.writer(
+    FILE, delimiter=",", quotechar="'", quoting=csv.QUOTE_NONNUMERIC
+)
 
 # Build a SCORE array with (2 x the number of players) length filled with SS.
 SCORE = []
@@ -176,10 +180,10 @@ SCORE = [INDEX] + SCORE
 
 # CSV header
 # Prints a line at the top of the CSV which labels each column.
-print(','.join(map(str, SCORE_KEY)))
+print(",".join(map(str, SCORE_KEY)))
 WRITER.writerow(SCORE_KEY)
 # Starting SCOREs
-print(','.join(map(str, SCORE)))
+print(",".join(map(str, SCORE)))
 WRITER.writerow(SCORE)
 
 # Functions
@@ -461,8 +465,9 @@ for x in range(0, H):
             if tiebreak() is True:
                 if ARGS.verbose:
                     print("WIN!")
-                SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 *
-                                                      TURN) - 1 + rpmd] + chlng
+                SCORE[(2 * TURN) - 1 + rpmd] = (
+                    SCORE[(2 * TURN) - 1 + rpmd] + chlng
+                )
             else:
                 if ARGS.verbose:
                     print("LOSE!")
@@ -489,8 +494,9 @@ for x in range(0, H):
             if tiebreak() is True:
                 if ARGS.verbose:
                     print("WIN!")
-                SCORE[(2 * TURN) - 1 + rpmd] = SCORE[(2 *
-                                                      TURN) - 1 + rpmd] + chlng
+                SCORE[(2 * TURN) - 1 + rpmd] = (
+                    SCORE[(2 * TURN) - 1 + rpmd] + chlng
+                )
                 # SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 *
                 #                                      opp) - 1 + rpmd] - gnlhc
             else:
@@ -499,8 +505,9 @@ for x in range(0, H):
                 # SCORE[(2 *
                 #        TURN) - 1 + rpmd] = SCORE[(2 *
                 #                                   TURN) - 1 + rpmd] - chlng
-                SCORE[(2 * opp) - 1 + rpmd] = SCORE[(2 *
-                                                     opp) - 1 + rpmd] + gnlhc
+                SCORE[(2 * opp) - 1 + rpmd] = (
+                    SCORE[(2 * opp) - 1 + rpmd] + gnlhc
+                )
         else:
             print("ERROR: pcroll or oproll is invalid!")
 
@@ -523,13 +530,13 @@ for x in range(0, H):
     # Score after each Scene
     if ARGS.verbose:
         print("Scene scores")
-        print(','.join(map(str, SCORE)))
+        print(",".join(map(str, SCORE)))
 
     # Score after each event
     if TURN == N:
         if ARGS.verbose:
             print("Final event scores:")
-        print(','.join(map(str, SCORE)))
+        print(",".join(map(str, SCORE)))
         WRITER.writerow(SCORE)
 
 # Events 1-6 are complete.
@@ -608,10 +615,15 @@ print("Winner:," + str(WIN))
 
 # Probability of facing NPCs
 # Probability of facing NPC = (gate1/100)+(1-gate1/100)*(1/(N+1))*(gate2/100)
-PROB = round(100 * ((NPCGATE1 / 100) + (1 - NPCGATE1 / 100) * (1 / (N + 1)) *
-                    (NPCGATE2 / 100)), 1)
-print("Probability of choosing NPC as a random opponent is " +
-      str(PROB) + "%.")
+PROB = round(
+    100
+    * (
+        (NPCGATE1 / 100)
+        + (1 - NPCGATE1 / 100) * (1 / (N + 1)) * (NPCGATE2 / 100)
+    ),
+    1,
+)
+print("Probability of choosing NPC as a random opponent is " + str(PROB) + "%.")
 
 # Statistics
 print("Game statistics:")

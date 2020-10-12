@@ -31,9 +31,11 @@ import argparse  # Add switch arguments for python v2.7 and v3.2+
 # argparse
 # This section adds switch -h and argument to the script.
 PARSER = argparse.ArgumentParser(
-    description='Plot CSV visualizes csv data using matplotlib.')
-PARSER.add_argument('csvfile', metavar='N', type=str,
-                    help='a csv spreadsheet to be graphed')
+    description="Plot CSV visualizes csv data using matplotlib."
+)
+PARSER.add_argument(
+    "csvfile", metavar="N", type=str, help="a csv spreadsheet to be graphed"
+)
 ARGS = PARSER.parse_args()
 
 # Variables
@@ -58,14 +60,14 @@ def plotaspng(csv_input):
     dfp.plot()
 
     # Graph labels
-    plt.xlabel('Events')
-    plt.ylabel('Score')
+    plt.xlabel("Events")
+    plt.ylabel("Score")
     plt.title(csv_input)
-    plt.legend(loc='upper left')
+    plt.legend(loc="upper left")
 
     # Save output as png.
-    plt.savefig(csv_input+'.png')
+    plt.savefig(csv_input + ".png")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     plotaspng(FILE)
