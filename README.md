@@ -2,16 +2,16 @@
 
 Dice Mechanic Simulator (DMS) tests game mechanics for
 [Midnight Riders](https://github.com/GhostCityGames/Midnight-Riders), the pen
-and paper RPG.
+and paper tabletop role-playing game (TTRPG).
 
 Michael McMahon
 
-Visit us at the [World Maker Faire 2018](https://makerfaire.com/new-york/) at
-the location 3 tent in the games section!
+Thank you for visiting us at the [World Maker Faire 2018](https://makerfaire.com/new-york/)
+at the location 3 tent in the games section!
 
 Support the developers of Midnight Riders by purchasing a physical zine with
 [our GCG Square Store](https://squareup.com/store/ghostcitygames/),
-an ebook at
+purchasing an ebook at
 [DriveThruRPG](http://www.drivethrurpg.com/product/225714/Midnight-Riders), or
 developing with us on
 [Github](https://github.com/GhostCityGames/Midnight-Riders).
@@ -21,7 +21,7 @@ developing with us on
 ![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/20180219214011.csv.png?raw=true "Plot of 20180219214011.csv")
 
 This code is released under the
-[AGPL 3.0 license](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/LICENSE).
+[GNU Affero General Public License version 3 or any later version (AGPL-3.0-or-later) license](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/LICENSE).
 
 [Slides](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/slides/README.md)
 from talks regarding Midnight Riders can be found in the
