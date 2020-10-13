@@ -623,7 +623,9 @@ PROB = round(
     ),
     1,
 )
-print("Probability of choosing NPC as a random opponent is " + str(PROB) + "%.")
+print(
+    "Probability of choosing NPC as a random opponent is " + str(PROB) + "%."
+)
 
 # Statistics
 print("Game statistics:")
