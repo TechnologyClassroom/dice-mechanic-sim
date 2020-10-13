@@ -50,7 +50,7 @@ N = randrange(3, 6)  # Choose number of players randomly (3-5)
 # Uncomment the line above to assign a specific number of palyers.
 
 # Scenes
-H = N * 6  # Scene = Players * Events
+S = N * 6  # Scene = Players * Events
 # Homebrew: Increase Event number to add more conflicts to simulate
 # battles with multiple PCs or extended games.
 
@@ -140,7 +140,7 @@ ARGS = PARSER.parse_args()
 
 # Starting game information
 if ARGS.verbose:
-    print(str(N) + " players and " + str(H) + " scenes.")
+    print(str(N) + " players and " + str(S) + " scenes.")
     print("Starting SCORE:" + str(SS) + " Minimum SCORE:" + str(MS) + ".")
 
 # csv file output
@@ -306,7 +306,7 @@ def tiebreak():
 
 # Game loop plays through 6 events.
 # Each loop is one Scene.
-for x in range(0, H):
+for x in range(0, S):
     # Loop Variables
     current = x + 1  # Scene variable
 
@@ -372,7 +372,7 @@ for x in range(0, H):
             chlng = roll(3)  # Default action
             # chlng = 3 # Static choice
             # Uncomment the above line to set a static challenge for Player 1.
-        elif current > (H / 6) * 3:  # Experiment with late game static choices
+        elif current > (S / 6) * 3:  # Experiment with late game static choices
             chlng = roll(3)  # Default action
             # chlng = 3 # Static choice
             # Uncomment the above line to set a static challenge for late game.
