@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# rebuilddatapack.sh v1.0
-
+# rebuilddatapack.sh
+# Rebuild Data Pack v1.0.0
 # Michael McMahon
 
 # This script only works with GNU/Linux.  To run this on Mac and GNU/Linux distros

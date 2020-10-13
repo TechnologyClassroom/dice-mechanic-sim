@@ -2,8 +2,7 @@
 """Plot CSV visualizes CSV data."""
 
 # plotcsv.py
-# Plot CSV v1.0
-
+# Plot CSV v1.0.0
 # Michael McMahon
 
 # Plot CSV uses python 3 because of the dependencies.  Tested with v3.5.2.

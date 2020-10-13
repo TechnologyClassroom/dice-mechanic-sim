@@ -2,7 +2,7 @@
 """dicemechanicsim (DMS) tests game mechanics for the RPG Midnight Riders."""
 
 # dicemechanicsim.py
-# Dice Mechanic Simulation v0.98
+# Dice Mechanic Simulation v0.98.0
 # Michael McMahon
 # DMS can be used to balance dice based RPGs and board games.
 
@@ -42,7 +42,7 @@ from plotdicemechanic import plotaspng  # Python 3
 from roll import roll
 
 # Variables
-# Modify the numbers in this section to experiment with game settings
+# Modify the numbers in this section to experiment with game settings.
 
 # Number of Players
 N = randrange(3, 6)  # Choose number of players randomly (3-5)

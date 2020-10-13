@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# setupdeb.sh v1.0
-
+# setupdeb.sh
+# Setup DMS for Debian v1.0.0
 # Michael McMahon
 
-# setup.sh installs the necessary pacakges to run builddatapack.sh
+# setupdeb.sh installs the necessary pacakges to run builddatapack.sh
 # on Debian based GNU/Linux distributions.
 
 # To run, open a terminal and enter:

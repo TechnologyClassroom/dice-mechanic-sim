@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# buildtoxtestenvironment.sh v1.0
-
+# setuptoxtestenvironment.sh
+# Setup tox test environment for DMS v1.0.0
 # Michael McMahon
+
 # Compile various versions of Python for local tox testing using pyenv.
 
 # To run, open a terminal and enter:
-#   bash buildtoxtestenvironment.sh
+#   bash setuptoxtestenvironment.sh
 
 
 # Initialization checks

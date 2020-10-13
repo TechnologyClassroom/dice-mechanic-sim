@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# builddatapack.sh v1.0
-
+# builddatapack.sh
+# Build Data Pack v.1.0.1
 # Michael McMahon
 
 # This script only works with GNU/Linux.  To run this on Mac and GNU/Linux distros
@@ -13,9 +13,10 @@
 # To run, open a terminal and enter:
 #   bash builddatapack.sh
 
-N_SIM=40 # Default value
+# Variables
+N_SIM=40  # Default value
 
-# Adding command line arguments via getopts
+# Optional command line arguments via getopts
 while getopts "s:" opt;
 do
   case ${opt} in
@@ -23,10 +24,10 @@ do
       N_SIM=$OPTARG
       re_isanum='^[0-9]+$'
       if ! [[ $N_SIM =~ $re_isanum ]] ; then
-        echo "Error: the number of simulations must be a positive whole number"
+        echo "Error: The number of simulations must be a positive whole number!"
         exit 1
       elif [ $N_SIM -eq "0" ]; then
-        echo "Error: the number of simulations must be greater than 0"
+        echo "Error: The number of simulations must be greater than 0!"
         exit 1
       fi
       ;;
@@ -47,7 +48,7 @@ do
   python3 dicemechanicsim.py 2>/dev/null
   # Display the latest png file
   ls -tr | tail -n 1 | xargs gpicview 2>/dev/null &
-  # From bmb at https://stackoverflow.com/questions/1587059/bash-find-highest-numbered-filename-in-a-directory-where-names-start-with-digit
+  # From bmb at https://stackoverflow.com/questions/1587059
   # Wait 3 second
   sleep 3
   # Stop gpicview
@@ -55,7 +56,7 @@ do
 done
 
 # Create a temp directory and copy work files
-mkdir $pack
+mkdir -p $pack
 cd $pack
 mv ../*.csv .
 mv ../*.png .

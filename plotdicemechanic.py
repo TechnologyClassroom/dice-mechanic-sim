@@ -2,8 +2,7 @@
 """PDM visualizes Midnight Riders csv data using matplotlib."""
 
 # plotdicemechanic.py
-# Plot Dice Mechanic v1.1
-
+# Plot Dice Mechanic v1.1.0
 # Michael McMahon
 
 # Another version of PDM exists that can take arguments.
