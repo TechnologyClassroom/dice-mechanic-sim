@@ -13,12 +13,35 @@
 # To run, open a terminal and enter:
 #   bash builddatapack.sh
 
+N_SIM=40 # Default value
+
+# Adding command line arguments via getopts
+while getopts "s:" opt;
+do
+  case ${opt} in
+    s )
+      N_SIM=$OPTARG
+      re_isanum='^[0-9]+$'
+      if ! [[ $N_SIM =~ $re_isanum ]] ; then
+        echo "Error: the number of simulations must be a positive whole number"
+        exit 1
+      elif [ $N_SIM -eq "0" ]; then
+        echo "Error: the number of simulations must be greater than 0"
+        exit 1
+      fi
+      ;;
+    ? )
+      echo "Usage: bash builddatapack.sh [-s N_SIM]"
+      exit 1
+      ;;
+  esac
+done
 
 # Generate timestamp variable
 pack=$(date +%Y%m%d-%H%M)
 
-# Run 40 simulations and display contents
-for i in {1..40}
+# Run N_SIM simulations and display contents
+for i in $(seq 1 $N_SIM);
 do
   # Run dms
   python3 dicemechanicsim.py 2>/dev/null
