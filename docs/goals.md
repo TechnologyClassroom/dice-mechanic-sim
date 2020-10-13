@@ -28,7 +28,6 @@ analysis.
 
 ## dicemechanicsim.py Feature requests
 
-- [ ] Easy: Change variable H to S.
 - [ ] Easy: create setup.py
 - [ ] Easy: Translate this document into github issues
 - [ ] Easy: Change variable numbers to improve
@@ -40,8 +39,7 @@ analysis.
     calculate the possible scores for each conflict.
   - [ ] Applying strategy involves the PC choosing the opponent that yields a
     balance of the highests points with lowest risk.
-- [ ] Easy: Only load pieces of libraries that are used to speed up processing
-  time.
+- [ ] Easy: [Only load pieces of libraries that are used](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/4)
 - [ ] Medium: Create a player generator to add flavor from MR using classes
 - [ ] Medium: Event 7 needs to match first printing
   - [ ] Bracket system that pits all runner up PCs against each other to decide
@@ -55,15 +53,14 @@ analysis.
     must be stopped by the winner of the bracket.
   - [ ] Event 7 edge case: What happens when two players tie for highest
     madness and repuatation?
-- [ ] Medium: Apply happening modifiers to the simulation.
+- [ ] Medium: [Apply happening modifiers to the simulation.](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/7)
   - [ ] Medium: Fight a random number of opponents in special happenings
 - [ ] Advanced: Include CI workflow with tox.ini.
 - [ ] Advanced: Add an option for interactive play.
 
 ## Data Analysis Feature requests
 
-- [ ] Medium: Analyze and plot averages from multiple csv files by combining
-  event 6 from all data sets.
+- [ ] Medium: [Analyse statistics from multiple csv files](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues/12)
 - [ ] Advanced: Create a secondary system that analyzes the output and changes
   the variables in dicemechanicsim.py autonomously.
 - [ ] Advanced: Update code to work with the latest pandas
