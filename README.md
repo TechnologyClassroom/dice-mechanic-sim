@@ -1,8 +1,8 @@
 # dice-mechanic-sim
 
 Dice Mechanic Simulator (DMS) tests game mechanics for
-[Midnight Riders](https://github.com/GhostCityGames/Midnight-Riders), the pen
-and paper tabletop role-playing game (TTRPG).
+[Midnight Riders](https://github.com/GhostCityGames/Midnight-Riders), the
+tabletop role-playing game (TTRPG).
 
 Michael McMahon
 
@@ -67,23 +67,16 @@ Python is installed by running this command from a terminal:
 python3 -V
 ```
 
-Install all dependencies for Debian 9
+Install all dependencies for Debian.
 
 ```
-apt update
-apt install -y python3-pip
-apt install -y python3-tk
-pip3 install numpy==1.15.0
-pip3 install pandas==0.20.3
-pip3 install matplotlib
-apt install -y gpicview
-apt install -y zip
+sudo bash setupdeb.sh
 ```
 
-Configure tox testing environment
+Configure tox testing environment.
 
 ```
-bash buildtoxtestenvironment.sh
+sudo bash setuptoxtestenvironment.sh
 ```
 
 - Mac Installation Instructions
@@ -96,7 +89,11 @@ this reason.  If your computer cannot run the latest macOS, I would suggest
  or using a [Virtual Machine (VM)](https://www.virtualbox.org/wiki/Downloads)
 instead of trading in for a new Mac.
 
-Try to run the dicemechanicsim.py and solve each dependency.
+Try to run the `dicemechanicsim.py` and solve each dependency.
+
+```
+python3 dicemechanicsim.py
+```
 
 - Windows Installation Instructions
 
@@ -109,7 +106,7 @@ updater in the future.
 For all python files, use Notepad++ to change the end of line from UNIX / OS X
 Format to Windows Format.
 
-Try to run the dicemechanicsim.py and solve each dependency.
+Try to run the `dicemechanicsim.py` and solve each dependency.
 
 - If DMS is not compatible with your system...
 
@@ -145,8 +142,7 @@ Loop the script every two seconds (GNU/Linux or UNIX):
 watch -n 2 python3 dicemechanicsim.py
 ```
 
-Loop the script 40 times and package the results as a data pack (GNU/Linux or
-UNIX):
+Loop the script 40 times and package the results as a data pack (GNU/Linux):
 
 ```
 bash builddatapack.sh
@@ -166,6 +162,7 @@ the script.
   experimentation with rule changes instead of months of gameplay tests.
 
 Feature requests can be found in the
+[issues](https://github.com/TechnologyClassroom/dice-mechanic-sim/issues) and 
 [goals.md file](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/goals.md).
 
 ## How to analyze data generated from this script
