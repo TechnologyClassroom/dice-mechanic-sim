@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # setuptoxtestenvironment.sh
-# Setup tox test environment for DMS v1.0.0
+# Setup tox test environment for DMS v1.0.1
 # Michael McMahon
 
 # Compile various versions of Python for local tox testing using pyenv.
@@ -67,15 +67,12 @@ echo "Installing pyenv..."
 wget https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer
 bash pyenv-installer
 
-echo "Adding pyenv to the .bash_profile..."
-echo '# pyenv' >> ~/.bashrc
-echo 'export PATH="/home/user/.pyenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-echo 'pyenv shell 3.4.9 3.5.6 3.6.6' >> ~/.bashrc
-echo \ 
-echo 'Copy the pyenv section of /root/.bash to any users that need pyenv.'
-echo \ 
+# TODO Check if pyenv was already configured in /etc/bash.bashrc
+echo "Adding pyenv to the /etc/bash.bashrc..."
+echo '# pyenv' >> /etc/bash.bashrc
+echo 'export PATH="/home/user/.pyenv/bin:$PATH"' >> /etc/bash.bashrc
+echo 'eval "$(pyenv init -)"' >> /etc/bash.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> /etc/bash.bashrc
 
 echo "Reloading bash..."
 source ~/.bashrc
@@ -83,21 +80,32 @@ source ~/.bashrc
 echo "Updating pyenv..."
 ~/.pyenv/bin/pyenv update
 
-echo "Listing available versions of Python..."
-~/.pyenv/bin/pyenv install -l
+echo "Installing multiple Python versions..."
 
-echo "Installing multiple Python version..."
-# TODO automatically find the latest dot release for every main version >2.6
-#~/.pyenv/bin/pyenv install 2.6.9
-#~/.pyenv/bin/pyenv install 2.7.15
-#~/.pyenv/bin/pyenv install 3.0.1
-#~/.pyenv/bin/pyenv install 3.1.5
-#~/.pyenv/bin/pyenv install 3.2.6
-#~/.pyenv/bin/pyenv install 3.3.7
-~/.pyenv/bin/pyenv install 3.4.9
-~/.pyenv/bin/pyenv install 3.5.6
-~/.pyenv/bin/pyenv install 3.6.6
-#~/.pyenv/bin/pyenv install 3.7.0
+# Function to find the latest python version of available within pyenv
+latestpyenv () {
+   ~/.pyenv/bin/pyenv install -l | sed 's/  //g' | egrep "^$1" | sort -V | tail -n 1
+   # Breakdown of this one-liner
+   # ~/.pyenv/bin/pyenv install -l  # List available versions of Python.
+   # | sed 's/  //g'                # Remove the empty space before the strings.
+   # | egrep "^$1"                  # Limit the output to standard versions of python.
+   # | sort -V                      # Sort by version number format.
+   # | tail -n 1                    # Output the last entry.
+}
+
+# Create variables for the current versions of python
+py36=$(latestpyenv 3.6)
+py37=$(latestpyenv 3.7)
+py38=$(latestpyenv 3.8)
+py39=$(latestpyenv 3.9)
+
+~/.pyenv/bin/pyenv install $py36
+~/.pyenv/bin/pyenv install $py37
+~/.pyenv/bin/pyenv install $py38
+~/.pyenv/bin/pyenv install $py39
+
+echo "pyenv shell $py36 $py37 $py38 $py39" >> /etc/bash.bashrc
+echo \ 
 
 echo "Installing tox..."
 pip3 install tox
