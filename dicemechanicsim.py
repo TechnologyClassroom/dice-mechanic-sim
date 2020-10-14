@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-"""dicemechanicsim (DMS) tests game mechanics for the RPG Midnight Riders."""
+"""dicemechanicsim (DMS) tests game mechanics for the TTRPG Midnight Riders."""
 
 # dicemechanicsim.py
-# Dice Mechanic Simulation v0.98.0
+# Dice Mechanic Simulation (DMS) v0.98.0
 
 # Copyright (C) 2017-2020 Michael McMahon
 #
@@ -33,7 +33,7 @@
 #   python dicemechanicsim.py -v
 
 # Python 2 Information
-# To run dms with python 2, remove, change, comment these three lines:
+# To run DMS with python 2, remove, change, comment these three lines:
 # Remove "import plotdicemechanic"
 # Change this line 'file = open(filename, "w", newline="")  # Python 3'
 # to this 'file = open(filename, "wb")  # Python 2'
