@@ -40,14 +40,14 @@ fi
 
 # Disable screensaver
 echo "Disabling screensaver..."
-xset s off
-xset -dpms
-xset s noblank
-gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
-setterm -blank 0 -powerdown 0  -powersave off
+xset s off 2>/dev/null
+xset -dpms 2>/dev/null
+xset s noblank 2>/dev/null
+gsettings set org.gnome.desktop.screensaver idle-activation-enabled false 2>/dev/null
+setterm -blank 0 -powerdown 0  -powersave off 2>/dev/null
 
 echo "Installing Debian dependencies..."
-sudo apt update
+apt update
 echo "If you see an error that reads:"
 echo "  E: You must put some 'source' URIs in your sources.list"
 echo "or" 
@@ -56,9 +56,9 @@ echo "after the next command, edit your /etc/apt/sources.list"
 echo "file and remove the comments before all deb-src lines that"
 echo "follow lines that start with 'deb' that are uncommented."
 echo \ 
-sudo apt-get build-deps -y python
-sudo apt install -y libssl1.0-dev
-sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+apt-get build-deps -y python
+apt install -y libssl1.0-dev
+apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev
 # https://github.com/pyenv/pyenv/wiki/common-build-problems
@@ -73,8 +73,11 @@ echo 'export PATH="/home/user/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 echo 'pyenv shell 3.4.9 3.5.6 3.6.6' >> ~/.bashrc
+echo \ 
+echo 'Copy the pyenv section of /root/.bash to any users that need pyenv.'
+echo \ 
 
-echo "Reloading bash"
+echo "Reloading bash..."
 source ~/.bashrc
 
 echo "Updating pyenv..."
@@ -97,10 +100,10 @@ echo "Installing multiple Python version..."
 #~/.pyenv/bin/pyenv install 3.7.0
 
 echo "Installing tox..."
-sudo pip3 install tox
+pip3 install tox
 
 echo "Installing tox-pyenv..."
-sudo pip3 install tox-pyenv
+pip3 install tox-pyenv
 
 echo "Building tox python instances and testing..."
 tox
