@@ -20,9 +20,6 @@ developing with us on
 
 ![Screenshot](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/20180219214011.csv.png?raw=true "Plot of 20180219214011.csv")
 
-This code is released under the
-[GNU Affero General Public License version 3 or any later version (AGPL-3.0-or-later) license](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/LICENSE).
-
 [Slides](https://github.com/TechnologyClassroom/dice-mechanic-datapacks/blob/master/slides/README.md)
 from talks regarding Midnight Riders can be found in the
 [dice-mechanic-datapacks](https://github.com/TechnologyClassroom/dice-mechanic-datapacks)
@@ -33,7 +30,10 @@ This script can be used to balance dice based RPGs and board games.
 DMS boils the game down to only the game mechanics by removing theme,
 characters, and storytelling.
 
-[Change log](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/docs/changelog.txt)
+## License
+
+This code is released under the
+[GNU Affero General Public License version 3 or any later version (AGPL-3.0-or-later) license](https://github.com/TechnologyClassroom/dice-mechanic-sim/blob/master/LICENSE).
 
 ## Game Logic
 
