@@ -69,6 +69,11 @@ analysis.
 
 - [ ] Advanced: Add to pip.
 
+## setup*.sh Feature requests
+
+- [ ] Add logging.
+- [ ] Add log files to `.gitignore`.
+
 ## Documentation Feature requests
 
 - [ ] Medium: docs/gamelogic Event 7 needs an update to the bracket system from
