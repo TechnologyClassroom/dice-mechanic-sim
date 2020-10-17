@@ -76,6 +76,7 @@ analysis.
 
 ## Documentation Feature requests
 
+- [ ] Emphasize that this repository is not needed to play or enjoy Midnight Riders.  Instead this repo was used to help design and balance Midnight Riders.  Future insight from this repo could help improve Midnight Riders, other tabletop role-playing games (TTRPGs), or board games.
 - [ ] Medium: docs/gamelogic Event 7 needs an update to the bracket system from
   the first edition of Midnight Riders.
 - [ ] Update the doc folder to sphinx-doc style documenation.
