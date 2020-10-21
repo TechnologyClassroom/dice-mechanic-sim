@@ -65,4 +65,4 @@ apt install -y gpicview
 apt install -y zip
 
 echo "To configure tox, run"
-echo "  bash buildtoxtestenvironment.sh"
+echo "  bash setuptoxtestenvironment.sh"
